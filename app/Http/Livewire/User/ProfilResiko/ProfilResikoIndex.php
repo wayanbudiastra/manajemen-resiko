@@ -78,6 +78,7 @@ class ProfilResikoIndex extends Component
                 "matrik_monitoring_f" => $this->matrik_monitoring_f,
                 "matrik_monitoring_rpn" => $this->matrik_monitoring_f * $this->matrik_monitoring_d,
                 "matrik_monitoring_f" => $this->tgl_deadline,
+                "aktif" => "N",
                 "unit_id" => $this->unit_id,
                 "users_id" => auth()->user()->id
             ]);
@@ -136,9 +137,7 @@ class ProfilResikoIndex extends Component
                 $data = Risk_register_master::where("aktivitas_kerja", "like", "%{$this->src}%")->where('unit_id', $user_unit_id)->orderby('id', 'desc')->paginate(15);
             }
         } catch (Exception $e) {
-            $katagori = [];
-            $data = [];
-            $evaluasi = [];
+           
             session()->flash('error', 'Terjadi Kesalahan..' . $e);
         }
 

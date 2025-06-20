@@ -160,10 +160,10 @@ public function postingConfirmed($id)
     {
        
 
-        $data = Risk_register_pelaporan::where('unit_id', $this->cek_unit())->orderby('id', 'desc')->paginate(15);
+        $data = Risk_register_pelaporan::where('unit_id', $this->cek_unit())->orderby('id', 'desc')->limit(150)->paginate(15);
 
          if (strlen($this->src) > 1) {
-                $data = Risk_register_pelaporan::where("aktivitas_kerja", "like", "%{$this->src}%")->where('unit_id', $this->cek_unit())->orderby('id', 'desc')->paginate(15);
+                $data = Risk_register_pelaporan::where("aktivitas_kerja", "like", "%{$this->src}%")->where('unit_id', $this->cek_unit())->orderby('id', 'desc')->limit(150)->paginate(15);
         }
 
         return view('livewire.user.pelaporan-risk-register.pelaporan-risk-register-index', [

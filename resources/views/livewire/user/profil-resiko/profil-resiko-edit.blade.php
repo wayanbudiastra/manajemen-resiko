@@ -87,8 +87,13 @@
 
 
                                 <div class="mb-3">
+                                        <div class="flex space-x-2">
                                         <label for="exampleText0"
-                                            class="form-label inline-block mb-2 text-gray-700">Matrik Kontrol</label>
+                                            class="form-control w-1/2 inline-block mb-2 text-gray-700">Matrik Kontrol Frekuensi</label>
+
+                                            <label for="exampleText0"
+                                            class="form-control w-1/2 inline-block mb-2 text-gray-700">Matrik Kontrol Dampak</label>
+                                    </div>
                                         <div class="flex space-x-2">
                                             <input type="text" placeholder="F"
                                                 class="form-control w-1/2 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-green-300 focus:outline-none"
@@ -214,8 +219,13 @@
                                 </div>
                     
                                     <div class="mb-3">
+                                        <div class="flex space-x-2">
                                         <label for="exampleText0"
-                                            class="form-label inline-block mb-2 text-gray-700">Monitoring</label>
+                                            class="form-control w-1/2 inline-block mb-2 text-gray-700">Matrik Evaluasi Frekuensi</label>
+
+                                            <label for="exampleText0"
+                                            class="form-control w-1/2 inline-block mb-2 text-gray-700">Matrik Evaluasi Dampak</label>
+                                    </div>
                                         <div class="flex space-x-2">
                                             <input type="text" placeholder="F"
                                                 class="form-control w-1/2 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out   focus:text-gray-700 focus:bg-white focus:border-green-300 focus:outline-none"

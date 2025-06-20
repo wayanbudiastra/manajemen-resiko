@@ -121,6 +121,7 @@ use App\Http\Livewire\User\PelaporanRiskRegister\PelaporanRiskRegisterValidasi;
 use App\Http\Livewire\User\ProfilResiko\ProfilResikoEdit;
 use App\Http\Livewire\User\ProfilResiko\ProfilResikoGrading;
 use App\Http\Livewire\User\ProfilResiko\ProfilResikoIndex;
+use App\Http\Livewire\User\RiskRegisterRekap\RiskRegisterRekapEvaluasi;
 use App\Http\Livewire\User\RiskRegisterRekap\RiskRegisterRekapIndex;
 use App\Http\Livewire\User\Sertifikat\SertifikatUserEdit;
 use App\Http\Livewire\User\Sertifikat\SertifikatUserIndex;
@@ -201,6 +202,7 @@ Route::middleware(['auth', 'aktifuser:Y','checkunit'])->group(function () {
      Route::get('/risk-register-pelaporan-validasi/{param?}', PelaporanRiskRegisterValidasi::class)->name('rsik.register.pelaporan.validasi');
  
     Route::get('/risk-register-rekap-unit-index', RiskRegisterRekapIndex::class)->name('risk.register.rekap.unit.index'); 
+ Route::get('/risk-register-rekap-evaluasi-unit-index', RiskRegisterRekapEvaluasi::class)->name('risk.register.rekap.evaluasi.unit.index'); 
 
     Route::get('/insiden-medis-unit/{param?}', InsidenMedisUnitTerkait::class)->name('insiden.medis.unit');
     Route::get('/insiden-medis-kategori/{param?}', InsidenMedisKategori::class)->name('insiden.medis.kategori');
