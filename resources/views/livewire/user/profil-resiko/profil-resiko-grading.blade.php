@@ -63,7 +63,8 @@
                                 <div class="mb-3">
                                     <label for="exampleText0"
                                         class="form-label inline-block mb-2 text-gray-700">Kategori Resiko</label>
-
+ <a href="{{ url('/risk-register-panduan-index') }}" target="_BLANK"><u class=" text-blue-700">Lihat Panduan
+                                            disini</u></a>
                                     <select
                                         class="form-select form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0
                                                             focus:text-gray-700 focus:bg-white focus:border-green-300 focus:outline-none select2"

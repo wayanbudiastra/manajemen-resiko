@@ -72,6 +72,9 @@
                                     <button wire:click="add"
                                         class="mt-5 px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-green-600 border border-transparent rounded-lg active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-green"><i
                                             class="fas fa-fw fa-plus"></i>Tambah</button>
+                                            <button wire:click="panduan_grade"
+                                        class="mt-5 px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-yellow-500 border border-transparent rounded-lg active:bg-yellow-500 hover:bg-yellow-700 focus:outline-none focus:shadow-outline-yellow"><i
+                                            class="fas fa-fw fa-book"></i>Panduan</button>
                                     <div class="w-full overflow-x-auto mt-5">
 
                                         <table
@@ -107,25 +110,25 @@
                                                             @if ($item->matrik_kontrol_grade == 1)
                                                                 <div
                                                                     class="bg-green-600 text-white px-2 py-2 font-bold text-center rounded-lg">
-                                                                    Sangat Rendah </div>
+                                                                    Sangat Rendah <br> {{$item->matrik_kontrol_rpn}} </div>
                                                             @elseif($item->matrik_kontrol_grade == 2)
                                                                 <div
                                                                     class="bg-blue-600 text-white px-2 py-2 font-bold text-center rounded-lg">
-                                                                    Rendah
+                                                                    Rendah <br> {{$item->matrik_kontrol_rpn}}
                                                                 </div>
                                                             @elseif($item->matrik_kontrol_grade == 3)
                                                                 <div
                                                                     class="bg-yellow-500 text-white px-2 py-2 font-bold text-center rounded-lg">
-                                                                    Sedang
+                                                                    Sedang <br> {{$item->matrik_kontrol_rpn}}
                                                                 </div>
                                                             @elseif($item->matrik_kontrol_grade == 4)
                                                                 <div
                                                                     class="bg-orange-500 text-white px-2 py-2 font-bold text-center rounded-lg">
-                                                                    Tinggi </div>
+                                                                    Tinggi <br> {{$item->matrik_kontrol_rpn}} </div>
                                                             @elseif($item->matrik_kontrol_grade == 5)
                                                                 <div
                                                                     class="bg-red-600 text-white px-2 py-2 font-bold text-center rounded-lg">
-                                                                    Sangat Tinggi </div>
+                                                                    Sangat Tinggi <br> {{$item->matrik_kontrol_rpn}} </div>
                                                             @endif
                                                         </td>
                                                         <td class="px-4 py-3">
@@ -139,25 +142,25 @@
                                                             @if ($item->matrik_monitoring_grade == 1)
                                                                 <div
                                                                     class="bg-green-600 text-white px-2 py-2 font-bold text-center rounded-lg">
-                                                                    Sangat Rendah </div>
+                                                                    Sangat Rendah <br> {{$item->matrik_monitoring_rpn}} </div>
                                                             @elseif($item->matrik_monitoring_grade == 2)
                                                                 <div
                                                                     class="bg-blue-600 text-white px-2 py-2 font-bold text-center rounded-lg">
-                                                                    Rendah
+                                                                    Rendah <br> {{$item->matrik_monitoring_rpn}}
                                                                 </div>
                                                             @elseif($item->matrik_monitoring_grade == 3)
                                                                 <div
                                                                     class="bg-yellow-500 text-white px-2 py-2 font-bold text-center rounded-lg">
-                                                                    Sedang
+                                                                    Sedang <br>{{$item->matrik_monitoring_rpn}}
                                                                 </div>
                                                             @elseif($item->matrik_monitoring_grade == 4)
                                                                 <div
                                                                     class="bg-orange-500 text-white px-2 py-2 font-bold text-center rounded-lg">
-                                                                    Tinggi </div>
+                                                                    Tinggi <br> {{$item->matrik_monitoring_rpn}} </div>
                                                             @elseif($item->matrik_monitoring_grade == 5)
                                                                 <div
                                                                     class="bg-red-600 text-white px-2 py-2 font-bold text-center rounded-lg">
-                                                                    Sangat Tinggi </div>
+                                                                    Sangat Tinggi <br> {{$item->matrik_monitoring_rpn}} </div>
                                                             @endif
                                                         </td>
                                                         

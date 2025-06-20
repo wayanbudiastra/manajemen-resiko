@@ -109,7 +109,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ Route('risk.register.rekap.evaluasi.unit.index') }}">
+                            href="{{ Route('risk.register.rekap.monitoring.unit.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M3 3v18h18" stroke="currentColor" stroke-width="2" fill="none" />

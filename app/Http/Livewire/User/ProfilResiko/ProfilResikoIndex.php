@@ -110,6 +110,10 @@ class ProfilResikoIndex extends Component
     }
 
 
+    public function panduan_grade()
+    {
+        return redirect()->to('risk-register-panduan-index');
+    }
     public function render()
     {
         try {
@@ -131,10 +135,10 @@ class ProfilResikoIndex extends Component
             //
             $evaluasi = Risk_evaluasi::where('aktif', 'Y')->get();
             //
-            $data = Risk_register_master::where('unit_id', $user_unit_id)->orderby('id', 'desc')->paginate(15);
+            $data = Risk_register_master::where('unit_id', $user_unit_id)->orderby('matrik_monitoring_grade', 'desc')->paginate(15);
 
             if (strlen($this->src) > 1) {
-                $data = Risk_register_master::where("aktivitas_kerja", "like", "%{$this->src}%")->where('unit_id', $user_unit_id)->orderby('id', 'desc')->paginate(15);
+                $data = Risk_register_master::where("aktivitas_kerja", "like", "%{$this->src}%")->where('unit_id', $user_unit_id)->orderby('matrik_monitoring_grade', 'desc')->paginate(15);
             }
         } catch (Exception $e) {
            
