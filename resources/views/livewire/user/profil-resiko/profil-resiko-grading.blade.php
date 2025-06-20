@@ -4,7 +4,7 @@
             <div class="md:col-span-1">
                 <div class="px-6 sm:px-0  justify-between text-center">
                     <h3 class="text-lg font-medium leading-8 text-gray-900">
-                        Grading Profile Resiko Unit
+                        Grading Data Resiko Unit
                     </h3>
                 </div>
             </div>

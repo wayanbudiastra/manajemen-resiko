@@ -4,7 +4,7 @@
             <div class="md:col-span-1">
                 <div class="px-6 sm:px-0  justify-between text-center">
                     <h3 class="text-lg font-medium leading-8 text-gray-900">
-                        Update Profile Resiko Unit
+                        Update Data Resiko Unit
                     </h3>
                 </div>
             </div>
@@ -256,7 +256,7 @@
                                         @enderror
                                     </div>
 
-                                     <div class="mb-3">
+                                    {{-- <div class="mb-3">
                                     <label for="exampleText0"
                                         class="form-label inline-block mb-2 text-gray-700">Aktif</label>
                                     <input type="radio" wire:model.defer="aktif" value="Y" name="aktif"
@@ -270,7 +270,7 @@
                                         <span class="font-medium"></span>{{ $message }}
                                     </div>
                                     @enderror
-                                </div>
+                                </div> --}}
 
 
                                     <button wire:click="store"

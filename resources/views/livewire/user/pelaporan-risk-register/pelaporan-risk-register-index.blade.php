@@ -90,7 +90,8 @@
                                                      <th class="px-4 py-3">Grading Resiko</th>
                                                     <th class="px-4 py-3">Resiko</th>
                                                     <th class="px-4 py-3">Akar Masalah</th>
-                        
+                                                    <th class="px-4 py-3">Tindak Lanjut</th>
+                         <th class="px-4 py-3">Monitoring</th>
                                                     <th class="px-4 py-3">Posting</th>
                                                     <th class="px-4 py-3">Aksi</th>
                                                 </tr>
@@ -109,22 +110,62 @@
                                                         </td>
                                                         <td class="px-4 py-3">
                                                             @if ($item->matrik_kontrol_grade == 1)
-                                                                <div class="bg-blue-600 text-white px-2 py-2 font-bold text-center rounded-lg">
-                                                                    Rendah </div>
+                                                                <div
+                                                                    class="bg-green-600 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    Sangat Rendah </div>
                                                             @elseif($item->matrik_kontrol_grade == 2)
-                                                                <div class="bg-green-600 text-white px-2 py-2 font-bold text-center rounded-lg"> Sedang
+                                                                <div
+                                                                    class="bg-blue-600 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    Rendah
                                                                 </div>
                                                             @elseif($item->matrik_kontrol_grade == 3)
-                                                                <div class="bg-yellow-500 text-white px-2 py-2 font-bold text-center rounded-lg"> Tinggi
+                                                                <div
+                                                                    class="bg-yellow-500 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    Sedang
                                                                 </div>
                                                             @elseif($item->matrik_kontrol_grade == 4)
-                                                                <div class="bg-red-600 text-white px-2 py-2 font-bold text-center rounded-lg"> Ekstrim </div>
+                                                                <div
+                                                                    class="bg-orange-500 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    Tinggi </div>
+                                                            @elseif($item->matrik_kontrol_grade == 5)
+                                                                <div
+                                                                    class="bg-red-600 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    Sangat Tinggi </div>
                                                             @endif
                                                         </td>
                                                         <td class="px-4 py-3">
                                                             {{ $item->resiko }}</td>
                                                         <td class="px-4 py-3">
                                                             {{ $item->akar_masalah }}</td>
+                                                             <td class="px-4 py-3">
+                                                            {{ $item->rencana_tindak_lanjut }}
+                                                        </td>
+                                                            <td class="px-4 py-3">
+                                                            @if ($item->matrik_monitoring_grade == 1)
+                                                                <div
+                                                                    class="bg-green-600 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    Sangat Rendah </div>
+                                                            @elseif($item->matrik_monitoring_grade == 2)
+                                                                <div
+                                                                    class="bg-blue-600 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    Rendah
+                                                                </div>
+                                                            @elseif($item->matrik_monitoring_grade == 3)
+                                                                <div
+                                                                    class="bg-yellow-500 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    Sedang
+                                                                </div>
+                                                            @elseif($item->matrik_monitoring_grade == 4)
+                                                                <div
+                                                                    class="bg-orange-500 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    Tinggi </div>
+                                                            @elseif($item->matrik_monitoring_grade == 5)
+                                                                <div
+                                                                    class="bg-red-600 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    Sangat Tinggi </div>
+                                                            @endif
+                                                        </td>
+                                                        
                                                         <td class="px-4 py-3">
                                                              @if($item->posting=="Y")
                                                             {{ $item->posting }} </td>
@@ -140,7 +181,7 @@
                                                                 class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-sky-600 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue"><i
                                                                     class="fas fa-fw fa-pencil"></i>
                                                             </button>
-                                                            <button title="Hapus Data" wire:click="grade({{ $item->id }})"
+                                                            <button title="Hapus Data" onclick="confirmDelete({{ $item->id }})"
                                                                 class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-pink-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-red"><i
                                                                     class="fas fa-fw fa-trash"></i>
                                                             </button>
@@ -195,6 +236,29 @@
                         htmlContainer: 'text-sm text-green-600'
                     }
                 });
+            }
+        });
+    }
+
+     function confirmDelete(id) {
+         Swal.fire({
+            title: 'Anda Yakin ingin Hapus?',
+            text: 'Data Resiko berikut akan di hapus dari menu pelaporan.',
+            icon: 'warning',
+            showCancelButton: true,
+            buttonsStyling: false, // Penting: agar class kustom Tailwind digunakan
+            confirmButtonText: 'Ya, Hapus!',
+            cancelButtonText: 'Batal',
+            customClass: {
+                popup: 'rounded-xl shadow-lg',
+                title: 'text-lg font-bold text-gray-800',
+                htmlContainer: 'text-sm text-gray-600',
+                confirmButton: 'bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none',
+                cancelButton: 'bg-gray-300 text-gray-800 px-4 py-2 rounded-md hover:bg-gray-400 ml-2 focus:outline-none'
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Livewire.emit('deleteConfirmed', id);
             }
         });
     }

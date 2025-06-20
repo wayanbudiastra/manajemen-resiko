@@ -16,7 +16,7 @@ class ProfilResikoIndex extends Component
 {
     use WithPagination;
     public $modeAdd = false;
-    public $src = '', $user_unit = '', $unit_id = '', $resiko = '', $efek_resiko = '', $target_waktu = '';
+    public $src = '', $user_unit = '', $unit_id = '', $resiko = '', $efek_resiko = '', $target_waktu = '', $tgl_deadline;
     public $aktivitas_kerja = '', $pengendalian_saat_ini = '', $risk_kategori_id = '',  $risk_evaluasi_id;
     public $akar_masalah = '', $rencana_tindak_lanjut = '', $laporan_singkat = '', $aktif = '', $matrik_monitoring_f = '', $matrik_monitoring_d = '';
     public $matrik_kontrol_f = '', $matrik_kontrol_d = '', $penanggung_jawab = '', $matrik_evaluasi_d = '', $matrik_evaluasi_f = '';
@@ -49,7 +49,8 @@ class ProfilResikoIndex extends Component
             'akar_masalah' => 'required',
             'rencana_tindak_lanjut' => 'required',
             'matrik_monitoring_f' => 'required',
-            'matrik_monitoring_d' => 'required'
+            'matrik_monitoring_d' => 'required',
+            'tgl_deadline' => 'required'
 
         ]);
         //
@@ -76,7 +77,7 @@ class ProfilResikoIndex extends Component
                 "matrik_monitoring_d" => $this->matrik_monitoring_d,
                 "matrik_monitoring_f" => $this->matrik_monitoring_f,
                 "matrik_monitoring_rpn" => $this->matrik_monitoring_f * $this->matrik_monitoring_d,
-
+                "matrik_monitoring_f" => $this->tgl_deadline,
                 "unit_id" => $this->unit_id,
                 "users_id" => auth()->user()->id
             ]);
@@ -117,7 +118,7 @@ class ProfilResikoIndex extends Component
             $user_unit = Insiden_unit_user::where('users_id', auth()->user()->id)->first();
 
             if ($user_unit == null) {
-               
+
                 session()->flash('error', 'Unit Anda Belum di mapping Silahkan hubungi Admin PMKP...');
                 //redirect()->to('/login'); // arahkan ke halaman login
             }

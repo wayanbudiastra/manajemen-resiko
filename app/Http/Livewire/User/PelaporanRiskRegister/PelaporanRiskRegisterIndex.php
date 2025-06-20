@@ -14,7 +14,7 @@ class PelaporanRiskRegisterIndex extends Component
 {
     use WithPagination;
     public $src;
-    protected $listeners = ['postingConfirmed','postingConfirmedAll'];
+    protected $listeners = ['postingConfirmed','postingConfirmedAll','deleteConfirmed'];
 
     function cek_unit()
     {
@@ -47,11 +47,17 @@ class PelaporanRiskRegisterIndex extends Component
         return redirect()->to('risk-register-pelaporan-validasi/' . $idx);
     }
 
-    public function hapus($id)
+    public function deleteConfirmed($id)
     {
 
-        $idx = Crypt::encrypt($id);
-        return redirect()->to('risk-register-pelaporan-delete/' . $idx);
+        try {
+            $data = Risk_register_pelaporan::find($id);
+            $data->delete();
+            session()->flash('success', 'Data Berhasil di hapus....');
+        } catch (Exception $e) {
+            session()->flash('error', 'Terjadi Kesalahan..' . $e);
+        }
+        
     }
 
     

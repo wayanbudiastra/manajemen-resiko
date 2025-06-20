@@ -4,7 +4,7 @@
             <div class="md:col-span-1">
                 <div class="px-6 sm:px-0  justify-between text-center">
                     <h3 class="text-lg font-medium leading-8 text-gray-900">
-                        Tambah Profile Resiko Unit
+                        Tambah Data Resiko Unit
                     </h3>
                 </div>
             </div>
@@ -86,9 +86,14 @@
                                 </div>
 
 
-                                <div class="mb-3">
+                                <div class="mb-3 mt-5">
+                                    <div class="flex space-x-2">
                                         <label for="exampleText0"
-                                            class="form-label inline-block mb-2 text-gray-700">Matrik Kontrol</label>
+                                            class="form-control w-1/2 inline-block mb-2 text-gray-700">Matrik Kontrol Frekuensi</label>
+
+                                            <label for="exampleText0"
+                                            class="form-control w-1/2 inline-block mb-2 text-gray-700">Matrik Kontrol Dampak</label>
+                                    </div>
                                         <div class="flex space-x-2">
                                             <input type="text" placeholder="F"
                                                 class="form-control w-1/2 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-green-300 focus:outline-none"
@@ -100,7 +105,7 @@
                                                 </div>
                                             @enderror
 
-                                            <input type="text" placeholder="D"
+                                           <input type="text" placeholder="D"
                                                 class="form-control w-1/2 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-green-300 focus:outline-none"
                                                 name="matrik_kontrol_d" wire:model.defer="matrik_kontrol_d">
                                             @error('matrik_kontrol_d')
@@ -214,8 +219,13 @@
                                 </div>
                     
                                     <div class="mb-3">
+                                        <div class="flex space-x-2">
                                         <label for="exampleText0"
-                                            class="form-label inline-block mb-2 text-gray-700">Monitoring</label>
+                                            class="form-control w-1/2 inline-block mb-2 text-gray-700">Matrik Evaluasi Frekuensi</label>
+
+                                            <label for="exampleText0"
+                                            class="form-control w-1/2 inline-block mb-2 text-gray-700">Matrik Evaluasi Dampak</label>
+                                    </div>
                                         <div class="flex space-x-2">
                                             <input type="text" placeholder="F"
                                                 class="form-control w-1/2 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out   focus:text-gray-700 focus:bg-white focus:border-green-300 focus:outline-none"
@@ -255,6 +265,22 @@
                                             </div>
                                         @enderror
                                     </div>
+
+                                    <div class="mb-3">
+                                    <label for="exampleText0"
+                                        class="form-label inline-block mb-2 text-gray-700">Tanggal Deadline</label>
+                                    <input type="date"
+                                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0
+                                    focus:text-gray-700 focus:bg-white focus:border-green-300 focus:outline-none"
+                                        aria-label="Default select example" name="tgl_deadline"
+                                        wire:model.defer="tgl_deadline">
+                                    @error('tgl_deadline')
+                                        <div class="mb-2 text-sm text-red-700  rounded-lg dark:bg-red-200 dark:text-red-800"
+                                            role="alert">
+                                            <span class="font-medium"></span>{{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
 
 
                                     <button wire:click="store"
