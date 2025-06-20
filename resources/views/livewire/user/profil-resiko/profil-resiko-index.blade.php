@@ -19,10 +19,9 @@
                             <div class="flex flex-col">
 
                                 <div class="px-4 py-3 mt-4 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
-
                                     {{-- <div class="w-full overflow-hidden rounded-lg shadow-xs mt-5"> --}}
                                     <h2 class=" my-6 text-2xl font-semibold text-gray-700">
-                                        Data Profil Resiko Unit
+                                        Data Resiko Unit
                                     </h2>
 
                                     <div class="mt-5 relative w-full max-w-xl mr-6 focus-within:text-green-500">
@@ -84,9 +83,11 @@
                                                     <th class="px-4 py-3">No</th>
                                                     <th class="px-4 py-3">Aktivitas Kerja</th>
                                                     <th class="px-4 py-3">Kategori Resiko</th>
-                                                    <th class="px-4 py-3">Grading Resiko</th>
+                                                    <th class="px-4 py-3">Kontrol</th>
                                                     <th class="px-4 py-3">Resiko</th>
                                                     <th class="px-4 py-3">Akar Masalah</th>
+                                                    <th class="px-4 py-3">Tindak Lanjut</th>
+                                                    <th class="px-4 py-3">Evaluasi</th>
                                                     <th class="px-4 py-3">Aktif</th>
                                                     <th class="px-4 py-3">Aksi</th>
                                                 </tr>
@@ -101,6 +102,7 @@
                                                         <td class="px-4 py-3">
                                                             {{ $item->risk_kategori->nama_kategori }}
                                                         </td>
+                                                        
                                                         <td class="px-4 py-3">
                                                             @if ($item->matrik_kontrol_grade == 1)
                                                                 <div
@@ -126,6 +128,31 @@
                                                             {{ $item->resiko }}</td>
                                                         <td class="px-4 py-3">
                                                             {{ $item->akar_masalah }}</td>
+                                                             <td class="px-4 py-3">
+                                                            {{ $item->rencana_tindak_lanjut }}
+                                                        </td>
+                                                            <td class="px-4 py-3">
+                                                            @if ($item->matrik_monitoring_grade == 1)
+                                                                <div
+                                                                    class="bg-blue-600 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    Rendah </div>
+                                                            @elseif($item->matrik_monitoring_grade == 2)
+                                                                <div
+                                                                    class="bg-green-600 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    Sedang
+                                                                </div>
+                                                            @elseif($item->matrik_monitoring_grade == 3)
+                                                                <div
+                                                                    class="bg-yellow-500 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    Tinggi
+                                                                </div>
+                                                            @elseif($item->matrik_monitoring_grade == 4)
+                                                                <div
+                                                                    class="bg-red-600 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    Ekstrim </div>
+                                                            @endif
+                                                        </td>
+                                                        
 
                                                         <td class="px-4 py-3">
                                                             {{ $item->aktif }}</td>
