@@ -12,7 +12,7 @@ use Livewire\Component;
 
 class HomeRequestor extends Component
 {
-    public $portal_rendah, $portal_sedang, $portal_tinggi, $portal_ekstrim, $labels, $data;
+    public $portal_rendah,$portal_sangat_rendah, $portal_sedang, $portal_tinggi, $portal_sangat_tinggi, $labels, $data;
 
     function cek_unit()
     {
@@ -57,35 +57,28 @@ class HomeRequestor extends Component
             }
             //dd($portal);
 
+            $ds_sangat_rendah = Risk_register_master::where('unit_id', $this->cek_unit())->where('matrik_monitoring_grade', '1')->count();
+            $ds_rendah = Risk_register_master::where('unit_id', $this->cek_unit())->where('matrik_monitoring_grade', '2')->count();
+            $ds_sedang = Risk_register_master::where('unit_id', $this->cek_unit())->where('matrik_monitoring_grade', '3')->count();
+            $ds_tinggi = Risk_register_master::where('unit_id', $this->cek_unit())->where('matrik_monitoring_grade', '4')->count();
+            $ds_sangat_tinggi = Risk_register_master::where('unit_id', $this->cek_unit())->where('matrik_monitoring_grade', '5')->count();
 
-            $ds_rendah = Risk_register_master::where('unit_id', $this->cek_unit())->where('matrik_kontrol_grade', '1')->count();
-
-            $ds_sedang = Risk_register_master::where('unit_id', $this->cek_unit())->where('matrik_kontrol_grade', '2')->count();
-
-            $ds_tinggi = Risk_register_master::where('unit_id', $this->cek_unit())->where('matrik_kontrol_grade', '3')->count();
-
-            $ds_ekstrim = Risk_register_master::where('unit_id', $this->cek_unit())->where('matrik_kontrol_grade', '4')->count();
-
+            $this->portal_sangat_rendah = $ds_sangat_rendah;
             $this->portal_rendah = $ds_rendah;
 
             // dd($data_reject);
             $this->portal_tinggi = $ds_tinggi;
-
-
-            $this->portal_ekstrim = $ds_ekstrim;
-
+            $this->portal_sangat_tinggi = $ds_sangat_tinggi;
             $this->portal_sedang = $ds_sedang;
-
-            $this->labels = ['Rendah', 'Sedang', 'Tinggi', 'Ekstrim'];
-            $this->data = [$ds_rendah, $ds_sedang, $ds_tinggi, $ds_ekstrim];
+            $this->labels = ['Sangat Rendah','Rendah', 'Sedang', 'Tinggi', 'Sangat Tinggi'];
+            $this->data = [$ds_sangat_rendah, $ds_rendah, $ds_sedang, $ds_tinggi, $ds_sangat_tinggi];
 
             // dd($counter_finis);
-
-            $data_risk = Risk_register_master::where('unit_id', $this->cek_unit())->where('matrik_kontrol_grade', 4)->limit(10)->get();
+            $data_risk = Risk_register_master::where('unit_id', $this->cek_unit())->where('matrik_kontrol_grade', 5)->limit(15)->get();
         
        // dd($data);
         } catch (Exception $e) {
-            session()->flash('error', 'Terjadi Kesalahan..' . $e);
+            session()->flash('error', 'Terjadi Kesalahan....' . $e);
         }
         return view('livewire.user.dashboard.home-requestor',[
             "no"=>1,

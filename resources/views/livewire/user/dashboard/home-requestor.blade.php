@@ -44,6 +44,21 @@
                                             <a href="">
                                                 <h5
                                                     class="mb-2 text-6xl text-center font-bold tracking-tight text-gray-900 dark:text-white">
+                                                    {{ $portal_sangat_rendah }}
+                                                </h5>
+                                            </a>
+
+                                            <center>
+                                                <a href="{{ url('risk-register-rekap-unit-index') }}"
+                                                    class="mt-5 px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-green-600 border border-transparent rounded-lg active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-green"><i
+                                                        class="fas fa-fw fa-tree"></i>Sangat Rendah</a>
+                                            </center>
+                                        </div>
+                                          <div
+                                            class="p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 basis-1/4">
+                                            <a href="">
+                                                <h5
+                                                    class="mb-2 text-6xl text-center font-bold tracking-tight text-gray-900 dark:text-white">
                                                     {{ $portal_rendah }}
                                                 </h5>
                                             </a>
@@ -65,8 +80,8 @@
 
                                             <center>
                                                 <a href="{{ url('risk-register-rekap-unit-index') }}"
-                                                    class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-green-600 border border-transparent rounded-lg active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-red"><i
-                                                        class="fas fa-fw fa-edit"></i>Sedang</a>
+                                                    class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-yellow-300 border border-transparent rounded-lg active:bg-yellow-300 hover:bg-yellow-500 focus:outline-none focus:shadow-outline-red"><i
+                                                        class="fas fa-fw fa-pencil"></i>Sedang</a>
                                             </center>
                                         </div>
                                         <div
@@ -80,7 +95,7 @@
 
                                             <center>
                                                 <a href="{{ url('risk-register-rekap-unit-index') }}"
-                                                    class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-yellow-500 border border-transparent rounded-lg active:bg-yellow-600 hover:bg-yellow-700 focus:outline-none focus:shadow-outline-yellow"><i
+                                                    class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-orange-500 border border-transparent rounded-lg active:bg-orange-600 hover:bg-orange-700 focus:outline-none focus:shadow-outline-orange"><i
                                                         class="fas fa-fw fa-eye"></i>Tinggi</a>
                                             </center>
 
@@ -90,14 +105,14 @@
                                             <a href="{{ url('portal-user-request-index') }}">
                                                 <h2
                                                     class="mb-2 text-6xl text-center font-bold tracking-tight text-gray-900 dark:text-white">
-                                                    {{ $portal_ekstrim }}
+                                                    {{ $portal_sangat_tinggi }}
                                                 </h2>
                                             </a>
 
                                             <center>
                                                 <a href="{{ url('risk-register-rekap-unit-index') }}"
-                                                    class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-green"><i
-                                                        class="fas fa-fw fa-fire"></i>Ekstrim</a>
+                                                    class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-yellow"><i
+                                                        class="fas fa-fw fa-fire"></i>Sangat Tinggi</a>
                                             </center>
                                         </div>
                                     </div>
@@ -162,7 +177,7 @@
                                     </div>
                                     <div class="flex flex-col">
                                         <h2 class=" my-6 text-2xl font-semibold text-gray-700">
-                                            Matrik Kontrol Grading
+                                            Matrik Evaluasi Grading
                                         </h2>
                                         <canvas id="barChart" width="900" height="150"></canvas>
 
@@ -170,7 +185,7 @@
 
                                     <div class="w-full overflow-x-auto mt-5">
                                     <h2 class=" my-6 text-2xl font-semibold text-gray-700">
-                                            Matrik Kontrol Ekstrim ( Merah )
+                                            Matrik Kontrol Sangat Tinggi ( Merah )
                                         </h2>
                                         <table
                                             class="table-auto w-full border border-gray-200 text-left text-sm text-gray-700p"
@@ -181,9 +196,11 @@
                                                     <th class="px-4 py-3">No</th>
                                                     <th class="px-4 py-3">Aktivitas Kerja</th>
                                                     <th class="px-4 py-3">Kategori Resiko</th>
-                                                    <th class="px-4 py-3">Grading Resiko</th>
+                                                    <th class="px-4 py-3">Grading Kontrol</th>
                                                     <th class="px-4 py-3">Resiko</th>
                                                     <th class="px-4 py-3">Akar Masalah</th>
+                                                    <th class="px-4 py-3">Tindak Lanjut</th>
+                                                    <th class="px-4 py-3">Evaluasi </th>
                                                     <th class="px-4 py-3">Aktif</th>
                                                 </tr>
                                             </thead>
@@ -198,31 +215,61 @@
                                                             {{ $item->risk_kategori->nama_kategori }}
                                                         </td>
                                                         <td class="px-4 py-3">
-                                                            @if ($item->matrik_kontrol_grade == 1)
-                                                                <div
-                                                                    class="bg-blue-600 text-white px-2 py-2 font-bold text-center rounded-lg">
-                                                                    Rendah </div>
-                                                            @elseif($item->matrik_kontrol_grade == 2)
+                                                           @if ($item->matrik_kontrol_grade == 1)
                                                                 <div
                                                                     class="bg-green-600 text-white px-2 py-2 font-bold text-center rounded-lg">
-                                                                    Sedang
+                                                                    Sangat Rendah <br> {{$item->matrik_kontrol_rpn}} </div>
+                                                            @elseif($item->matrik_kontrol_grade == 2)
+                                                                <div
+                                                                    class="bg-blue-600 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    Rendah <br> {{$item->matrik_kontrol_rpn}}
                                                                 </div>
                                                             @elseif($item->matrik_kontrol_grade == 3)
                                                                 <div
                                                                     class="bg-yellow-500 text-white px-2 py-2 font-bold text-center rounded-lg">
-                                                                    Tinggi
+                                                                    Sedang <br> {{$item->matrik_kontrol_rpn}}
                                                                 </div>
                                                             @elseif($item->matrik_kontrol_grade == 4)
                                                                 <div
+                                                                    class="bg-orange-500 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    Tinggi <br> {{$item->matrik_kontrol_rpn}} </div>
+                                                            @elseif($item->matrik_kontrol_grade == 5)
+                                                                <div
                                                                     class="bg-red-600 text-white px-2 py-2 font-bold text-center rounded-lg">
-                                                                    Ekstrim </div>
+                                                                    Sangat Tinggi <br> {{$item->matrik_kontrol_rpn}} </div>
                                                             @endif
                                                         </td>
                                                         <td class="px-4 py-3">
                                                             {{ $item->resiko }}</td>
                                                         <td class="px-4 py-3">
                                                             {{ $item->akar_masalah }}</td>
-
+                                                             <td class="px-4 py-3">
+                                                            {{ $item->rencana_tindak_lanjut }}</td>
+ <td class="px-4 py-3">
+                                                           @if ($item->matrik_monitoring_grade == 1)
+                                                                <div
+                                                                    class="bg-green-600 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    Sangat Rendah <br> {{$item->matrik_kontrol_rpn}} </div>
+                                                            @elseif($item->matrik_monitoring_grade == 2)
+                                                                <div
+                                                                    class="bg-blue-600 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    Rendah <br> {{$item->matrik_kontrol_rpn}}
+                                                                </div>
+                                                            @elseif($item->matrik_monitoring_grade == 3)
+                                                                <div
+                                                                    class="bg-yellow-500 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    Sedang <br> {{$item->matrik_kontrol_rpn}}
+                                                                </div>
+                                                            @elseif($item->matrik_monitoring_grade == 4)
+                                                                <div
+                                                                    class="bg-orange-500 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    Tinggi <br> {{$item->matrik_kontrol_rpn}} </div>
+                                                            @elseif($item->matrik_monitoring_grade == 5)
+                                                                <div
+                                                                    class="bg-red-600 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    Sangat Tinggi <br> {{$item->matrik_monitoring_rpn}} </div>
+                                                            @endif
+                                                        </td>
                                                         <td class="px-4 py-3">
                                                             {{ $item->aktif }}</td>
                                                        
@@ -235,7 +282,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                  
                     @push('scripts')
                         <script>
                             document.addEventListener('livewire:load', function() {
@@ -247,7 +294,7 @@
                                         datasets: [{
                                                 label: 'Jumlah',
                                                 data: @json($data),
-                                                backgroundColor: ['blue', 'green', 'yellow', 'red'],
+                                                backgroundColor: ['green', 'blue', 'yellow', 'orange', 'red'],
                                                 borderColor: 'rgba(75, 192, 192, 1)',
                                                 borderWidth: 1
                                             },
