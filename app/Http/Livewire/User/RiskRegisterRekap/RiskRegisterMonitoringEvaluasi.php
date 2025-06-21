@@ -9,7 +9,7 @@ use Livewire\Component;
 class RiskRegisterMonitoringEvaluasi extends Component
 {
 
-    public $tahun , $pilih_tahun, $unit, $nama_unit;
+    public $tahun , $pilih_tahun, $unit, $nama_unit, $label;
 
     public $rendah_sekali , $rendah , $sedang , $tinggi , $tinggi_sekali;
 
@@ -18,10 +18,13 @@ class RiskRegisterMonitoringEvaluasi extends Component
     {
         $this->tahun = date('Y');
     }
+    
     public function cek_data(){
 
         $this->tahun = $this->pilih_tahun;
+
     }
+
     function cek_unit()
     {
         $user_unit = "";
@@ -57,6 +60,79 @@ class RiskRegisterMonitoringEvaluasi extends Component
         $this->unit = $this->cek_unit();
         $this->nama_unit = $this->cek_nama_unit();
 
+        $this->label = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+                    'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+        
+        $this->rendah_sekali = [
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '01', 1),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '02', 1),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '03', 1),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '04', 1),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '05', 1),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '06', 1),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '07', 1),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '08', 1),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '09', 1),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '10', 1),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '11', 1),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '12', 1),
+        ];
+        $this->rendah = [
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '01', 2),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '02', 2),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '03', 2),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '04', 2),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '05', 2),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '06', 2),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '07', 2),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '08', 2),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '09', 2),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '10', 2),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '11', 2),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '12', 2),
+        ];
+        $this->sedang = [
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '01', 3),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '02', 3),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '03', 3),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '04', 3),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '05', 3),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '06', 3),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '07', 3),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '08', 3),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '09', 3),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '10', 3),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '11', 3),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '12', 3),
+        ];
+        $this->tinggi = [
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '01', 4),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '02', 4),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '03', 4),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '04', 4),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '05', 4),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '06', 4),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '07', 4),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '08', 4),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '09', 4),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '10', 4),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '11', 4),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '12', 4),
+        ];
+        $this->tinggi_sekali =[
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '01', 5),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '02', 5),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '03', 5),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '04', 5),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '05', 5),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '06', 5),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '07', 5),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '08', 5),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '09', 5),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '10', 5),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '11', 5),
+            rekap_risk_evaluasi_unit($this->unit, $this->tahun, '12', 5),
+        ];
 
  
         return view('livewire.user.risk-register-rekap.risk-register-monitoring-evaluasi', [

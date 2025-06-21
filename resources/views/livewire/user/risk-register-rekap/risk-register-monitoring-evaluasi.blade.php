@@ -53,9 +53,6 @@
                                 </div>
 
                                 <div class="w-full overflow-x-auto">
-
-
-
                                     <canvas id="lineChart" width="800" height="150"></canvas>
                                 </div>
 
@@ -80,13 +77,10 @@
         const lineChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: [
-                    'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
-                    'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
-                ],
+                labels: @json($label),
                 datasets: [{
                         label: 'Rendah Sekali',
-                        data: [15, 15, 16, 17, 17, 18, 19, 19, 19, 19, 19, 110],
+                        data: @json($rendah_sekali),
                         borderColor: 'green',
                         backgroundColor: 'rgba(0, 128, 0, 0.1)',
                         fill: false,
@@ -94,7 +88,7 @@
                     },
                     {
                         label: 'Rendah',
-                        data: [5, 5, 6, 7, 7, 8, 9, 9, 9, 9, 9, 10],
+                        data: @json($rendah),
                         borderColor: 'blue',
                         backgroundColor: 'rgba(0, 128, 0, 0.1)',
                         fill: false,
@@ -102,7 +96,7 @@
                     },
                     {
                         label: 'Sedang',
-                        data: [50, 50, 45, 60, 50, 60, 70, 60, 60, 60, 90, 70],
+                        data: @json($sedang),
                         borderColor: 'yellow',
                         backgroundColor: 'rgba(0, 0, 255, 0.1)',
                         fill: false,
@@ -110,7 +104,7 @@
                     },
                     {
                         label: 'Tinggi',
-                        data: [30, 30, 30, 30, 40, 50, 40, 40, 55, 40, 30, 40],
+                        data: @json($tinggi),
                         borderColor: 'orange',
                         backgroundColor: 'rgba(255, 165, 0, 0.1)',
                         fill: false,
@@ -118,7 +112,7 @@
                     },
                     {
                         label: 'Tinggi Sekali',
-                        data: [15, 15, 18, 19, 17, 18, 19, 18, 19, 17, 16, 16],
+                        data: @json($tinggi_sekali),
                         borderColor: 'red',
                         backgroundColor: 'rgba(255, 0, 0, 0.1)',
                         fill: false,
