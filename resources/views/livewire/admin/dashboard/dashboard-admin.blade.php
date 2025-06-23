@@ -39,67 +39,82 @@
                                     <div class="px-4 py-3 mt-4 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
                                         <div class="flex flex-row">
 
-                                            <div
-                                                class="p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 basis-1/4">
-                                                <a href="">
-                                                    <h5
-                                                        class="mb-2 text-6xl text-center font-bold tracking-tight text-gray-900 dark:text-white">
-                                                        {{ $portal_rendah }}
-                                                    </h5>
-                                                </a>
+                                           <div
+                                            class="p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 basis-1/4">
+                                            <a href="">
+                                                <h5
+                                                    class="mb-2 text-6xl text-center font-bold tracking-tight text-gray-900 dark:text-white">
+                                                    {{ $portal_sangat_rendah }}
+                                                </h5>
+                                            </a>
 
-                                                <center>
-                                                    <a href="{{ url('risk-register-rekap-unit-index') }}"
-                                                        class="mt-5 px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-blue-600 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue"><i
-                                                            class="fas fa-fw fa-check"></i> Rendah</a>
-                                                </center>
-                                            </div>
-                                            <div
-                                                class="p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 basis-1/4">
-                                                <a href="">
-                                                    <h5
-                                                        class="mb-2 text-6xl text-center font-bold tracking-tight text-gray-900 dark:text-white">
-                                                        {{ $portal_sedang }}
-                                                    </h5>
-                                                </a>
+                                            <center>
+                                                <a href="{{ url('risk-register-rekap-unit-index') }}"
+                                                    class="mt-5 px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-green-600 border border-transparent rounded-lg active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-green"><i
+                                                        class="fas fa-fw fa-tree"></i>Sangat Rendah</a>
+                                            </center>
+                                        </div>
+                                          <div
+                                            class="p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 basis-1/4">
+                                            <a href="">
+                                                <h5
+                                                    class="mb-2 text-6xl text-center font-bold tracking-tight text-gray-900 dark:text-white">
+                                                    {{ $portal_rendah }}
+                                                </h5>
+                                            </a>
 
-                                                <center>
-                                                    <a href="{{ url('risk-register-rekap-unit-index') }}"
-                                                        class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-green-600 border border-transparent rounded-lg active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-red"><i
-                                                            class="fas fa-fw fa-edit"></i>Sedang</a>
-                                                </center>
-                                            </div>
-                                            <div
-                                                class="p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 basis-1/4">
-                                                <a href="">
-                                                    <h5
-                                                        class="mb-2 text-6xl text-center font-bold tracking-tight text-gray-900 dark:text-white">
-                                                        {{ $portal_tinggi }}
-                                                    </h5>
-                                                </a>
+                                            <center>
+                                                <a href="{{ url('risk-register-rekap-unit-index') }}"
+                                                    class="mt-5 px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-blue-600 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue"><i
+                                                        class="fas fa-fw fa-check"></i> Rendah</a>
+                                            </center>
+                                        </div>
+                                        <div
+                                            class="p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 basis-1/4">
+                                            <a href="">
+                                                <h5
+                                                    class="mb-2 text-6xl text-center font-bold tracking-tight text-gray-900 dark:text-white">
+                                                    {{ $portal_sedang }}
+                                                </h5>
+                                            </a>
 
-                                                <center>
-                                                    <a href="{{ url('risk-register-rekap-unit-index') }}"
-                                                        class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-yellow-500 border border-transparent rounded-lg active:bg-yellow-600 hover:bg-yellow-700 focus:outline-none focus:shadow-outline-yellow"><i
-                                                            class="fas fa-fw fa-eye"></i>Tinggi</a>
-                                                </center>
+                                            <center>
+                                                <a href="{{ url('risk-register-rekap-unit-index') }}"
+                                                    class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-yellow-300 border border-transparent rounded-lg active:bg-yellow-300 hover:bg-yellow-500 focus:outline-none focus:shadow-outline-red"><i
+                                                        class="fas fa-fw fa-pencil"></i>Sedang</a>
+                                            </center>
+                                        </div>
+                                        <div
+                                            class="p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 basis-1/4">
+                                            <a href="">
+                                                <h5
+                                                    class="mb-2 text-6xl text-center font-bold tracking-tight text-gray-900 dark:text-white">
+                                                    {{ $portal_tinggi }}
+                                                </h5>
+                                            </a>
 
-                                            </div>
-                                            <div
-                                                class="p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 basis-1/4">
-                                                <a href="{{ url('portal-user-request-index') }}">
-                                                    <h2
-                                                        class="mb-2 text-6xl text-center font-bold tracking-tight text-gray-900 dark:text-white">
-                                                        {{ $portal_ekstrim }}
-                                                    </h2>
-                                                </a>
+                                            <center>
+                                                <a href="{{ url('risk-register-rekap-unit-index') }}"
+                                                    class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-orange-500 border border-transparent rounded-lg active:bg-orange-600 hover:bg-orange-700 focus:outline-none focus:shadow-outline-orange"><i
+                                                        class="fas fa-fw fa-eye"></i>Tinggi</a>
+                                            </center>
 
-                                                <center>
-                                                    <a href="{{ url('risk-register-rekap-unit-index') }}"
-                                                        class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-green"><i
-                                                            class="fas fa-fw fa-fire"></i>Ekstrim</a>
-                                                </center>
-                                            </div>
+                                        </div>
+                                        <div
+                                            class="p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 basis-1/4">
+                                            <a href="{{ url('portal-user-request-index') }}">
+                                                <h2
+                                                    class="mb-2 text-6xl text-center font-bold tracking-tight text-gray-900 dark:text-white">
+                                                    {{ $portal_sangat_tinggi }}
+                                                </h2>
+                                            </a>
+
+                                            <center>
+                                                <a href="{{ url('risk-register-rekap-unit-index') }}"
+                                                    class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-yellow"><i
+                                                        class="fas fa-fw fa-fire"></i>Sangat Tinggi</a>
+                                            </center>
+                                        </div>
                                         </div>
 
                                         <div class="flex flex-col">
@@ -137,7 +152,7 @@
                                             datasets: [{
                                                     label: 'Jumlah',
                                                     data: @json($data),
-                                                    backgroundColor: ['blue', 'green', 'orange', 'red'],
+                                                    backgroundColor: [ 'green', 'blue','yellow','orange', 'red'],
                                                     borderColor: 'rgba(75, 192, 192, 1)',
                                                     borderWidth: 1
                                                 },
@@ -167,13 +182,19 @@
                                 const lineChart = new Chart(ctx, {
                                     type: 'line',
                                     data: {
-                                        labels: [
-                                            'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
-                                            'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
-                                        ],
-                                        datasets: [{
+                                        labels: @json($label_bulan),
+                                        datasets: [
+                                            {
+                                                label: 'Rendah Sekali',
+                                                data: @json($rendah_sekali),
+                                                borderColor: 'green',
+                                                backgroundColor: 'rgba(0, 128, 0, 0.1)',
+                                                fill: false,
+                                                tension: 0.3
+                                            },
+                                            {
                                                 label: 'Rendah',
-                                                data: [5, 5, 6, 7, 7, 8, 9, 9, 9, 9, 9, 10],
+                                                data: @json($rendah),
                                                 borderColor: 'blue',
                                                 backgroundColor: 'rgba(0, 128, 0, 0.1)',
                                                 fill: false,
@@ -181,23 +202,23 @@
                                             },
                                             {
                                                 label: 'Sedang',
-                                                data: [50, 50, 45, 60, 50, 60, 70, 60, 60, 60, 90, 70],
-                                                borderColor: 'green',
+                                                data: @json($sedang),
+                                                borderColor: 'yellow',
                                                 backgroundColor: 'rgba(0, 0, 255, 0.1)',
                                                 fill: false,
                                                 tension: 0.3
                                             },
                                             {
                                                 label: 'Tinggi',
-                                                data: [30, 30, 30, 30, 40, 50, 40, 40, 55, 40, 30, 40],
+                                                data: @json($tinggi),
                                                 borderColor: 'orange',
                                                 backgroundColor: 'rgba(255, 165, 0, 0.1)',
                                                 fill: false,
                                                 tension: 0.3
                                             },
                                             {
-                                                label: 'Ekstrim',
-                                                data: [15, 15, 18, 19, 17, 18, 19, 18, 19, 17, 16, 16],
+                                                label: 'Tinggi Sekali',
+                                                data: @json($tinggi_sekali),
                                                 borderColor: 'red',
                                                 backgroundColor: 'rgba(255, 0, 0, 0.1)',
                                                 fill: false,
