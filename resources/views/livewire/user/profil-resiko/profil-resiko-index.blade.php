@@ -166,7 +166,7 @@
                                                         
 
                                                         <td class="px-4 py-3">
-                                                            {{ $item->aktif }}</td>
+                                                         {{ $item->aktif }}  </td>
                                                         <td class="px-4 py-2 border text-center whitespace-nowrap">
                                                             <button wire:click="edit({{ $item->id }})"
                                                                 class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-sky-600 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue"><i
