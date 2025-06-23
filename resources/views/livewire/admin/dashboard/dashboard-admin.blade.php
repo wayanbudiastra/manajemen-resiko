@@ -105,13 +105,13 @@
                                         <div class="flex flex-col">
 
                                             <h3 class=" my-6 text-2xl font-semibold text-gray-700">
-                                                Matrik Kontrol Grading
+                                                Matrik Monitoring Grading
                                             </h3>
 
                                             <canvas id="barChart" width="800" height="150"></canvas>
 
                                             <h3 class=" mt-5 my-6 text-2xl font-semibold text-gray-700">
-                                                Matrik Kontrol Bulanan Periode {{ date('Y') }}
+                                                Matrik Monitoring Bulanan Periode {{ date('Y') }}
                                             </h3>
                                             <canvas id="lineChart" width="800" height="150"></canvas>
 

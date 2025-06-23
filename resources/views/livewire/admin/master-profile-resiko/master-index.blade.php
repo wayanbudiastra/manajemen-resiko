@@ -77,50 +77,96 @@
                                                 <tr
                                                     class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
                                                     <th class="px-4 py-3">No</th>
-                                                     <th class="px-4 py-3">Unit Kerja</th>
                                                     <th class="px-4 py-3">Aktivitas Kerja</th>
                                                     <th class="px-4 py-3">Kategori Resiko</th>
-                                                     <th class="px-4 py-3">Grading Resiko</th>
+                                                    <th class="px-4 py-3">Kontrol</th>
                                                     <th class="px-4 py-3">Resiko</th>
                                                     <th class="px-4 py-3">Akar Masalah</th>
-                                                   
+                                                    <th class="px-4 py-3">Tindak Lanjut</th>
+                                                    <th class="px-4 py-3">Penanggung jawab</th>
+                                                    <th class="px-4 py-3">Evaluasi</th>
                                                     <th class="px-4 py-3">Aktif</th>
+                                                     <th class="px-4 py-3">Laporan Singkat</th>
                                                     <th class="px-4 py-3">Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 @foreach ($data as $item)
                                                     <tr class="text-gray-700 dark:text-gray-400">
-                                                        <td class="px-4 py-3">
+                                                       <td class="px-4 py-3">
                                                             {{ $no++ }}</td>
-                                                            <td class="px-4 py-3">
-                                                            {{ $item->unit->nama_insiden_unit }}</td>
                                                         <td class="px-4 py-3">
                                                             {{ $item->aktivitas_kerja }}</td>
                                                         <td class="px-4 py-3">
                                                             {{ $item->risk_kategori->nama_kategori }}
                                                         </td>
+                                                        
                                                         <td class="px-4 py-3">
                                                             @if ($item->matrik_kontrol_grade == 1)
-                                                                <div class="bg-blue-600 text-white px-2 py-2 font-bold text-center rounded-lg">
-                                                                    Rendah </div>
+                                                                <div
+                                                                    class="bg-green-600 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    Sangat Rendah <br> {{$item->matrik_kontrol_rpn}} </div>
                                                             @elseif($item->matrik_kontrol_grade == 2)
-                                                                <div class="bg-green-600 text-white px-2 py-2 font-bold text-center rounded-lg"> Sedang
+                                                                <div
+                                                                    class="bg-blue-600 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    Rendah <br> {{$item->matrik_kontrol_rpn}}
                                                                 </div>
                                                             @elseif($item->matrik_kontrol_grade == 3)
-                                                                <div class="bg-yellow-500 text-white px-2 py-2 font-bold text-center rounded-lg"> Tinggi
+                                                                <div
+                                                                    class="bg-yellow-500 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    Sedang <br> {{$item->matrik_kontrol_rpn}}
                                                                 </div>
                                                             @elseif($item->matrik_kontrol_grade == 4)
-                                                                <div class="bg-red-600 text-white px-2 py-2 font-bold text-center rounded-lg"> Ekstrim </div>
+                                                                <div
+                                                                    class="bg-orange-500 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    Tinggi <br> {{$item->matrik_kontrol_rpn}} </div>
+                                                            @elseif($item->matrik_kontrol_grade == 5)
+                                                                <div
+                                                                    class="bg-red-600 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    Sangat Tinggi <br> {{$item->matrik_kontrol_rpn}} </div>
                                                             @endif
                                                         </td>
                                                         <td class="px-4 py-3">
                                                             {{ $item->resiko }}</td>
                                                         <td class="px-4 py-3">
                                                             {{ $item->akar_masalah }}</td>
+                                                             <td class="px-4 py-3">
+                                                            {{ $item->rencana_tindak_lanjut }}
+                                                        </td>
+                                                         <td class="px-4 py-3">
+                                                            {{ $item->penanggung_jawab }}
+                                                        </td>
+                                                            <td class="px-4 py-3">
+                                                            @if ($item->matrik_monitoring_grade == 1)
+                                                                <div
+                                                                    class="bg-green-600 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    Sangat Rendah <br> {{$item->matrik_monitoring_rpn}} </div>
+                                                            @elseif($item->matrik_monitoring_grade == 2)
+                                                                <div
+                                                                    class="bg-blue-600 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    Rendah <br> {{$item->matrik_monitoring_rpn}}
+                                                                </div>
+                                                            @elseif($item->matrik_monitoring_grade == 3)
+                                                                <div
+                                                                    class="bg-yellow-500 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    Sedang <br>{{$item->matrik_monitoring_rpn}}
+                                                                </div>
+                                                            @elseif($item->matrik_monitoring_grade == 4)
+                                                                <div
+                                                                    class="bg-orange-500 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    Tinggi <br> {{$item->matrik_monitoring_rpn}} </div>
+                                                            @elseif($item->matrik_monitoring_grade == 5)
+                                                                <div
+                                                                    class="bg-red-600 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    Sangat Tinggi <br> {{$item->matrik_monitoring_rpn}} </div>
+                                                            @endif
+                                                        </td>
                                                         
+
                                                         <td class="px-4 py-3">
-                                                            {{ $item->aktif }}</td>
+                                                         {{ $item->aktif }}  </td>
+                                                          <td class="px-4 py-3">
+                                                         {{ $item->laporan_singkat }}  </td>
                                                         <td class="px-4 py-2 border text-center whitespace-nowrap">
                                                             <button wire:click="edit({{ $item->id }})"
                                                                 class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-sky-600 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue"><i
