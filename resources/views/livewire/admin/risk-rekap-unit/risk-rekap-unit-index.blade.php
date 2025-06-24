@@ -79,10 +79,11 @@
                                                 class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
                                                 <th class="px-4 py-3">No</th>
                                                 <th class="px-4 py-3">Nama Unit</th>
+                                                <th class="px-4 py-3">Sangat Rendah</th>
                                                 <th class="px-4 py-3">Rendah</th>
                                                 <th class="px-4 py-3">Sedang</th>
                                                 <th class="px-4 py-3">Tinggi</th>
-                                                <th class="px-4 py-3">Ekstrim</th>
+                                                <th class="px-4 py-3">Sangat Tinggi</th>
                                                 <th class="px-4 py-3">Total</th>
                                             </tr>
                                         </thead>
@@ -91,14 +92,16 @@
                                                 <tr class="text-gray-700 dark:text-gray-400">
                                                     <td class="px-4 py-3"> {{ $no++ }} </td>
                                                     <td class="px-4 py-3"> {{ $item->nama_insiden_unit }} </td>
-                                                    <td class="px-4 py-3 bg-blue-300">
-                                                        {{ rekap_risk_unit($item->id, $tahun, $bulan, 1) }}</td>
                                                     <td class="px-4 py-3 bg-green-300">
+                                                        {{ rekap_risk_unit($item->id, $tahun, $bulan, 1) }}</td>
+                                                    <td class="px-4 py-3 bg-blue-300">
                                                         {{ rekap_risk_unit($item->id, $tahun, $bulan, 2) }}</td>
                                                     <td class="px-4 py-3 bg-yellow-300">
                                                         {{ rekap_risk_unit($item->id, $tahun, $bulan, 3) }}</td>
-                                                    <td class="px-4 py-3 bg-red-300">
+                                                    <td class="px-4 py-3 bg-orange-300">
                                                         {{ rekap_risk_unit($item->id, $tahun, $bulan, 4) }}</td>
+                                                    <td class="px-4 py-3 bg-red-300">
+                                                        {{ rekap_risk_unit($item->id, $tahun, $bulan, 5) }}</td>
                                                     <td class="px-4 py-3">
                                                         {{ rekap_risk_unit_total($item->id, $tahun, $bulan) }}
                                                     </td>

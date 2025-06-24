@@ -15,13 +15,8 @@ class DashboardAdmin extends Component
 
     public $rendah_sekali , $rendah , $sedang , $tinggi , $tinggi_sekali, $label_bulan, $tahun;
 
-
-
-
     public function render()
     {
-
-
         $this->tahun = date('Y');
 
         $ds_sangat_rendah = Risk_register_master::where('aktif', 'Y')->where('matrik_monitoring_grade', '1')->count();

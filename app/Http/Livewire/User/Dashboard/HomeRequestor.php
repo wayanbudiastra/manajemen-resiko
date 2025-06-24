@@ -74,7 +74,7 @@ class HomeRequestor extends Component
             $this->data = [$ds_sangat_rendah, $ds_rendah, $ds_sedang, $ds_tinggi, $ds_sangat_tinggi];
 
             // dd($counter_finis);
-            $data_risk = Risk_register_master::where('unit_id', $this->cek_unit())->where('matrik_kontrol_grade', 5)->limit(15)->get();
+            $data_risk = Risk_register_master::where('unit_id', $this->cek_unit())->where('matrik_monitoring_grade', 5)->limit(15)->get();
         
        // dd($data);
         } catch (Exception $e) {
