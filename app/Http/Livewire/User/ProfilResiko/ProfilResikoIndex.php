@@ -77,7 +77,7 @@ class ProfilResikoIndex extends Component
                 "matrik_monitoring_d" => $this->matrik_monitoring_d,
                 "matrik_monitoring_f" => $this->matrik_monitoring_f,
                 "matrik_monitoring_rpn" => $this->matrik_monitoring_f * $this->matrik_monitoring_d,
-                "matrik_monitoring_f" => $this->tgl_deadline,
+                "tgl_deadline" => $this->tgl_deadline,
                 "aktif" => "N",
                 "unit_id" => $this->unit_id,
                 "users_id" => auth()->user()->id
