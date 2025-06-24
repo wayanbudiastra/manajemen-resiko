@@ -44,7 +44,8 @@ class MasterGrade extends Component
                 'akar_masalah' => 'required',
                 'rencana_tindak_lanjut' => 'required',
                 'matrik_monitoring_f' => 'required',
-                'matrik_monitoring_d' => 'required'
+                'matrik_monitoring_d' => 'required',
+                 'tgl_deadline' => 'required'
 
 
             ]);
@@ -69,6 +70,7 @@ class MasterGrade extends Component
                 "matrik_monitoring_f" => $this->matrik_monitoring_f,
                 "matrik_monitoring_rpn" => $this->matrik_monitoring_f * $this->matrik_monitoring_d,
                  "matrik_monitoring_grade" => $this->matrik_monitoring_grade,
+                  "tgl_deadline" => $this->tgl_deadline,
                 "aktif" => $this->aktif
             ]);
             session()->flash('success', 'Data Berhasil di simpan..');
