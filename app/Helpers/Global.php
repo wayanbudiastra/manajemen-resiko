@@ -16,6 +16,7 @@ use App\Models\Insiden\Insiden_nonmedis_request;
 use App\Models\Insiden\Insiden_unit_terkait_medis;
 use App\Models\Insiden\Insiden_unit_terkait_nonmedis;
 use App\Models\Insiden\Insiden_unit_user;
+use App\Models\Risk\Risk_register_master;
 use App\Models\Risk\Risk_register_pelaporan;
 use App\Models\Transaksi\Portal_request;
 use App\Models\Transaksi\Portal_request_proses;
@@ -233,6 +234,11 @@ $nama_bulan = "Desember";
    return $periode;    
 }
 
+function rekap_risk_unit_nonaktif($id){
+$data = Risk_register_master::where('unit_id', $id)->where('aktif','N')->count();
+
+return $data;
+}
 
 function rekap_risk_unit($unit,$tahun,$bulan,$grade){
 $total = 0;

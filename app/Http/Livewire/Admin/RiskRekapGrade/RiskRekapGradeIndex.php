@@ -57,6 +57,7 @@ class RiskRekapGradeIndex extends Component
         $this->unit = $this->cek_unit();
         $this->nama_unit = $this->cek_nama_unit();
 
+        
         return view('livewire.admin.risk-rekap-grade.risk-rekap-grade-index', [
           
             'no' => 1,

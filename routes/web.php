@@ -62,12 +62,15 @@ use App\Http\Livewire\Admin\MasterProfileResiko\MasterIndex;
 use App\Http\Livewire\Admin\PortalMapping\PortalUserMappingEdit;
 use App\Http\Livewire\Admin\PortalMapping\PortalUserMappingIndex;
 use App\Http\Livewire\Admin\Report\RekapTotalInsiden;
+use App\Http\Livewire\Admin\RiskDeadline\MonitoringDeadlineIndex;
 use App\Http\Livewire\Admin\RiskEvaluasi\RiskEvaluasiIndex;
 use App\Http\Livewire\Admin\RiskEvaluasi\RiskEvaluasiUpdate;
 use App\Http\Livewire\Admin\RiskKategori\RiskKategoriIndex;
 use App\Http\Livewire\Admin\RiskKategori\RiskKategoriUpdate;
 use App\Http\Livewire\Admin\RiskRekapGrade\RiskRekapGradeIndex;
 use App\Http\Livewire\Admin\RiskRekapUnit\RiskRekapUnitIndex;
+use App\Http\Livewire\Admin\RiskVerifikasi\RiskVerifikasiIndex;
+use App\Http\Livewire\Admin\RiskVerifikasi\RiskVerifikasiUnit;
 use App\Http\Livewire\Admin\Setting\PortalKabid\PortalKabidEdit;
 use App\Http\Livewire\Admin\Setting\PortalKabid\PortalKabidIndex;
 use App\Http\Livewire\Admin\Setting\PortalKabid\PortalKabidUser;
@@ -276,9 +279,17 @@ Route::middleware(['auth', 'cekadmin:Y', 'aktifuser:Y'])->group(function () {
     Route::get('/admin-resiko-grade-rekap', RiskRekapGradeIndex::class)->name('resiko.grade.rekap.index');
     Route::get('/admin-resiko-unit-rekap', RiskRekapUnitIndex::class)->name('resiko.unit.rekap.index');
 
-     Route::get('/admin-resiko-master', MasterIndex::class)->name('resiko.master.index');
+ Route::get('/admin-resiko-unit-deadline', MonitoringDeadlineIndex::class)->name('resiko.unit.deadline.index');
+    
+
+    Route::get('/admin-resiko-master', MasterIndex::class)->name('resiko.master.index');
     Route::get('/admin-resiko-master-edit/{param?}', MasterEdit::class)->name('resiko.master.edit');
+    
     Route::get('/admin-resiko-master-grade/{param?}', MasterGrade::class)->name('resiko.master.grade');
+    
+
+     Route::get('/admin-resiko-verifikasi', RiskVerifikasiIndex::class)->name('resiko.verifikasi.index');
+     Route::get('/admin-resiko-verifikasi-unit/{param?}', RiskVerifikasiUnit::class)->name('resiko.verifikasi.unit');
 
     Route::get('/admin-portal-vendor', PortalVendorIndex::class)->name('portal.vendor.index');
     Route::get('/admin-portal-vendor-edit/{param?}', PortalVendorEdit::class)->name('portal.vendor.edit');
