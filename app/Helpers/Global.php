@@ -314,6 +314,15 @@ function get_total_soal($id)
     return $total;
 }
 
+function setup_grade($hasil){
+    $grade = 1;
+    if($hasil )
+
+    
+    return $grade;
+
+}
+
 function get_total_user($id)
 {
     $total = 0;

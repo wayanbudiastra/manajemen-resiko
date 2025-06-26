@@ -21,7 +21,7 @@
                             {{-- <img class="object-cover  w-full" src="{{ asset('assets/img/grading.png') }}"
                                 alt="" aria-hidden="true" /> --}}
                                  <iframe id="fraDisabled" class="h-screen w-full"
-                src="{{ asset('assets/panduan_grading_risk_register.pdf') }}#toolbar=0&navpanes=0&scrollbar=0" frameborder="0"></iframe>
+                src="{{ asset('assets/MATRIX_GRADING_RISK_REGISTER.pdf') }}#toolbar=0&navpanes=0&scrollbar=0" frameborder="0"></iframe>
                         </div>
 
                         </div>
