@@ -4,12 +4,14 @@ namespace App\Http\Livewire\User\RiskRegisterRekap;
 
 use App\Models\Insiden\Insiden_unit;
 use App\Models\Insiden\Insiden_unit_user;
+use App\Models\Risk\Risk_grade;
+use Illuminate\Support\Facades\Crypt;
 use Livewire\Component;
 
 class RiskRegisterMonitoringEvaluasi extends Component
 {
 
-    public $tahun , $pilih_tahun, $unit, $nama_unit, $label;
+    public $tahun , $pilih_tahun, $pilih_grade, $unit, $nama_unit, $label;
 
     public $rendah_sekali , $rendah , $sedang , $tinggi , $tinggi_sekali;
 
@@ -21,7 +23,11 @@ class RiskRegisterMonitoringEvaluasi extends Component
     
     public function cek_data(){
 
-        $this->tahun = $this->pilih_tahun;
+
+        $th = Crypt::encrypt($this->pilih_tahun);
+        $gd = Crypt::encrypt($this->pilih_grade);
+        return redirect()->to('risk-register-rekap-monitoring-unit-data/'.$th.'/'.$gd);
+       
 
     }
 
@@ -62,6 +68,8 @@ class RiskRegisterMonitoringEvaluasi extends Component
 
         $this->label = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
                     'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+
+        $grade = Risk_grade::all();
         
         $this->rendah_sekali = [
             rekap_risk_evaluasi_unit($this->unit, $this->tahun, '01', 1),
@@ -138,6 +146,7 @@ class RiskRegisterMonitoringEvaluasi extends Component
         return view('livewire.user.risk-register-rekap.risk-register-monitoring-evaluasi', [
             "no" => 1,
             "data" => $years,
+            "grade" => $grade
         ])->layout('layouts.main');
     }
     

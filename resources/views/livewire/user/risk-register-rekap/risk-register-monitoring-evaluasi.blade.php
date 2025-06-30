@@ -36,6 +36,16 @@
                             <div class="w-full overflow-hidden rounded-lg shadow-xs mt-5">
                                 <div class="flex w-1/2 space-x-2 items-start">
                                     <!-- Select: Lebar 75% -->
+
+                                    <select
+                                        class="form-select form-control w-3/4 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-green-300 focus:outline-none select2"
+                                        name="pilih_grade" wire:model.defer="pilih_grade">
+                                        <option value="">Pilih Grade</option>
+                                        @foreach ($grade as $item)
+                                            <option value="{{ $item }}">{{ $item->nama_grade }} - {{ $item->warna}}</option>
+                                        @endforeach
+                                    </select>
+
                                     <select
                                         class="form-select form-control w-3/4 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-green-300 focus:outline-none select2"
                                         name="pilih_tahun" wire:model.defer="pilih_tahun">
