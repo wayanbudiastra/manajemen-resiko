@@ -242,7 +242,7 @@ return $data;
 
 function rekap_risk_unit($unit,$tahun,$bulan,$grade){
 $total = 0;
-$data = Risk_register_pelaporan::where('unit_id',$unit)->where('periode_laporan',$tahun.''.$bulan)->where('matrik_kontrol_grade',$grade)->where('posting','Y')->count();
+$data = Risk_register_pelaporan::where('unit_id',$unit)->where('periode_laporan',$tahun.''.$bulan)->where('matrik_monitoring_grade',$grade)->where('posting','Y')->count();
 if($data > 0){
     $total = $data;
 }
