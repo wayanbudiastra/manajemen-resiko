@@ -201,17 +201,17 @@ Route::middleware(['auth', 'aktifuser:Y','checkunit'])->group(function () {
     Route::get('/insiden-pic-nonmedis-view/{param?}', InsidenUserNonMedisView::class)->name('insiden.pic.nonmedis.view');
 
     Route::get('/risk-register-profil-index', ProfilResikoIndex::class)->name('rsik.register.profil.index');
-     Route::get('/risk-register-panduan-index', PanduanGradeIndex::class)->name('rsik.register.panduan.index');
+    Route::get('/risk-register-panduan-index', PanduanGradeIndex::class)->name('rsik.register.panduan.index');
     Route::get('/risk-register-profil-edit/{param?}', ProfilResikoEdit::class)->name('rsik.register.profil.edit');
     Route::get('/risk-register-profil-grade/{param?}', ProfilResikoGrading::class)->name('rsik.register.profil.grade');
 
     Route::get('/risk-register-pelaporan-index', PelaporanRiskRegisterIndex::class)->name('rsik.register.pelaporan.index');
-     Route::get('/risk-register-pelaporan-validasi/{param?}', PelaporanRiskRegisterValidasi::class)->name('rsik.register.pelaporan.validasi');
+    Route::get('/risk-register-pelaporan-validasi/{param?}', PelaporanRiskRegisterValidasi::class)->name('rsik.register.pelaporan.validasi');
  
     Route::get('/risk-register-rekap-unit-index', RiskRegisterRekapIndex::class)->name('risk.register.rekap.unit.index'); 
- Route::get('/risk-register-rekap-evaluasi-unit-index', RiskRegisterRekapEvaluasi::class)->name('risk.register.rekap.evaluasi.unit.index'); 
-Route::get('/risk-register-rekap-monitoring-unit-index', RiskRegisterMonitoringEvaluasi::class)->name('risk.register.rekap.monitoring.unit.index'); 
-Route::get('/risk-register-rekap-monitoring-unit-data/{th?}/{gd?}', RiskRegisterMonitoringData::class)->name('risk.register.rekap.monitoring.unit.data'); 
+    Route::get('/risk-register-rekap-evaluasi-unit-index', RiskRegisterRekapEvaluasi::class)->name('risk.register.rekap.evaluasi.unit.index'); 
+    Route::get('/risk-register-rekap-monitoring-unit-index', RiskRegisterMonitoringEvaluasi::class)->name('risk.register.rekap.monitoring.unit.index'); 
+    Route::get('/risk-register-rekap-monitoring-unit-data/{param1?}/{param2?}', RiskRegisterMonitoringData::class)->name('risk.register.rekap.monitoring.unit.data'); 
 
 
     Route::get('/insiden-medis-unit/{param?}', InsidenMedisUnitTerkait::class)->name('insiden.medis.unit');

@@ -42,7 +42,7 @@
                                         name="pilih_grade" wire:model.defer="pilih_grade">
                                         <option value="">Pilih Grade</option>
                                         @foreach ($grade as $item)
-                                            <option value="{{ $item }}">{{ $item->nama_grade }} - {{ $item->warna}}</option>
+                                            <option value="{{ $item->id }}">{{ $item->nama_grade }} - {{ $item->warna}}</option>
                                         @endforeach
                                     </select>
 
