@@ -63,13 +63,11 @@ class RiskRegisterMonitoringData extends Component
          }else{
             $warna = "red";
          }
-
          return $warna;
 
     }
 
    
-
     public function cek_label(){
 
          $data = Crypt::decrypt($this->param2);

@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Admin\RiskRekapGrade;
 
 use App\Models\Insiden\Insiden_unit;
 use App\Models\Insiden\Insiden_unit_user;
+use Illuminate\Support\Facades\Crypt;
 use Livewire\Component;
 
 class RiskRekapGradeIndex extends Component
@@ -44,7 +45,12 @@ class RiskRekapGradeIndex extends Component
     }
 
     
+    public function detail($id){
+
+        $idx = Crypt::encrypt($id);
+        return redirect()->to('admin-resiko-grade-rekap-detail/'.$idx);
     
+    }
    
     public function render()
     {

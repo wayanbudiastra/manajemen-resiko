@@ -48,11 +48,15 @@
                                         @endforeach
                                     </select>
 
-                                     
                                     <!-- Tombol: Lebar 25% -->
                                     <button wire:click="cek_data"
                                         class="w-1/4 px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-green-600 border border-transparent rounded-lg active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-green">
                                         <i class="fas fa-fw fa-search-plus"></i> Cek Data
+                                    </button>
+
+                                      <button wire:click="detail(5)"
+                                        class="w-1/4 px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-red">
+                                        <i class="fas fa-fw fa-book"></i> Data Grading Detail
                                     </button>
                                 </div>
 
@@ -68,7 +72,7 @@
                                                 <th class="px-4 py-3">No</th>
                                                 <th class="px-4 py-3">Bulan</th>
                                                 <th class="px-4 py-3">Sangat Rendah</th>
-                                                <th class="px-4 py-3">Rendah</th>
+                                                <th class="px-4 py-3">Rendah </th>
                                                 <th class="px-4 py-3">Sedang</th>
                                                 <th class="px-4 py-3">Tinggi</th>
                                                 <th class="px-4 py-3">Tinggi Sekali</th>
@@ -283,15 +287,17 @@
                                             </tr>
                                         </tbody>
                                     </table>
+
                                 </div>
 
+                               
                             </div>
 
 
 
                         </div>
                     </div>
-
+ 
                 </div>
             </div>
         </div>

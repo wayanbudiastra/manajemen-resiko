@@ -67,6 +67,7 @@ use App\Http\Livewire\Admin\RiskEvaluasi\RiskEvaluasiIndex;
 use App\Http\Livewire\Admin\RiskEvaluasi\RiskEvaluasiUpdate;
 use App\Http\Livewire\Admin\RiskKategori\RiskKategoriIndex;
 use App\Http\Livewire\Admin\RiskKategori\RiskKategoriUpdate;
+use App\Http\Livewire\Admin\RiskRekapGrade\RiskRekapGradeDetail;
 use App\Http\Livewire\Admin\RiskRekapGrade\RiskRekapGradeIndex;
 use App\Http\Livewire\Admin\RiskRekapUnit\RiskRekapUnitIndex;
 use App\Http\Livewire\Admin\RiskVerifikasi\RiskVerifikasiIndex;
@@ -280,6 +281,7 @@ Route::middleware(['auth', 'cekadmin:Y', 'aktifuser:Y'])->group(function () {
     Route::get('/admin-resiko-evaluasi-edit/{param?}', RiskEvaluasiUpdate::class)->name('resiko.evaluasi.edit');
     
     Route::get('/admin-resiko-grade-rekap', RiskRekapGradeIndex::class)->name('resiko.grade.rekap.index');
+     Route::get('/admin-resiko-grade-rekap-detail/{param?}', RiskRekapGradeDetail::class)->name('resiko.grade.rekap.detail');
     Route::get('/admin-resiko-unit-rekap', RiskRekapUnitIndex::class)->name('resiko.unit.rekap.index');
 
  Route::get('/admin-resiko-unit-deadline', MonitoringDeadlineIndex::class)->name('resiko.unit.deadline.index');
