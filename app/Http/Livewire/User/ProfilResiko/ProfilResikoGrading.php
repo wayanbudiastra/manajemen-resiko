@@ -64,12 +64,12 @@ class ProfilResikoGrading extends Component
                 "target_waktu" => $this->target_waktu,
                 "matrik_kontrol_f" => $this->matrik_kontrol_f,
                 "matrik_kontrol_d" => $this->matrik_kontrol_d,
-                "matrik_kontrol_grade" => $this->matrik_kontrol_grade,
+                "matrik_kontrol_grade" => setup_grade($this->matrik_kontrol_d * $this->matrik_kontrol_f),
                 "matrik_kontrol_rpn" => $this->matrik_kontrol_d * $this->matrik_kontrol_f,
                 "matrik_monitoring_d" => $this->matrik_monitoring_d,
                 "matrik_monitoring_f" => $this->matrik_monitoring_f,
                 "matrik_monitoring_rpn" => $this->matrik_monitoring_f * $this->matrik_monitoring_d,
-                "matrik_monitoring_grade" => $this->matrik_monitoring_grade,
+                "matrik_monitoring_grade" => setup_grade($this->matrik_monitoring_f * $this->matrik_monitoring_d),
                 "tgl_deadline" => $this->tgl_deadline,
             
                 "aktif" => $this->aktif

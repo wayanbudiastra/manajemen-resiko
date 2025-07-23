@@ -64,9 +64,11 @@ class ProfilResikoEdit extends Component
                 "matrik_kontrol_f" => $this->matrik_kontrol_f,
                 "matrik_kontrol_d" => $this->matrik_kontrol_d,
                 "matrik_kontrol_rpn" => $this->matrik_kontrol_d * $this->matrik_kontrol_f,
+                "matrik_kontrol_grade" => setup_grade($this->matrik_kontrol_d * $this->matrik_kontrol_f),
                 "matrik_monitoring_d" => $this->matrik_monitoring_d,
                 "matrik_monitoring_f" => $this->matrik_monitoring_f,
                 "matrik_monitoring_rpn" => $this->matrik_monitoring_f * $this->matrik_monitoring_d,
+                "matrik_monitoring_grade" => setup_grade($this->matrik_monitoring_f * $this->matrik_monitoring_d),
                 "aktif" => $this->aktif
             ]);
             session()->flash('success', 'Data Berhasil di simpan..');

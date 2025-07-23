@@ -315,12 +315,22 @@ function get_total_soal($id)
 }
 
 function setup_grade($hasil){
-    $grade = 1;
-    if($hasil )
-
     
-    return $grade;
+    $grade = 1;
 
+if ($hasil < 3) {
+    $grade = 1;
+} elseif ($hasil >= 3 && $hasil < 5) {
+    $grade = 2;
+} elseif ($hasil >= 5 && $hasil < 10) {
+    $grade = 3;
+} elseif ($hasil >= 10 && $hasil < 15) {
+    $grade = 4;
+} else {
+    $grade = 5;
+}
+
+return $grade;
 }
 
 function get_total_user($id)

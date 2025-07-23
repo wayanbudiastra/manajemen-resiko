@@ -20,6 +20,12 @@ public function mount($param = null)
 
 }
 
+public function kembali(){
+
+        return redirect()->to('admin-resiko-grade-rekap-index');
+    
+}
+
 public function pilih_grade(){
 
    
@@ -41,7 +47,9 @@ public function render()
             }
 
         } catch (Exception $e) {
+            
             session()->flash('error', 'Terjadi Kesalahan..' . $e);
+        
         }
 
         return view('livewire.admin.risk-rekap-grade.risk-rekap-grade-detail',[
@@ -50,6 +58,5 @@ public function render()
             "master_grade" => $master_grade
 
         ])->layout('layouts.main-admin');
-
     }
 }
