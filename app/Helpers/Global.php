@@ -24,37 +24,41 @@ use App\Models\User;
 use Illuminate\Support\Facades\Crypt;
 
 
-function status_draf($id){
-        $total = 0;
-        $insiden_medis = Insiden_medis_request::where('users_id',$id)->where('insiden_status_id',1)->count();
-        $insiden_non_medis = Insiden_nonmedis_request::where('users_id',$id)->where('insiden_status_id',1)->count();
-        $total = $insiden_medis + $insiden_non_medis;
-
-        return $total;
-}
-
-function status_open($id){
+function status_draf($id)
+{
     $total = 0;
-    $insiden_medis = Insiden_medis_request::where('users_id',$id)->where('insiden_status_id',2)->count();
-    $insiden_non_medis = Insiden_nonmedis_request::where('users_id',$id)->where('insiden_status_id',2)->count();
+    $insiden_medis = Insiden_medis_request::where('users_id', $id)->where('insiden_status_id', 1)->count();
+    $insiden_non_medis = Insiden_nonmedis_request::where('users_id', $id)->where('insiden_status_id', 1)->count();
     $total = $insiden_medis + $insiden_non_medis;
 
     return $total;
 }
 
-function status_pending($id){
+function status_open($id)
+{
     $total = 0;
-    $insiden_medis = Insiden_medis_request::where('users_id',$id)->where('insiden_status_id',3)->count();
-    $insiden_non_medis = Insiden_nonmedis_request::where('users_id',$id)->where('insiden_status_id',3)->count();
+    $insiden_medis = Insiden_medis_request::where('users_id', $id)->where('insiden_status_id', 2)->count();
+    $insiden_non_medis = Insiden_nonmedis_request::where('users_id', $id)->where('insiden_status_id', 2)->count();
     $total = $insiden_medis + $insiden_non_medis;
 
     return $total;
 }
 
-function status_close($id){
+function status_pending($id)
+{
     $total = 0;
-    $insiden_medis = Insiden_medis_request::where('users_id',$id)->where('insiden_status_id',4)->count();
-    $insiden_non_medis = Insiden_nonmedis_request::where('users_id',$id)->where('insiden_status_id',4)->count();
+    $insiden_medis = Insiden_medis_request::where('users_id', $id)->where('insiden_status_id', 3)->count();
+    $insiden_non_medis = Insiden_nonmedis_request::where('users_id', $id)->where('insiden_status_id', 3)->count();
+    $total = $insiden_medis + $insiden_non_medis;
+
+    return $total;
+}
+
+function status_close($id)
+{
+    $total = 0;
+    $insiden_medis = Insiden_medis_request::where('users_id', $id)->where('insiden_status_id', 4)->count();
+    $insiden_non_medis = Insiden_nonmedis_request::where('users_id', $id)->where('insiden_status_id', 4)->count();
     $total = $insiden_medis + $insiden_non_medis;
 
     return $total;
@@ -183,115 +187,125 @@ function ambil_photo($id)
     return $photo;
 }
 
-function get_unit_user($id){
-    $data = Insiden_unit_user::where('users_id',$id)->first();
-if($data){
-    $id = $data->insiden_unit_id;
-}else{
-    $id = null;
-}
+function get_unit_user($id)
+{
+    $data = Insiden_unit_user::where('users_id', $id)->first();
+    if ($data) {
+        $id = $data->insiden_unit_id;
+    } else {
+        $id = null;
+    }
 
     return $id;
 }
 
-function get_periode(){
-   $tahun = date("Y");
-   $bulan = date("m");
-   $periode = $tahun.''.$bulan;
-   return $periode;    
+function get_periode()
+{
+    $tahun = date("Y");
+    $bulan = date("m");
+    $periode = $tahun . '' . $bulan;
+    return $periode;
 }
 
-function get_periode_laporan($data){
-   
-   $tahun = substr($data,0,4);
-   $bulan = substr($data,4,2);
-if($bulan=="01"){
-$nama_bulan = "Januari";
-}elseif($bulan=="02"){
-$nama_bulan = "Februari";
-}elseif($bulan=="03"){
-$nama_bulan = "Maret";
-}elseif($bulan=="04"){
-$nama_bulan = "April";
-}elseif($bulan=="05"){
-$nama_bulan = "Mei";
-}elseif($bulan=="06"){
-$nama_bulan = "Juni";
-}elseif($bulan=="07"){
-$nama_bulan = "Juli";
-}elseif($bulan=="08"){
-$nama_bulan = "Agustus";
-}elseif($bulan=="09"){
-$nama_bulan = "Setember";
-}elseif($bulan=="10"){
-$nama_bulan = "Oktober";
-}elseif($bulan=="11"){
-$nama_bulan = "November";
-}elseif($bulan=="12"){
-$nama_bulan = "Desember";
-}
-   $periode = $nama_bulan .' '.$tahun;
-   return $periode;    
+function get_periode_laporan($data)
+{
+
+    $tahun = substr($data, 0, 4);
+    $bulan = substr($data, 4, 2);
+    if ($bulan == "01") {
+        $nama_bulan = "Januari";
+    } elseif ($bulan == "02") {
+        $nama_bulan = "Februari";
+    } elseif ($bulan == "03") {
+        $nama_bulan = "Maret";
+    } elseif ($bulan == "04") {
+        $nama_bulan = "April";
+    } elseif ($bulan == "05") {
+        $nama_bulan = "Mei";
+    } elseif ($bulan == "06") {
+        $nama_bulan = "Juni";
+    } elseif ($bulan == "07") {
+        $nama_bulan = "Juli";
+    } elseif ($bulan == "08") {
+        $nama_bulan = "Agustus";
+    } elseif ($bulan == "09") {
+        $nama_bulan = "Setember";
+    } elseif ($bulan == "10") {
+        $nama_bulan = "Oktober";
+    } elseif ($bulan == "11") {
+        $nama_bulan = "November";
+    } elseif ($bulan == "12") {
+        $nama_bulan = "Desember";
+    }
+    $periode = $nama_bulan . ' ' . $tahun;
+    return $periode;
 }
 
-function rekap_risk_unit_nonaktif($id){
-$data = Risk_register_master::where('unit_id', $id)->where('aktif','N')->count();
+function rekap_risk_unit_nonaktif($id)
+{
+    $data = Risk_register_master::where('unit_id', $id)->where('aktif', 'N')->count();
 
-return $data;
-}
-
-function rekap_risk_unit($unit,$tahun,$bulan,$grade){
-$total = 0;
-$data = Risk_register_pelaporan::where('unit_id',$unit)->where('periode_laporan',$tahun.''.$bulan)->where('matrik_kontrol_grade',$grade)->where('posting','Y')->count();
-if($data > 0){
-    $total = $data;
-}
-return $total;
+    return $data;
 }
 
-function rekap_risk_unit_total($unit,$tahun,$bulan){
-$total = 0;
-$data = Risk_register_pelaporan::where('unit_id',$unit)->where('periode_laporan',$tahun.''.$bulan)->where('posting','Y')->count();
-if($data > 0){
-    $total = $data;
-}
-return $total;
-}
-
-function rekap_risk_evaluasi_unit($unit,$tahun,$bulan,$grade){
-$total = 0;
-$data = Risk_register_pelaporan::where('unit_id',$unit)->where('periode_laporan',$tahun.''.$bulan)->where('matrik_monitoring_grade',$grade)->where('posting','Y')->count();
-if($data > 0){
-    $total = $data;
-}
-return $total;
+function rekap_risk_unit($unit, $tahun, $bulan, $grade)
+{
+    $total = 0;
+    $data = Risk_register_pelaporan::where('unit_id', $unit)->where('periode_laporan', $tahun . '' . $bulan)->where('matrik_kontrol_grade', $grade)->where('posting', 'Y')->count();
+    if ($data > 0) {
+        $total = $data;
+    }
+    return $total;
 }
 
-function rekap_risk_evaluasi_unit_total($unit,$tahun,$bulan){
-$total = 0;
-$data = Risk_register_pelaporan::where('unit_id',$unit)->where('periode_laporan',$tahun.''.$bulan)->where('posting','Y')->count();
-if($data > 0){
-    $total = $data;
-}
-return $total;
-}
-
-function rekap_risk_unit_all($tahun,$bulan,$grade){
-$total = 0;
-$data = Risk_register_pelaporan::where('periode_laporan',$tahun.''.$bulan)->where('matrik_monitoring_grade',$grade)->where('posting','Y')->count();
-if($data > 0){
-    $total = $data;
-}
-return $total;
+function rekap_risk_unit_total($unit, $tahun, $bulan)
+{
+    $total = 0;
+    $data = Risk_register_pelaporan::where('unit_id', $unit)->where('periode_laporan', $tahun . '' . $bulan)->where('posting', 'Y')->count();
+    if ($data > 0) {
+        $total = $data;
+    }
+    return $total;
 }
 
-function rekap_risk_unit_total_all($tahun,$bulan){
-$total = 0;
-$data = Risk_register_pelaporan::where('periode_laporan',$tahun.''.$bulan)->where('posting','Y')->count();
-if($data > 0){
-    $total = $data;
+function rekap_risk_evaluasi_unit($unit, $tahun, $bulan, $grade)
+{
+    $total = 0;
+    $data = Risk_register_pelaporan::where('unit_id', $unit)->where('periode_laporan', $tahun . '' . $bulan)->where('matrik_monitoring_grade', $grade)->where('posting', 'Y')->count();
+    if ($data > 0) {
+        $total = $data;
+    }
+    return $total;
 }
-return $total;
+
+function rekap_risk_evaluasi_unit_total($unit, $tahun, $bulan)
+{
+    $total = 0;
+    $data = Risk_register_pelaporan::where('unit_id', $unit)->where('periode_laporan', $tahun . '' . $bulan)->where('posting', 'Y')->count();
+    if ($data > 0) {
+        $total = $data;
+    }
+    return $total;
+}
+
+function rekap_risk_unit_all($tahun, $bulan, $grade)
+{
+    $total = 0;
+    $data = Risk_register_pelaporan::where('periode_laporan', $tahun . '' . $bulan)->where('matrik_monitoring_grade', $grade)->where('posting', 'Y')->count();
+    if ($data > 0) {
+        $total = $data;
+    }
+    return $total;
+}
+
+function rekap_risk_unit_total_all($tahun, $bulan)
+{
+    $total = 0;
+    $data = Risk_register_pelaporan::where('periode_laporan', $tahun . '' . $bulan)->where('posting', 'Y')->count();
+    if ($data > 0) {
+        $total = $data;
+    }
+    return $total;
 }
 
 function get_total_materi($id)
@@ -314,23 +328,24 @@ function get_total_soal($id)
     return $total;
 }
 
-function setup_grade($hasil){
-    
+function setup_grade($hasil)
+{
+
     $grade = 1;
 
-if ($hasil < 3) {
-    $grade = 1;
-} elseif ($hasil >= 3 && $hasil < 5) {
-    $grade = 2;
-} elseif ($hasil >= 5 && $hasil < 10) {
-    $grade = 3;
-} elseif ($hasil >= 10 && $hasil < 15) {
-    $grade = 4;
-} else {
-    $grade = 5;
-}
+    if ($hasil < 3) {
+        $grade = 1;
+    } elseif ($hasil >= 3 && $hasil < 5) {
+        $grade = 2;
+    } elseif ($hasil >= 5 && $hasil < 10) {
+        $grade = 3;
+    } elseif ($hasil >= 10 && $hasil < 15) {
+        $grade = 4;
+    } else {
+        $grade = 5;
+    }
 
-return $grade;
+    return $grade;
 }
 
 function get_total_user($id)
@@ -477,50 +492,57 @@ function get_nama_user($id)
     return $full_name;
 }
 
-function rekap_data_ktd($tahun,$bulan){
-   
-    $umum = Insiden_nonmedis_request::where('insiden_jenis_id',1)->whereYear('tgl_insiden', $tahun)->whereMonth('tgl_insiden', $bulan)->count();
-    $medis = Insiden_medis_request::where('insiden_jenis_id',1)->whereYear('tgl_insiden', $tahun)->whereMonth('tgl_insiden', $bulan)->count();
+function rekap_data_ktd($tahun, $bulan)
+{
+
+    $umum = Insiden_nonmedis_request::where('insiden_jenis_id', 1)->whereYear('tgl_insiden', $tahun)->whereMonth('tgl_insiden', $bulan)->count();
+    $medis = Insiden_medis_request::where('insiden_jenis_id', 1)->whereYear('tgl_insiden', $tahun)->whereMonth('tgl_insiden', $bulan)->count();
     return $umum + $medis;
 }
 
-function rekap_data_ktc($tahun,$bulan){
-   
-    $umum = Insiden_nonmedis_request::where('insiden_jenis_id',2)->whereYear('tgl_insiden', $tahun)->whereMonth('tgl_insiden', $bulan)->count();
-    $medis = Insiden_medis_request::where('insiden_jenis_id',2)->whereYear('tgl_insiden', $tahun)->whereMonth('tgl_insiden', $bulan)->count();
+function rekap_data_ktc($tahun, $bulan)
+{
+
+    $umum = Insiden_nonmedis_request::where('insiden_jenis_id', 2)->whereYear('tgl_insiden', $tahun)->whereMonth('tgl_insiden', $bulan)->count();
+    $medis = Insiden_medis_request::where('insiden_jenis_id', 2)->whereYear('tgl_insiden', $tahun)->whereMonth('tgl_insiden', $bulan)->count();
     return $umum + $medis;
 }
 
-function rekap_data_knc($tahun,$bulan){
-   
-    $umum = Insiden_nonmedis_request::where('insiden_jenis_id',3)->whereYear('tgl_insiden', $tahun)->whereMonth('tgl_insiden', $bulan)->count();
-    $medis = Insiden_medis_request::where('insiden_jenis_id',3)->whereYear('tgl_insiden', $tahun)->whereMonth('tgl_insiden', $bulan)->count();
+function rekap_data_knc($tahun, $bulan)
+{
+
+    $umum = Insiden_nonmedis_request::where('insiden_jenis_id', 3)->whereYear('tgl_insiden', $tahun)->whereMonth('tgl_insiden', $bulan)->count();
+    $medis = Insiden_medis_request::where('insiden_jenis_id', 3)->whereYear('tgl_insiden', $tahun)->whereMonth('tgl_insiden', $bulan)->count();
     return $umum + $medis;
 }
 
-function rekap_data_kpcs($tahun,$bulan){
-   
-    $umum = Insiden_nonmedis_request::where('insiden_jenis_id',4)->whereYear('tgl_insiden', $tahun)->whereMonth('tgl_insiden', $bulan)->count();
-    $medis = Insiden_medis_request::where('insiden_jenis_id',4)->whereYear('tgl_insiden', $tahun)->whereMonth('tgl_insiden', $bulan)->count();
+function rekap_data_kpcs($tahun, $bulan)
+{
+
+    $umum = Insiden_nonmedis_request::where('insiden_jenis_id', 4)->whereYear('tgl_insiden', $tahun)->whereMonth('tgl_insiden', $bulan)->count();
+    $medis = Insiden_medis_request::where('insiden_jenis_id', 4)->whereYear('tgl_insiden', $tahun)->whereMonth('tgl_insiden', $bulan)->count();
     return $umum + $medis;
 }
 
-function rekap_data_sentinel($tahun,$bulan){
-   
-    $umum = Insiden_nonmedis_request::where('insiden_jenis_id',5)->whereYear('tgl_insiden', $tahun)->whereMonth('tgl_insiden', $bulan)->count();
-    $medis = Insiden_medis_request::where('insiden_jenis_id',5)->whereYear('tgl_insiden', $tahun)->whereMonth('tgl_insiden', $bulan)->count();
+function rekap_data_sentinel($tahun, $bulan)
+{
+
+    $umum = Insiden_nonmedis_request::where('insiden_jenis_id', 5)->whereYear('tgl_insiden', $tahun)->whereMonth('tgl_insiden', $bulan)->count();
+    $medis = Insiden_medis_request::where('insiden_jenis_id', 5)->whereYear('tgl_insiden', $tahun)->whereMonth('tgl_insiden', $bulan)->count();
     return $umum + $medis;
 }
 
-function rekap_insiden_jenis_medis($id,$tahun){
-    
-    $data = Insiden_medis_request::where('insiden_jenis_id',$id)->whereYear('tgl_insiden', $tahun)->count();
+function rekap_insiden_jenis_medis($id, $tahun)
+{
+
+    $data = Insiden_medis_request::where('insiden_jenis_id', $id)->whereYear('tgl_insiden', $tahun)->count();
     return $data;
 }
 
-function rekap_insiden_jenis_nonmedis($id,$tahun){
-    
-    $data = Insiden_nonmedis_request::where('insiden_jenis_id',$id)->whereYear('tgl_insiden', $tahun)->count();
+function rekap_insiden_jenis_nonmedis($id, $tahun)
+{
+
+    $data = Insiden_nonmedis_request::where('insiden_jenis_id', $id)->whereYear('tgl_insiden', $tahun)->count();
     return $data;
 }
 
@@ -598,71 +620,70 @@ function enkerip_data($id)
     return $enkrip;
 }
 
-function rekap_insiden_medis($id,$data_tahun){
+function rekap_insiden_medis($id, $data_tahun)
+{
 
-    if($data_tahun ==''){
+    if ($data_tahun == '') {
         $tahun = date("Y");
-    }else{
+    } else {
         $tahun = $data_tahun;
     }
-  
+
     $hasil = 0;
-    $data = Insiden_unit_terkait_medis::where('insiden_unit_id',$id)->whereYear('created_at',$tahun)->count();
-    if($data){
+    $data = Insiden_unit_terkait_medis::where('insiden_unit_id', $id)->whereYear('created_at', $tahun)->count();
+    if ($data) {
         $hasil = $data;
     }
     return $hasil;
-    
 }
 
-function rekap_insiden_unit_medis($id,$data_tahun){
+function rekap_insiden_unit_medis($id, $data_tahun)
+{
 
-    if($data_tahun ==''){
+    if ($data_tahun == '') {
         $tahun = date("Y");
-    }else{
+    } else {
         $tahun = $data_tahun;
     }
-  
+
     $hasil = 0;
-    $data = Insiden_medis_request::where('insiden_unit_id',$id)->whereYear('tgl_insiden',$tahun)->count();
-    if($data){
+    $data = Insiden_medis_request::where('insiden_unit_id', $id)->whereYear('tgl_insiden', $tahun)->count();
+    if ($data) {
         $hasil = $data;
     }
     return $hasil;
-    
 }
 
-function rekap_insiden_nonmedis($id,$data_tahun){
+function rekap_insiden_nonmedis($id, $data_tahun)
+{
 
-    if($data_tahun ==''){
+    if ($data_tahun == '') {
         $tahun = date("Y");
-    }else{
+    } else {
         $tahun = $data_tahun;
     }
     $hasil = 0;
-    
-    $data = Insiden_unit_terkait_nonmedis::where('insiden_unit_id',$id)->whereYear('created_at', $tahun)->count();
-    if($data){
+
+    $data = Insiden_unit_terkait_nonmedis::where('insiden_unit_id', $id)->whereYear('created_at', $tahun)->count();
+    if ($data) {
         $hasil = $data;
     }
     return $hasil;
-    
 }
 
-function rekap_insiden_unit_nonmedis($id,$data_tahun){
+function rekap_insiden_unit_nonmedis($id, $data_tahun)
+{
 
-    if($data_tahun ==''){
+    if ($data_tahun == '') {
         $tahun = date("Y");
-    }else{
+    } else {
         $tahun = $data_tahun;
     }
     $hasil = 0;
-    
-    $data = Insiden_nonmedis_request::where('insiden_unit_id',$id)->whereYear('tgl_insiden', $tahun)->count();
-    if($data){
+
+    $data = Insiden_nonmedis_request::where('insiden_unit_id', $id)->whereYear('tgl_insiden', $tahun)->count();
+    if ($data) {
         $hasil = $data;
     }
     return $hasil;
-    
 }
-

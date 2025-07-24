@@ -92,7 +92,6 @@ class ProfilResikoIndex extends Component
         }
     }
 
-
     public function edit($id)
     {
         $idx = Crypt::encrypt($id);
@@ -119,17 +118,13 @@ class ProfilResikoIndex extends Component
     public function render()
     {
         try {
-
             $user_unit = " ";
-
             $user_unit = Insiden_unit_user::where('users_id', auth()->user()->id)->first();
-
             if ($user_unit == null) {
 
                 session()->flash('error', 'Unit Anda Belum di mapping Silahkan hubungi Admin PMKP...');
                 //redirect()->to('/login'); // arahkan ke halaman login
             }
-
             $user_unit_id = $user_unit->insiden_unit_id;
             //
             $this->unit_id = $user_unit_id;

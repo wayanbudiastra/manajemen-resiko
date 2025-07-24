@@ -48,6 +48,7 @@ class RiskRekapGradeIndex extends Component
     public function detail($id){
 
         $idx = Crypt::encrypt($id);
+        
         return redirect()->to('admin-resiko-grade-rekap-detail/'.$idx);
     
     }
