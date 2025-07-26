@@ -67,8 +67,10 @@ use App\Http\Livewire\Admin\RiskEvaluasi\RiskEvaluasiIndex;
 use App\Http\Livewire\Admin\RiskEvaluasi\RiskEvaluasiUpdate;
 use App\Http\Livewire\Admin\RiskKategori\RiskKategoriIndex;
 use App\Http\Livewire\Admin\RiskKategori\RiskKategoriUpdate;
+use App\Http\Livewire\Admin\RiskKontrolEvaluasi\RiskKontrolEvaluasiIndex;
 use App\Http\Livewire\Admin\RiskRekapGrade\RiskRekapGradeDetail;
 use App\Http\Livewire\Admin\RiskRekapGrade\RiskRekapGradeIndex;
+use App\Http\Livewire\Admin\RiskRekapKategori\RiskRekapKatergoriIndex;
 use App\Http\Livewire\Admin\RiskRekapUnit\RiskRekapUnitIndex;
 use App\Http\Livewire\Admin\RiskVerifikasi\RiskVerifikasiIndex;
 use App\Http\Livewire\Admin\RiskVerifikasi\RiskVerifikasiUnit;
@@ -261,44 +263,33 @@ Route::middleware(['auth', 'cekadmin:Y', 'aktifuser:Y'])->group(function () {
 
     Route::get('/admin-insiden-unit-mapping', UserUnitInsidenIndex::class)->name('insiden.unit.mapping.index');
     Route::get('/admin-insiden-unit-mapping-edit/{param?}', UserUnitInsidenEdit::class)->name('insiden.unit.mapping.edit');
-
     Route::get('/admin-insiden-ruangan', InsidenRuanganIndex::class)->name('insiden.ruangan.index');
     Route::get('/admin-insiden-ruangan-edit/{param?}', InsidenRuanganEdit::class)->name('insiden.ruangan.edit');
-
     Route::get('/admin-insiden-unit', InsidenUnitIndex::class)->name('insiden.unit.index');
     Route::get('/admin-insiden-unit-edit/{param?}', InsidenUnitEdit::class)->name('insiden.unit.edit');
-
     Route::get('/admin-insiden-jenis', InsidenJenisIndex::class)->name('insiden.jenis.index');
     Route::get('/admin-insiden-jenis-edit/{param?}', InsidenJenisEdit::class)->name('insiden.jenis.edit');
-
     Route::get('/admin-insiden-status', InsidenStatusIndex::class)->name('insiden.status.index');
     Route::get('/admin-insiden-status-edit/{param?}', InsidenStatusEdit::class)->name('insiden.status.edit');
 
     Route::get('/admin-resiko-kategori', RiskKategoriIndex::class)->name('resiko.kategori.index');
     Route::get('/admin-resiko-kategori-edit/{param?}', RiskKategoriUpdate::class)->name('resiko.kategori.edit');
-
     Route::get('/admin-resiko-evaluasi', RiskEvaluasiIndex::class)->name('resiko.evaluasi.index');
     Route::get('/admin-resiko-evaluasi-edit/{param?}', RiskEvaluasiUpdate::class)->name('resiko.evaluasi.edit');
-    
     Route::get('/admin-resiko-grade-rekap', RiskRekapGradeIndex::class)->name('resiko.grade.rekap.index');
-     Route::get('/admin-resiko-grade-rekap-detail/{param?}', RiskRekapGradeDetail::class)->name('resiko.grade.rekap.detail');
+    Route::get('/admin-resiko-grade-rekap-detail/{param?}', RiskRekapGradeDetail::class)->name('resiko.grade.rekap.detail');
     Route::get('/admin-resiko-unit-rekap', RiskRekapUnitIndex::class)->name('resiko.unit.rekap.index');
-
- Route::get('/admin-resiko-unit-deadline', MonitoringDeadlineIndex::class)->name('resiko.unit.deadline.index');
-    
-
+    Route::get('/admin-resiko-unit-deadline', MonitoringDeadlineIndex::class)->name('resiko.unit.deadline.index');
     Route::get('/admin-resiko-master', MasterIndex::class)->name('resiko.master.index');
     Route::get('/admin-resiko-master-edit/{param?}', MasterEdit::class)->name('resiko.master.edit');
-    
     Route::get('/admin-resiko-master-grade/{param?}', MasterGrade::class)->name('resiko.master.grade');
-    
-
-     Route::get('/admin-resiko-verifikasi', RiskVerifikasiIndex::class)->name('resiko.verifikasi.index');
-     Route::get('/admin-resiko-verifikasi-unit/{param?}', RiskVerifikasiUnit::class)->name('resiko.verifikasi.unit');
+    Route::get('/admin-resiko-verifikasi', RiskVerifikasiIndex::class)->name('resiko.verifikasi.index');
+    Route::get('/admin-resiko-verifikasi-unit/{param?}', RiskVerifikasiUnit::class)->name('resiko.verifikasi.unit');
+    Route::get('/admin-resiko-kontrol-evaluasi', RiskKontrolEvaluasiIndex::class)->name('resiko.kontrol.evaluasi.index');
+    Route::get('/admin-resiko-rekap-kategori', RiskRekapKatergoriIndex::class)->name('resiko.rekap.kategori.index');
 
     Route::get('/admin-portal-vendor', PortalVendorIndex::class)->name('portal.vendor.index');
     Route::get('/admin-portal-vendor-edit/{param?}', PortalVendorEdit::class)->name('portal.vendor.edit');
-
     Route::get('/insiden-rekap-index', InsidenRekapIndex::class)->name('insiden.rekap.index');
     Route::get('/insiden-rekap-index-barchart/{param?}', InsidenRekapIndexBarchart::class)->name('insiden.rekap.index.barchart');
     Route::get('/insiden-rekap-index-barchart-total/{param?}', InsidenRekapIndexBarchartTotal::class)->name('insiden.rekap.index.barchart.total');
