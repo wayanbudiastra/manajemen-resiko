@@ -7,6 +7,7 @@ use Livewire\Component;
 class RiskKontrolEvaluasiIndex extends Component
 {
     public $tahun, $pilih_tahun, $pilih_bulan, $unit, $nama_unit, $bulan;
+    
     public function mount()
     {
         $this->tahun = date('Y');
@@ -27,6 +28,16 @@ class RiskKontrolEvaluasiIndex extends Component
     public function render()
     { 
 
-        return view('livewire.admin.risk-kontrol-evaluasi.risk-kontrol-evaluasi-index')->layout('layouts.main-admin');
+        $currentYear = date('Y'); // Tahun sekarang
+        $years = [];
+
+        for ($i = 0; $i < 5; $i++) {
+            $years[] = $currentYear - $i;
+        }
+
+        return view('livewire.admin.risk-kontrol-evaluasi.risk-kontrol-evaluasi-index',[
+              'no' => 1,
+            'data' => $years,
+        ])->layout('layouts.main-admin');
     }
 }

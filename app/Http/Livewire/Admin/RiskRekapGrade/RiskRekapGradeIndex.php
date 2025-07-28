@@ -9,17 +9,17 @@ use Livewire\Component;
 
 class RiskRekapGradeIndex extends Component
 {
-     public $tahun , $pilih_tahun, $unit, $nama_unit;
-
-
+    public $tahun , $pilih_tahun, $unit, $nama_unit;
+    
     public function mount()
     {
         $this->tahun = date('Y');
     }
-    public function cek_data(){
 
+    public function cek_data(){
         $this->tahun = $this->pilih_tahun;
     }
+
     function cek_unit()
     {
         $user_unit = "";
@@ -44,7 +44,6 @@ class RiskRekapGradeIndex extends Component
         return $nama_unit;
     }
 
-    
     public function detail($id){
 
         $idx = Crypt::encrypt($id);
