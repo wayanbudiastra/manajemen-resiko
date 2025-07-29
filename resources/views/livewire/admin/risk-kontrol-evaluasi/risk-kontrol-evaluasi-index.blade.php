@@ -126,7 +126,7 @@
                                                 <td class="px-4 py-3 bg-red-300">
                                                     {{ rekap_risk_unit_all($tahun, '01', 5) }}</td>
                                                 <td class="px-4 py-3">
-                                                    <button wire:click="data_grafik(5)"
+                                                    <button wire:click="data_grafik('{{ "01" }}',{{$tahun}})"
                                                         class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-red">
                                                         <i class="fas fa-fw fa-line-chart"></i> Grafik
                                                     </button>
@@ -155,7 +155,7 @@
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '02', 5) }}</td>
                                                 <td class="px-4 py-3 bg-red-300">
                                                     {{ rekap_risk_unit_all($tahun, '02', 5) }}</td>
-                                                <td class="px-4 py-3"> <button wire:click="data_grafik(5)"
+                                                <td class="px-4 py-3"> <button wire:click="data_grafik('{{ "02" }}',{{$tahun}})"
                                                         class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-red">
                                                         <i class="fas fa-fw fa-line-chart"></i> Grafik
                                                     </button>
@@ -185,7 +185,7 @@
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '03', 5) }}</td>
                                                 <td class="px-4 py-3 bg-red-300">
                                                     {{ rekap_risk_unit_all($tahun, '03', 5) }}</td>
-                                                <td class="px-4 py-3"> <button wire:click="data_grafik(5)"
+                                                <td class="px-4 py-3"> <button wire:click="data_grafik('{{ "03" }}',{{$tahun}})"
                                                         class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-red">
                                                         <i class="fas fa-fw fa-line-chart"></i> Grafik
                                                     </button>
@@ -215,7 +215,7 @@
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '04', 5) }}</td>
                                                 <td class="px-4 py-3 bg-red-300">
                                                     {{ rekap_risk_unit_all($tahun, '04', 5) }}</td>
-                                                <td class="px-4 py-3"> <button wire:click="data_grafik(5)"
+                                                <td class="px-4 py-3"> <button wire:click="data_grafik('{{ "04" }}',{{$tahun}})"
                                                         class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-red">
                                                         <i class="fas fa-fw fa-line-chart"></i> Grafik
                                                     </button>
@@ -245,7 +245,7 @@
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '05', 5) }}</td>
                                                 <td class="px-4 py-3 bg-red-300">
                                                     {{ rekap_risk_unit_all($tahun, '05', 5) }}</td>
-                                                <td class="px-4 py-3"> <button wire:click="data_grafik(5)"
+                                                <td class="px-4 py-3"> <button wire:click="data_grafik('{{ "05" }}',{{$tahun}})"
                                                         class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-red">
                                                         <i class="fas fa-fw fa-line-chart"></i> Grafik
                                                     </button>
@@ -275,7 +275,7 @@
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '06', 5) }}</td>
                                                 <td class="px-4 py-3 bg-red-300">
                                                     {{ rekap_risk_unit_all($tahun, '06', 5) }}</td>
-                                                <td class="px-4 py-3"> <button wire:click="data_grafik(5)"
+                                                <td class="px-4 py-3"> <button wire:click="data_grafik('{{ "06" }}',{{$tahun}})"
                                                         class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-red">
                                                         <i class="fas fa-fw fa-line-chart"></i> Grafik
                                                     </button>
@@ -305,7 +305,7 @@
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '07', 5) }}</td>
                                                 <td class="px-4 py-3 bg-red-300">
                                                     {{ rekap_risk_unit_all($tahun, '07', 5) }}</td>
-                                                <td class="px-4 py-3"> <button wire:click="data_grafik(5)"
+                                                <td class="px-4 py-3"> <button wire:click="data_grafik('{{ "07" }}',{{$tahun}})"
                                                         class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-red">
                                                         <i class="fas fa-fw fa-line-chart"></i> Grafik
                                                     </button>
@@ -335,7 +335,7 @@
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '08', 5) }}</td>
                                                 <td class="px-4 py-3 bg-red-300">
                                                     {{ rekap_risk_unit_all($tahun, '08', 5) }}</td>
-                                                <td class="px-4 py-3"> <button wire:click="data_grafik(5)"
+                                                <td class="px-4 py-3"> <button wire:click="data_grafik('{{ "08" }}',{{$tahun}})"
                                                         class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-red">
                                                         <i class="fas fa-fw fa-line-chart"></i> Grafik
                                                     </button>
@@ -365,7 +365,7 @@
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '09', 5) }}</td>
                                                 <td class="px-4 py-3 bg-red-300">
                                                     {{ rekap_risk_unit_all($tahun, '09', 5) }}</td>
-                                                <td class="px-4 py-3"> <button wire:click="data_grafik(5)"
+                                                <td class="px-4 py-3"> <button wire:click="data_grafik('{{ "09" }}',{{$tahun}})"
                                                         class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-red">
                                                         <i class="fas fa-fw fa-line-chart"></i> Grafik
                                                     </button>
@@ -395,7 +395,7 @@
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '10', 5) }}</td>
                                                 <td class="px-4 py-3 bg-red-300">
                                                     {{ rekap_risk_unit_all($tahun, '10', 5) }}</td>
-                                                <td class="px-4 py-3"> <button wire:click="data_grafik(5)"
+                                                <td class="px-4 py-3"> <button wire:click="data_grafik({{ 10 }},{{$tahun}})"
                                                         class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-red">
                                                         <i class="fas fa-fw fa-line-chart"></i> Grafik
                                                     </button>
@@ -425,7 +425,7 @@
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '11', 5) }}</td>
                                                 <td class="px-4 py-3 bg-red-300">
                                                     {{ rekap_risk_unit_all($tahun, '11', 5) }}</td>
-                                                <td class="px-4 py-3"> <button wire:click="data_grafik(5)"
+                                                <td class="px-4 py-3"> <button wire:click="data_grafik({{ 11 }},{{$tahun}})"
                                                         class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-red">
                                                         <i class="fas fa-fw fa-line-chart"></i> Grafik
                                                     </button>
@@ -455,7 +455,7 @@
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '12', 5) }}</td>
                                                 <td class="px-4 py-3 bg-red-300">
                                                     {{ rekap_risk_unit_all($tahun, '12', 5) }}</td>
-                                                <td class="px-4 py-3"> <button wire:click="data_grafik(5)"
+                                                <td class="px-4 py-3"> <button wire:click="data_grafik({{ 12 }},{{$tahun}})"
                                                         class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-red">
                                                         <i class="fas fa-fw fa-line-chart"></i> Grafik
                                                     </button>

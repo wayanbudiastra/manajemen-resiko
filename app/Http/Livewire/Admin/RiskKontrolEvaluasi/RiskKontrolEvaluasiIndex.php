@@ -7,7 +7,7 @@ use Livewire\Component;
 class RiskKontrolEvaluasiIndex extends Component
 {
     public $tahun, $pilih_tahun, $pilih_bulan, $unit, $nama_unit, $bulan;
-    
+
     public function mount()
     {
         $this->tahun = date('Y');
@@ -25,6 +25,15 @@ class RiskKontrolEvaluasiIndex extends Component
         // dd($this->bulan);
     }
 
+    public function data_grafik($tahun, $bulan){
+
+        $data = [
+            "tahun"=> $tahun,
+            "bulan"=> $bulan
+        ];
+
+        dd($data);
+    }
     public function render()
     { 
 

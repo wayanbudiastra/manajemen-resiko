@@ -298,6 +298,16 @@ function rekap_risk_kategori_total($unit, $tahun, $bulan)
     return $total;
 }
 
+function rekap_risk_kategori_detail($unit, $tahun, $bulan, $grade)
+{
+    $total = 0;
+    $data = Risk_register_pelaporan::where('risk_kategori_id', $unit)->where('matrik_monitoring_grade', $grade)->where('periode_laporan', $tahun . '' . $bulan)->where('posting', 'Y')->count();
+    if ($data > 0) {
+        $total = $data;
+    }
+    return $total;
+}
+
 function rekap_risk_unit_all($tahun, $bulan, $grade)
 {
     $total = 0;
