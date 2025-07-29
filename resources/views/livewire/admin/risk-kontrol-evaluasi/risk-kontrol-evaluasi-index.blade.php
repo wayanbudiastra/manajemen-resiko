@@ -54,9 +54,9 @@
                                         <i class="fas fa-fw fa-search-plus"></i> Cek Data
                                     </button>
 
-                                    <button wire:click="detail(5)"
+                                    <button wire:click="download_excel({{$tahun}})"
                                         class="w-1/4 px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-red">
-                                        <i class="fas fa-fw fa-book"></i> Data Grading Detail
+                                        <i class="fas fa-fw fa-download"></i> Excel
                                     </button>
                                 </div>
 

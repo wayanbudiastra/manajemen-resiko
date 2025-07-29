@@ -17,12 +17,12 @@ class RiskKontrolEvaluasiIndex extends Component
 
     public function cek_data()
     {
-        if ($this->pilih_bulan == null or $this->pilih_tahun == null) {
+        if ($this->pilih_tahun == null) {
             session()->flash('error', 'Data Tahun / Bulan Masih ada yang kosong...');
         }
 
         $this->tahun = $this->pilih_tahun;
-        $this->bulan = $this->pilih_bulan;
+       
         // dd($this->bulan);
     }
 
@@ -30,8 +30,13 @@ class RiskKontrolEvaluasiIndex extends Component
 
         $th = Crypt::encrypt($tahun);
         $bln = Crypt::encrypt($bulan);
-        
+
         redirect()->to('/admin-resiko-kontrol-evaluasi-grafik/'.$th.'/'.$bln);
+    }
+
+    public function download_excel($tahun){
+
+        dd("Fitur Export Excel tahun ".$tahun." Dalam proses pengerjaan");
     }
     public function render()
     { 
