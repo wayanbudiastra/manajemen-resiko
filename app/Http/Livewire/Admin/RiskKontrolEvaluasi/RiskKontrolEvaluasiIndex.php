@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin\RiskKontrolEvaluasi;
 
+use Illuminate\Support\Facades\Crypt;
 use Livewire\Component;
 
 class RiskKontrolEvaluasiIndex extends Component
@@ -27,12 +28,10 @@ class RiskKontrolEvaluasiIndex extends Component
 
     public function data_grafik($tahun, $bulan){
 
-        $data = [
-            "tahun"=> $tahun,
-            "bulan"=> $bulan
-        ];
-
-        dd($data);
+        $th = Crypt::encrypt($tahun);
+        $bln = Crypt::encrypt($bulan);
+        
+        redirect()->to('/admin-resiko-kontrol-evaluasi-grafik/'.$th.'/'.$bln);
     }
     public function render()
     { 

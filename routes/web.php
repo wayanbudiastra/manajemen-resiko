@@ -67,6 +67,7 @@ use App\Http\Livewire\Admin\RiskEvaluasi\RiskEvaluasiIndex;
 use App\Http\Livewire\Admin\RiskEvaluasi\RiskEvaluasiUpdate;
 use App\Http\Livewire\Admin\RiskKategori\RiskKategoriIndex;
 use App\Http\Livewire\Admin\RiskKategori\RiskKategoriUpdate;
+use App\Http\Livewire\Admin\RiskKontrolEvaluasi\RiskKontrolEvaluasiGrafik;
 use App\Http\Livewire\Admin\RiskKontrolEvaluasi\RiskKontrolEvaluasiIndex;
 use App\Http\Livewire\Admin\RiskRekapGrade\RiskRekapGradeDetail;
 use App\Http\Livewire\Admin\RiskRekapGrade\RiskRekapGradeIndex;
@@ -286,6 +287,7 @@ Route::middleware(['auth', 'cekadmin:Y', 'aktifuser:Y'])->group(function () {
     Route::get('/admin-resiko-verifikasi', RiskVerifikasiIndex::class)->name('resiko.verifikasi.index');
     Route::get('/admin-resiko-verifikasi-unit/{param?}', RiskVerifikasiUnit::class)->name('resiko.verifikasi.unit');
     Route::get('/admin-resiko-kontrol-evaluasi', RiskKontrolEvaluasiIndex::class)->name('resiko.kontrol.evaluasi.index');
+    Route::get('/admin-resiko-kontrol-evaluasi-grafik/{param?}/{param1?}', RiskKontrolEvaluasiGrafik::class)->name('resiko.kontrol.evaluasi.grafik');
     Route::get('/admin-resiko-rekap-kategori', RiskRekapKatergoriIndex::class)->name('resiko.rekap.kategori.index');
 
     Route::get('/admin-portal-vendor', PortalVendorIndex::class)->name('portal.vendor.index');
