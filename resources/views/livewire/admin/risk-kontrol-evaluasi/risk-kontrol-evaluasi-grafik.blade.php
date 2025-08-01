@@ -125,7 +125,5 @@
                 });
             });
         </script>
-
-       
     @endpush
 </div>
