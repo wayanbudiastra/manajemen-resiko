@@ -37,6 +37,7 @@ class RiskRekapUnitIndex extends Component
         for ($i = 0; $i < 5; $i++) {
             $years[] = $currentYear - $i;
         }
+        
         $daftar_bulan = [
             '01' => 'Januari',
             '02' => 'Februari',

@@ -21,6 +21,7 @@
     <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
     <script src="https://unpkg.com/flowbite@1.4.7/dist/datepicker.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
      
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
