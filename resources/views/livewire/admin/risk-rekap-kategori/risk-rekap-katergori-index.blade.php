@@ -65,6 +65,11 @@
                                         class="w-1/4 px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-green-600 border border-transparent rounded-lg active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-green">
                                         <i class="fas fa-fw fa-search-plus"></i> Cek Data
                                     </button>
+                                    <button target="_BLANK"
+                                     wire:click="cetak_excel"
+                                        class="w-1/4 px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-blue-600 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue">
+                                        <i class="fas fa-fw fa-download" ></i> Excel
+                                    </button>
                                 </div>
 
                                 <div class="w-full overflow-x-auto">

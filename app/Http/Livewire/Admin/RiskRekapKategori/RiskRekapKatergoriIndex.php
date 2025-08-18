@@ -26,6 +26,11 @@ class RiskRekapKatergoriIndex extends Component
         $this->bulan = $this->pilih_bulan;
         // dd($this->bulan);
     }
+
+     public function cetak_excel()
+    {
+        return redirect()->to('/admin-resiko-kategori-rekap-excel/'.$this->tahun.'/'.$this->bulan);
+    }
     
     public function render()
     {

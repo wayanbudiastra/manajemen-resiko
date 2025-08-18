@@ -276,6 +276,7 @@ Route::middleware(['auth', 'cekadmin:Y', 'aktifuser:Y'])->group(function () {
 
     Route::get('/admin-resiko-kategori', RiskKategoriIndex::class)->name('resiko.kategori.index');
     Route::get('/admin-resiko-kategori-edit/{param?}', RiskKategoriUpdate::class)->name('resiko.kategori.edit');
+    Route::get('/admin-resiko-kategori-rekap-excel/{tahun?}/{bulan?}', [ExportExcelRiskRegisterController::class,'resiko_kategori_rekap'])->name('resiko.kategori.rekap.excel');
     Route::get('/admin-resiko-evaluasi', RiskEvaluasiIndex::class)->name('resiko.evaluasi.index');
     Route::get('/admin-resiko-evaluasi-edit/{param?}', RiskEvaluasiUpdate::class)->name('resiko.evaluasi.edit');
     Route::get('/admin-resiko-grade-rekap', RiskRekapGradeIndex::class)->name('resiko.grade.rekap.index');
