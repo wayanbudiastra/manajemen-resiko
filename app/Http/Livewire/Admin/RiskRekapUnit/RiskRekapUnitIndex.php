@@ -28,6 +28,10 @@ class RiskRekapUnitIndex extends Component
         // dd($this->bulan);
     }
 
+    public function cetak_excel()
+    {
+        return redirect()->to('/admin-resiko-unit-rekap-excel/'.$this->tahun.'/'.$this->bulan);
+    }
     public function render()
     {
         $unit = Insiden_unit::where('aktif', 'Y')->get();

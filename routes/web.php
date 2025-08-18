@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\GantiPasswordController;
 use App\Http\Controllers\CetakInsidenController;
 use App\Http\Controllers\CetakPortalController;
 use App\Http\Controllers\DashboardUserController;
+use App\Http\Controllers\ExportExcelRiskRegisterController;
 use App\Http\Controllers\RekapExcelController;
 use App\Http\Controllers\SertifikatController;
 use App\Http\Controllers\ValidasiDataRekapController;
@@ -280,6 +281,7 @@ Route::middleware(['auth', 'cekadmin:Y', 'aktifuser:Y'])->group(function () {
     Route::get('/admin-resiko-grade-rekap', RiskRekapGradeIndex::class)->name('resiko.grade.rekap.index');
     Route::get('/admin-resiko-grade-rekap-detail/{param?}', RiskRekapGradeDetail::class)->name('resiko.grade.rekap.detail');
     Route::get('/admin-resiko-unit-rekap', RiskRekapUnitIndex::class)->name('resiko.unit.rekap.index');
+    Route::get('/admin-resiko-unit-rekap-excel/{tahun?}/{bulan?}', [ExportExcelRiskRegisterController::class,'resiko_unit_rekap'])->name('resiko.unit.rekap.excel');
     Route::get('/admin-resiko-unit-deadline', MonitoringDeadlineIndex::class)->name('resiko.unit.deadline.index');
     Route::get('/admin-resiko-master', MasterIndex::class)->name('resiko.master.index');
     Route::get('/admin-resiko-master-edit/{param?}', MasterEdit::class)->name('resiko.master.edit');
