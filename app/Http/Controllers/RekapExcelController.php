@@ -20,6 +20,7 @@ class RekapExcelController extends Controller
         
         for ($i = 0; $i < 5; $i++) {
             $yearsAgo[] = $currentYear - $i;
+            
         }
       
         $insiden_unit = Insiden_unit::where('aktif','Y')->get();

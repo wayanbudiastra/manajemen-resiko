@@ -34,10 +34,12 @@ class RiskKontrolEvaluasiIndex extends Component
         redirect()->to('/admin-resiko-kontrol-evaluasi-grafik/'.$th.'/'.$bln);
     }
 
-    public function download_excel($tahun){
+    public function download_excel(){
 
-        dd("Fitur Export Excel tahun ".$tahun." Dalam proses pengerjaan");
+        redirect()->to('/admin-resiko-kontrol-evaluasi-excel/'.$this->tahun);
+    
     }
+
     public function render()
     { 
 

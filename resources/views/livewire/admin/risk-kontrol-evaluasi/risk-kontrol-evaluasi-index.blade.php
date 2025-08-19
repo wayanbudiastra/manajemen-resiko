@@ -116,11 +116,11 @@
                                                 <td class="px-4 py-3 bg-yellow-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '01', 3) }}</td>
                                                 <td class="px-4 py-3 bg-yellow-300">
-                                                    {{ rekap_risk_unit_kontrol_all($tahun, '01', 3) }}</td>
-                                                <td class="px-4 py-3 bg-orange-300">
-                                                    {{ rekap_risk_unit_all($tahun, '01', 4) }}</td>
+                                                    {{ rekap_risk_unit_all($tahun, '01', 3) }}</td>
                                                 <td class="px-4 py-3 bg-orange-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '01', 4) }}</td>
+                                                <td class="px-4 py-3 bg-orange-300">
+                                                    {{ rekap_risk_unit_all($tahun, '01', 4) }}</td>
                                                 <td class="px-4 py-3 bg-red-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '01', 5) }}</td>
                                                 <td class="px-4 py-3 bg-red-300">

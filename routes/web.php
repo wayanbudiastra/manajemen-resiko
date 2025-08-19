@@ -290,6 +290,7 @@ Route::middleware(['auth', 'cekadmin:Y', 'aktifuser:Y'])->group(function () {
     Route::get('/admin-resiko-verifikasi', RiskVerifikasiIndex::class)->name('resiko.verifikasi.index');
     Route::get('/admin-resiko-verifikasi-unit/{param?}', RiskVerifikasiUnit::class)->name('resiko.verifikasi.unit');
     Route::get('/admin-resiko-kontrol-evaluasi', RiskKontrolEvaluasiIndex::class)->name('resiko.kontrol.evaluasi.index');
+    Route::get('/admin-resiko-kontrol-evaluasi-excel/{param?}', [ExportExcelRiskRegisterController::class,'resiko_kontrol_evaluasi'])->name('resiko.kontrol.evaluasi.excel');
     Route::get('/admin-resiko-kontrol-evaluasi-grafik/{param?}/{param1?}', RiskKontrolEvaluasiGrafik::class)->name('resiko.kontrol.evaluasi.grafik');
     Route::get('/admin-resiko-rekap-kategori', RiskRekapKatergoriIndex::class)->name('resiko.rekap.kategori.index');
 

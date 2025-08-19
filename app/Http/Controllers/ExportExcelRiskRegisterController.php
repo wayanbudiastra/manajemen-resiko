@@ -88,4 +88,15 @@ class ExportExcelRiskRegisterController extends Controller
             "pilih_bulan" => $pilih_bulan
         ]);
     }
+
+     public function resiko_kontrol_evaluasi($tahun){
+
+         $pilih_tahun = $tahun;
+
+         return view('report.adminresikokontrolrekapexcel', [
+            "no" => 1,
+            "tahun" => $pilih_tahun,
+        ]);
+     }
+
 }
