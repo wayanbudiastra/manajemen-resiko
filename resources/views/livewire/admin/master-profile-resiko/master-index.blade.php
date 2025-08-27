@@ -19,7 +19,7 @@
 
                                     {{-- <div class="w-full overflow-hidden rounded-lg shadow-xs mt-5"> --}}
                                     <h2 class=" my-6 text-2xl font-semibold text-gray-700">
-                                        Data Profil Resiko Unit
+                                        Data Profil Resiko Unit 
                                     </h2>
 
                                     <div class="mt-5 relative w-full max-w-xl mr-6 focus-within:text-green-500">
@@ -49,8 +49,17 @@
                                                 </svg>
                                                 <span class="sr-only">Loading...</span>
                                             </div>
+                                            
                                         </div>
                                     </div>
+                                    <div class="flex justify-end mt-5">
+  <button target="_BLANK" wire:click="excel"
+                                        class="w-1/8 px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-blue-600 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue">
+                                        <i class="fas fa-fw fa-download"> </i> Excel
+                                    </button>
+</div>
+
+                                   
                                     <div>
                                         @if (session()->has('success'))
                                             <div class="mt-5 p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800"

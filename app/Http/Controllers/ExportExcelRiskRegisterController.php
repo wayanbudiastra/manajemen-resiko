@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Insiden\Insiden_unit;
 use App\Models\Risk\Risk_kategori;
+use App\Models\Risk\Risk_register_master;
 use Illuminate\Http\Request;
 
 class ExportExcelRiskRegisterController extends Controller
@@ -96,6 +97,19 @@ class ExportExcelRiskRegisterController extends Controller
          return view('report.adminresikokontrolrekapexcel', [
             "no" => 1,
             "tahun" => $pilih_tahun,
+        ]);
+     }
+
+     public function resiko_unit_master($tahun){
+
+         $pilih_tahun = $tahun;
+
+         $data = Risk_register_master::where("aktif","Y")->orderby('id', 'desc')->get();
+
+         return view('report.adminresikomasterrekapexcel', [
+            "no" => 1,
+            "data"=> $data,
+            "pilih_tahun" => $pilih_tahun,
         ]);
      }
 

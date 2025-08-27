@@ -286,6 +286,7 @@ Route::middleware(['auth', 'cekadmin:Y', 'aktifuser:Y'])->group(function () {
     Route::get('/admin-resiko-unit-deadline', MonitoringDeadlineIndex::class)->name('resiko.unit.deadline.index');
     Route::get('/admin-resiko-master', MasterIndex::class)->name('resiko.master.index');
     Route::get('/admin-resiko-master-edit/{param?}', MasterEdit::class)->name('resiko.master.edit');
+    Route::get('/admin-resiko-master-excel/{param?}', [ExportExcelRiskRegisterController::class,'resiko_unit_master'])->name('resiko.master.excel');
     Route::get('/admin-resiko-master-grade/{param?}', MasterGrade::class)->name('resiko.master.grade');
     Route::get('/admin-resiko-verifikasi', RiskVerifikasiIndex::class)->name('resiko.verifikasi.index');
     Route::get('/admin-resiko-verifikasi-unit/{param?}', RiskVerifikasiUnit::class)->name('resiko.verifikasi.unit');

@@ -24,6 +24,13 @@ class MasterIndex extends Component
         $idx = Crypt::encrypt($id);
         return redirect()->to('admin-resiko-master-grade/' . $idx);
     }
+
+   public function excel()
+    {
+        $idx = date('Y');
+        return redirect()->to('admin-resiko-master-excel/' . $idx);
+    }
+
     public function render()
     {
          try {
