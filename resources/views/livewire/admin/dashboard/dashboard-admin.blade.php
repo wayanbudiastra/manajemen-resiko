@@ -65,7 +65,7 @@
 
                                             <center>
                                                 <a href="{{ url('risk-register-rekap-unit-index') }}"
-                                                    class="mt-5 px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-blue-600 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue"><i
+                                                    class="mt-5 px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-yellow-300 border border-transparent rounded-lg active:bg-yellow-300 hover:bg-yellow-700 focus:outline-none focus:shadow-outline-blue"><i
                                                         class="fas fa-fw fa-check"></i> Rendah</a>
                                             </center>
                                         </div>
@@ -80,7 +80,7 @@
 
                                             <center>
                                                 <a href="{{ url('risk-register-rekap-unit-index') }}"
-                                                    class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-yellow-300 border border-transparent rounded-lg active:bg-yellow-300 hover:bg-yellow-500 focus:outline-none focus:shadow-outline-red"><i
+                                                    class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-orange-400 border border-transparent rounded-lg active:bg-orange-400 hover:bg-orange-500 focus:outline-none focus:shadow-outline-red"><i
                                                         class="fas fa-fw fa-pencil"></i>Sedang</a>
                                             </center>
                                         </div>
@@ -95,7 +95,7 @@
 
                                             <center>
                                                 <a href="{{ url('risk-register-rekap-unit-index') }}"
-                                                    class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-orange-500 border border-transparent rounded-lg active:bg-orange-600 hover:bg-orange-700 focus:outline-none focus:shadow-outline-orange"><i
+                                                    class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-500 border border-transparent rounded-lg active:bg-red-400 hover:bg-red-700 focus:outline-none focus:shadow-outline-orange"><i
                                                         class="fas fa-fw fa-eye"></i>Tinggi</a>
                                             </center>
 
@@ -111,7 +111,7 @@
 
                                             <center>
                                                 <a href="{{ url('risk-register-rekap-unit-index') }}"
-                                                    class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-yellow"><i
+                                                    class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-900 border border-transparent rounded-lg active:bg-red-900 hover:bg-red-900 focus:outline-none focus:shadow-outline-yellow"><i
                                                         class="fas fa-fw fa-fire"></i>Sangat Tinggi</a>
                                             </center>
                                         </div>
@@ -152,7 +152,7 @@
                                             datasets: [{
                                                     label: 'Jumlah',
                                                     data: @json($data),
-                                                    backgroundColor: [ 'green', 'blue','yellow','orange', 'red'],
+                                                    backgroundColor: [ 'green', 'yellow','orange','red', '#8B0000'],
                                                     borderColor: 'rgba(75, 192, 192, 1)',
                                                     borderWidth: 1
                                                 },
@@ -195,7 +195,7 @@
                                             {
                                                 label: 'Rendah',
                                                 data: @json($rendah),
-                                                borderColor: 'blue',
+                                                borderColor: 'yellow',
                                                 backgroundColor: 'rgba(0, 128, 0, 0.1)',
                                                 fill: false,
                                                 tension: 0.3
@@ -203,7 +203,7 @@
                                             {
                                                 label: 'Sedang',
                                                 data: @json($sedang),
-                                                borderColor: 'yellow',
+                                                borderColor: 'orange',
                                                 backgroundColor: 'rgba(0, 0, 255, 0.1)',
                                                 fill: false,
                                                 tension: 0.3
@@ -211,7 +211,7 @@
                                             {
                                                 label: 'Tinggi',
                                                 data: @json($tinggi),
-                                                borderColor: 'orange',
+                                                borderColor: 'red',
                                                 backgroundColor: 'rgba(255, 165, 0, 0.1)',
                                                 fill: false,
                                                 tension: 0.3
@@ -219,7 +219,7 @@
                                             {
                                                 label: 'Tinggi Sekali',
                                                 data: @json($tinggi_sekali),
-                                                borderColor: 'red',
+                                                borderColor: '#8B0000',
                                                 backgroundColor: 'rgba(255, 0, 0, 0.1)',
                                                 fill: false,
                                                 tension: 0.3

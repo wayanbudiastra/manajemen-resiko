@@ -363,13 +363,13 @@ function setup_grade($hasil)
 
     $grade = 1;
 
-    if ($hasil < 3) {
+    if ($hasil < 4 ) {
         $grade = 1;
-    } elseif ($hasil >= 3 && $hasil < 5) {
+    } elseif ($hasil >= 4 && $hasil < 9) {
         $grade = 2;
-    } elseif ($hasil >= 5 && $hasil < 10) {
+    } elseif ($hasil >= 9 && $hasil < 15) {
         $grade = 3;
-    } elseif ($hasil >= 10 && $hasil < 15) {
+    } elseif ($hasil >= 15 && $hasil < 20) {
         $grade = 4;
     } else {
         $grade = 5;

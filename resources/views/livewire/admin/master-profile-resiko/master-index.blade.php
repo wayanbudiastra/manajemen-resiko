@@ -88,12 +88,15 @@
                                                     <th class="px-4 py-3">No</th>
                                                      <th class="px-4 py-3">Unit Kerja</th>
                                                     <th class="px-4 py-3">Aktivitas Kerja</th>
+                                                     <th class="px-4 py-3">Resiko</th>
                                                     <th class="px-4 py-3">Kategori Resiko</th>
+                                                     <th class="px-4 py-3">Akar Masalah</th>
                                                     <th class="px-4 py-3">Kontrol</th>
-                                                    <th class="px-4 py-3">Resiko</th>
-                                                    <th class="px-4 py-3">Akar Masalah</th>
+                                                   
+                                                   
                                                     <th class="px-4 py-3">Tindak Lanjut</th>
                                                     <th class="px-4 py-3">Penanggung jawab</th>
+                                                    <th class="px-4 py-3">Target Waktu</th>
                                                     <th class="px-4 py-3">Evaluasi</th>
                                                     <th class="px-4 py-3">Aktif</th>
                                                      <th class="px-4 py-3">Laporan Singkat</th>
@@ -109,9 +112,13 @@
                                                             {{ $item->unit->nama_insiden_unit }}</td>
                                                         <td class="px-4 py-3">
                                                             {{ $item->aktivitas_kerja }}</td>
+                                                            <td class="px-4 py-3">
+                                                            {{ $item->resiko }}</td>
                                                         <td class="px-4 py-3">
                                                             {{ $item->risk_kategori->nama_kategori }}
                                                         </td>
+                                                        <td class="px-4 py-3">
+                                                            {{ $item->akar_masalah }}</td>
                                                         
                                                         <td class="px-4 py-3">
                                                             @if ($item->matrik_kontrol_grade == 1)
@@ -138,15 +145,16 @@
                                                                     Sangat Tinggi <br> {{$item->matrik_kontrol_rpn}} </div>
                                                             @endif
                                                         </td>
-                                                        <td class="px-4 py-3">
-                                                            {{ $item->resiko }}</td>
-                                                        <td class="px-4 py-3">
-                                                            {{ $item->akar_masalah }}</td>
+                                                       
+                                                        
                                                              <td class="px-4 py-3">
                                                             {{ $item->rencana_tindak_lanjut }}
                                                         </td>
                                                          <td class="px-4 py-3">
                                                             {{ $item->penanggung_jawab }}
+                                                        </td>
+                                                         <td class="px-4 py-3">
+                                                            {{ $item->target_waktu }}
                                                         </td>
                                                             <td class="px-4 py-3">
                                                             @if ($item->matrik_monitoring_grade == 1)
