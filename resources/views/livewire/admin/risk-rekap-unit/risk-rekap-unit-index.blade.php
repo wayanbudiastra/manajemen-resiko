@@ -94,18 +94,18 @@
                                         </thead>
                                         <tbody>
                                             @foreach ($data as $item)
-                                                <tr class="text-gray-700 dark:text-gray-400">
+                                                <tr >
                                                     <td class="px-4 py-3"> {{ $no++ }} </td>
                                                     <td class="px-4 py-3"> {{ $item->nama_insiden_unit }} </td>
                                                     <td class="px-4 py-3 bg-green-300">
                                                         {{  rekap_risk_evaluasi_unit($item->id, $tahun, $bulan, 1) }}</td>
-                                                    <td class="px-4 py-3 bg-blue-300">
-                                                        {{  rekap_risk_evaluasi_unit($item->id, $tahun, $bulan, 2) }}</td>
                                                     <td class="px-4 py-3 bg-yellow-300">
-                                                        {{  rekap_risk_evaluasi_unit($item->id, $tahun, $bulan, 3) }}</td>
+                                                        {{  rekap_risk_evaluasi_unit($item->id, $tahun, $bulan, 2) }}</td>
                                                     <td class="px-4 py-3 bg-orange-300">
+                                                        {{  rekap_risk_evaluasi_unit($item->id, $tahun, $bulan, 3) }}</td>
+                                                    <td class="px-4 py-3 bg-red-400">
                                                         {{  rekap_risk_evaluasi_unit($item->id, $tahun, $bulan, 4) }}</td>
-                                                    <td class="px-4 py-3 bg-red-300">
+                                                    <td class="px-4 py-3 bg-red-800 text-white">
                                                         {{  rekap_risk_evaluasi_unit($item->id, $tahun, $bulan, 5) }}</td>
                                                     <td class="px-4 py-3">
                                                         {{  rekap_risk_evaluasi_unit_total($item->id, $tahun, $bulan) }}
