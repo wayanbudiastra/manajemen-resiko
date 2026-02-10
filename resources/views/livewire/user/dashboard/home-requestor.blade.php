@@ -65,7 +65,7 @@
 
                                             <center>
                                                 <a href="{{ url('risk-register-rekap-unit-index') }}"
-                                                    class="mt-5 px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-blue-600 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue"><i
+                                                    class="mt-5 px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-yellow-300 border border-transparent rounded-lg active:bg-yellow-300 hover:bg-yellow-300 focus:outline-none focus:shadow-outline-blue"><i
                                                         class="fas fa-fw fa-check"></i> Rendah</a>
                                             </center>
                                         </div>
@@ -80,7 +80,7 @@
 
                                             <center>
                                                 <a href="{{ url('risk-register-rekap-unit-index') }}"
-                                                    class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-yellow-300 border border-transparent rounded-lg active:bg-yellow-300 hover:bg-yellow-500 focus:outline-none focus:shadow-outline-red"><i
+                                                    class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-orange-500 border border-transparent rounded-lg active:bg-orange-500 hover:bg-orange-500 focus:outline-none focus:shadow-outline-red"><i
                                                         class="fas fa-fw fa-pencil"></i>Sedang</a>
                                             </center>
                                         </div>
@@ -95,7 +95,7 @@
 
                                             <center>
                                                 <a href="{{ url('risk-register-rekap-unit-index') }}"
-                                                    class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-orange-500 border border-transparent rounded-lg active:bg-orange-600 hover:bg-orange-700 focus:outline-none focus:shadow-outline-orange"><i
+                                                    class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-500 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-500 focus:outline-none focus:shadow-outline-orange"><i
                                                         class="fas fa-fw fa-eye"></i>Tinggi</a>
                                             </center>
 
@@ -111,7 +111,7 @@
 
                                             <center>
                                                 <a href="{{ url('risk-register-rekap-unit-index') }}"
-                                                    class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-yellow"><i
+                                                    class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-900 border border-transparent rounded-lg active:bg-red-900 hover:bg-red-900 focus:outline-none focus:shadow-outline-yellow"><i
                                                         class="fas fa-fw fa-fire"></i>Sangat Tinggi</a>
                                             </center>
                                         </div>
@@ -221,21 +221,21 @@
                                                                     Sangat Rendah <br> {{$item->matrik_kontrol_rpn}} </div>
                                                             @elseif($item->matrik_kontrol_grade == 2)
                                                                 <div
-                                                                    class="bg-blue-600 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    class="bg-yellow-400 text-white px-2 py-2 font-bold text-center rounded-lg">
                                                                     Rendah <br> {{$item->matrik_kontrol_rpn}}
                                                                 </div>
                                                             @elseif($item->matrik_kontrol_grade == 3)
                                                                 <div
-                                                                    class="bg-yellow-500 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    class="bg-orange-500 text-white px-2 py-2 font-bold text-center rounded-lg">
                                                                     Sedang <br> {{$item->matrik_kontrol_rpn}}
                                                                 </div>
                                                             @elseif($item->matrik_kontrol_grade == 4)
                                                                 <div
-                                                                    class="bg-orange-500 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    class="bg-red-500 text-white px-2 py-2 font-bold text-center rounded-lg">
                                                                     Tinggi <br> {{$item->matrik_kontrol_rpn}} </div>
                                                             @elseif($item->matrik_kontrol_grade == 5)
                                                                 <div
-                                                                    class="bg-red-600 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    class="bg-red-900 text-white px-2 py-2 font-bold text-center rounded-lg">
                                                                     Sangat Tinggi <br> {{$item->matrik_kontrol_rpn}} </div>
                                                             @endif
                                                         </td>
@@ -252,21 +252,21 @@
                                                                     Sangat Rendah <br> {{$item->matrik_kontrol_rpn}} </div>
                                                             @elseif($item->matrik_monitoring_grade == 2)
                                                                 <div
-                                                                    class="bg-blue-600 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    class="bg-yellow-400 text-white px-2 py-2 font-bold text-center rounded-lg">
                                                                     Rendah <br> {{$item->matrik_kontrol_rpn}}
                                                                 </div>
                                                             @elseif($item->matrik_monitoring_grade == 3)
                                                                 <div
-                                                                    class="bg-yellow-500 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    class="bg-orange-500 text-white px-2 py-2 font-bold text-center rounded-lg">
                                                                     Sedang <br> {{$item->matrik_kontrol_rpn}}
                                                                 </div>
                                                             @elseif($item->matrik_monitoring_grade == 4)
                                                                 <div
-                                                                    class="bg-orange-500 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    class="bg-red-500 text-white px-2 py-2 font-bold text-center rounded-lg">
                                                                     Tinggi <br> {{$item->matrik_kontrol_rpn}} </div>
                                                             @elseif($item->matrik_monitoring_grade == 5)
                                                                 <div
-                                                                    class="bg-red-600 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    class="bg-red-900 text-white px-2 py-2 font-bold text-center rounded-lg">
                                                                     Sangat Tinggi <br> {{$item->matrik_monitoring_rpn}} </div>
                                                             @endif
                                                         </td>
@@ -294,7 +294,7 @@
                                         datasets: [{
                                                 label: 'Jumlah',
                                                 data: @json($data),
-                                                backgroundColor: ['green', 'blue', 'yellow', 'orange', 'red'],
+                                                backgroundColor: ['green', 'yellow', 'orange', 'red', '#8B0000'],
                                                 borderColor: 'rgba(75, 192, 192, 1)',
                                                 borderWidth: 1
                                             },

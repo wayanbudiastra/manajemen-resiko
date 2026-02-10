@@ -55,13 +55,13 @@ class RiskRegisterMonitoringData extends Component
          if($data==1){
             $warna = "green";
          }elseif($data==2){
-            $warna = "blue";
-         }elseif($data==3){
             $warna = "yellow";
-         }elseif($data==4){
+         }elseif($data==3){
             $warna = "orange";
-         }else{
+         }elseif($data==4){
             $warna = "red";
+         }else{
+            $warna = "#8B0000";
          }
          return $warna;
 

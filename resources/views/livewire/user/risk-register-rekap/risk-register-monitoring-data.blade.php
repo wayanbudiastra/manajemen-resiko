@@ -83,7 +83,7 @@
                 {
                     label: 'Rendah',
                     data: @json($rendah),
-                    borderColor: 'blue',
+                    borderColor: 'yellow',
                     backgroundColor: 'rgba(0, 128, 0, 0.1)',
                     fill: false,
                     tension: 0.3
@@ -91,7 +91,7 @@
                 {
                     label: 'Sedang',
                     data: @json($sedang),
-                    borderColor: 'yellow',
+                    borderColor: 'orange',
                     backgroundColor: 'rgba(255, 255, 0, 0.1)',
                     fill: false,
                     tension: 0.3
@@ -99,7 +99,7 @@
                 {
                     label: 'Tinggi',
                     data: @json($tinggi),
-                    borderColor: 'orange',
+                    borderColor: 'red',
                     backgroundColor: 'rgba(255, 165, 0, 0.1)',
                     fill: false,
                     tension: 0.3
@@ -107,7 +107,7 @@
                 {
                     label: 'Tinggi Sekali',
                     data: @json($tinggi_sekali),
-                    borderColor: 'red',
+                    borderColor: '#8B0000',
                     backgroundColor: 'rgba(255, 0, 0, 0.1)',
                     fill: false,
                     tension: 0.3
