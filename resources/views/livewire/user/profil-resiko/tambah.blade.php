@@ -47,21 +47,6 @@
 
                                 <div class="mb-3">
                                     <label for="exampleText0"
-                                        class="form-label inline-block mb-2 text-gray-700">Dampak Resiko</label>
-                                    <textarea rows="6"
-                                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0    focus:text-gray-700 focus:bg-white focus:border-green-300 focus:outline-none"
-                                        aria-label="Default select example" name="efek_resiko" wire:model.defer="efek_resiko"></textarea>
-
-                                    @error('efek_resiko')
-                                        <div class="mb-2 text-sm text-red-700  rounded-lg dark:bg-red-200 dark:text-red-800"
-                                            role="alert">
-                                            <span class="font-medium"></span>{{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="exampleText0"
                                         class="form-label inline-block mb-2 text-gray-700">Kategori Resiko</label>
 
                                     <select
@@ -85,14 +70,28 @@
                                     @enderror
                                 </div>
 
+                                 <div class="mb-3">
+                                    <label for="exampleText0" class="form-label inline-block mb-2 text-gray-700">Akar
+                                        Masalah</label>
+                                    <textarea rows="6"
+                                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-green-300 focus:outline-none"
+                                        aria-label="Default select example" name="akar_masalah" wire:model.defer="akar_masalah"></textarea>
 
-                                <div class="mb-3 mt-5">
+                                    @error('akar_masalah')
+                                        <div class="mb-2 text-sm text-red-700  rounded-lg dark:bg-red-200 dark:text-red-800"
+                                            role="alert">
+                                            <span class="font-medium"></span>{{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+
+                                 <div class="mb-3 mt-5">
                                     <div class="flex space-x-2">
                                         <label for="exampleText0"
-                                            class="form-control w-1/2 inline-block mb-2 text-gray-700">Matrik Kontrol Frekuensi</label>
+                                            class="form-control w-1/2 inline-block mb-2 text-gray-700">Inherent Risk Frekuensi</label>
 
                                             <label for="exampleText0"
-                                            class="form-control w-1/2 inline-block mb-2 text-gray-700">Matrik Kontrol Dampak</label>
+                                            class="form-control w-1/2 inline-block mb-2 text-gray-700">Inherent Risk Dampak</label>
                                     </div>
                                         <div class="flex space-x-2">
                                             <input type="text" placeholder="F"
@@ -117,6 +116,26 @@
                                         </div>
                                        
                                     </div>
+
+
+                                <div class="mb-3">
+                                    <label for="exampleText0"
+                                        class="form-label inline-block mb-2 text-gray-700">Dampak Resiko</label>
+                                    <textarea rows="6"
+                                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0    focus:text-gray-700 focus:bg-white focus:border-green-300 focus:outline-none"
+                                        aria-label="Default select example" name="efek_resiko" wire:model.defer="efek_resiko"></textarea>
+
+                                    @error('efek_resiko')
+                                        <div class="mb-2 text-sm text-red-700  rounded-lg dark:bg-red-200 dark:text-red-800"
+                                            role="alert">
+                                            <span class="font-medium"></span>{{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+
+                                
+
+                               
                                     <div class="mb-3">
                                     <label for="exampleText0"
                                         class="form-label inline-block mb-2 text-gray-700">Pengendalian Saat Ini</label>
@@ -132,39 +151,25 @@
                                     @enderror
                                 </div>
 
-                                <div class="mb-3">
-                                    <label for="exampleText0" class="form-label inline-block mb-2 text-gray-700">Akar
-                                        Masalah</label>
-                                    <textarea rows="6"
-                                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-green-300 focus:outline-none"
-                                        aria-label="Default select example" name="akar_masalah" wire:model.defer="akar_masalah"></textarea>
-
-                                    @error('akar_masalah')
-                                        <div class="mb-2 text-sm text-red-700  rounded-lg dark:bg-red-200 dark:text-red-800"
-                                            role="alert">
-                                            <span class="font-medium"></span>{{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="exampleText0" class="form-label inline-block mb-2 text-gray-700">Rencana
-                                        Tindak Lanjut</label>
-                                    <textarea rows="6"
-                                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-green-300 focus:outline-none"
-                                        aria-label="Default select example" name="rencana_tindak_lanjut" wire:model.defer="rencana_tindak_lanjut"></textarea>
-
-                                    @error('rencana_tindak_lanjut')
-                                        <div class="mb-2 text-sm text-red-700  rounded-lg dark:bg-red-200 dark:text-red-800"
-                                            role="alert">
-                                            <span class="font-medium"></span>{{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-
-                                <div class="mb-3">
+ <div class="mb-3">
                                     <label for="exampleText0"
-                                        class="form-label inline-block mb-2 text-gray-700">Evaluasi Resiko</label>
+                                        class="form-label inline-block mb-2 text-gray-700">Jadwal Pelaksanaan</label>
+                                    <input type="text"
+                                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0
+                                    focus:text-gray-700 focus:bg-white focus:border-green-300 focus:outline-none"
+                                        aria-label="Default select example" name="target_waktu"
+                                        wire:model.defer="target_waktu">
+                                    @error('target_waktu')
+                                        <div class="mb-2 text-sm text-red-700  rounded-lg dark:bg-red-200 dark:text-red-800"
+                                            role="alert">
+                                            <span class="font-medium"></span>{{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+
+                                  <div class="mb-3">
+                                    <label for="exampleText0"
+                                        class="form-label inline-block mb-2 text-gray-700"> Residual Risk </label>
 
                                     <select
                                         class="form-select form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0
@@ -186,6 +191,22 @@
                                         </div>
                                     @enderror
                                 </div>
+
+                                 <div class="mb-3">
+                                    <label for="exampleText0" class="form-label inline-block mb-2 text-gray-700">Rencana
+                                        Tindak Lanjut</label>
+                                    <textarea rows="6"
+                                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-green-300 focus:outline-none"
+                                        aria-label="Default select example" name="rencana_tindak_lanjut" wire:model.defer="rencana_tindak_lanjut"></textarea>
+
+                                    @error('rencana_tindak_lanjut')
+                                        <div class="mb-2 text-sm text-red-700  rounded-lg dark:bg-red-200 dark:text-red-800"
+                                            role="alert">
+                                            <span class="font-medium"></span>{{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+
                                 <div class="mb-3">
                                     <label for="exampleText0"
                                         class="form-label inline-block mb-2 text-gray-700">Penanggung Jawab</label>
@@ -202,21 +223,10 @@
                                     @enderror
                                 </div>
 
-                                <div class="mb-3">
-                                    <label for="exampleText0"
-                                        class="form-label inline-block mb-2 text-gray-700">Target Waktu</label>
-                                    <input type="text"
-                                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0
-                                    focus:text-gray-700 focus:bg-white focus:border-green-300 focus:outline-none"
-                                        aria-label="Default select example" name="target_waktu"
-                                        wire:model.defer="target_waktu">
-                                    @error('target_waktu')
-                                        <div class="mb-2 text-sm text-red-700  rounded-lg dark:bg-red-200 dark:text-red-800"
-                                            role="alert">
-                                            <span class="font-medium"></span>{{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
+                               
+                               
+
+                              
                     
                                     <div class="mb-3">
                                         <div class="flex space-x-2">
@@ -252,8 +262,7 @@
 
                                     <div class="mb-3">
                                         <label for="exampleText0"
-                                            class="form-label inline-block mb-2 text-gray-700">Laporan
-                                            Singkat</label>
+                                            class="form-label inline-block mb-2 text-gray-700">Kondisi Saat ini</label>
                                         <textarea rows="6"
                                             class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-green-300 focus:outline-none"
                                             aria-label="Default select example" name="laporan_singkat" wire:model.defer="laporan_singkat"></textarea>
