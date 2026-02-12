@@ -192,6 +192,38 @@
                                     @enderror
                                 </div>
 
+                                <div class="mb-3">
+                                        <div class="flex space-x-2">
+                                        <label for="exampleText0"
+                                            class="form-control w-1/2 inline-block mb-2 text-gray-700">Matrik Evaluasi Frekuensi</label>
+
+                                            <label for="exampleText0"
+                                            class="form-control w-1/2 inline-block mb-2 text-gray-700">Matrik Evaluasi Dampak</label>
+                                    </div>
+                                        <div class="flex space-x-2">
+                                            <input type="text" placeholder="F"
+                                                class="form-control w-1/2 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out   focus:text-gray-700 focus:bg-white focus:border-green-300 focus:outline-none"
+                                                name="matrik_monitoring_f" wire:model.defer="matrik_monitoring_f">
+                                            @error('matrik_monitoring_f')
+                                                <div class="mb-2 text-sm text-red-700 rounded-lg dark:bg-red-200 dark:text-red-800"
+                                                    role="alert">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+
+                                            <input type="text" placeholder="D"
+                                                class="form-control w-1/2 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out  focus:text-gray-700 focus:bg-white focus:border-green-300 focus:outline-none"
+                                                name="matrik_monitoring_d" wire:model.defer="matrik_monitoring_d">
+                                            @error('matrik_monitoring_d')
+                                                <div class="mb-2 text-sm text-red-700 rounded-lg dark:bg-red-200 dark:text-red-800"
+                                                    role="alert">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                       
+                                    </div>
+
                                  <div class="mb-3">
                                     <label for="exampleText0" class="form-label inline-block mb-2 text-gray-700">Rencana
                                         Tindak Lanjut</label>
@@ -228,37 +260,7 @@
 
                               
                     
-                                    <div class="mb-3">
-                                        <div class="flex space-x-2">
-                                        <label for="exampleText0"
-                                            class="form-control w-1/2 inline-block mb-2 text-gray-700">Matrik Evaluasi Frekuensi</label>
-
-                                            <label for="exampleText0"
-                                            class="form-control w-1/2 inline-block mb-2 text-gray-700">Matrik Evaluasi Dampak</label>
-                                    </div>
-                                        <div class="flex space-x-2">
-                                            <input type="text" placeholder="F"
-                                                class="form-control w-1/2 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out   focus:text-gray-700 focus:bg-white focus:border-green-300 focus:outline-none"
-                                                name="matrik_monitoring_f" wire:model.defer="matrik_monitoring_f">
-                                            @error('matrik_monitoring_f')
-                                                <div class="mb-2 text-sm text-red-700 rounded-lg dark:bg-red-200 dark:text-red-800"
-                                                    role="alert">
-                                                    {{ $message }}
-                                                </div>
-                                            @enderror
-
-                                            <input type="text" placeholder="D"
-                                                class="form-control w-1/2 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out  focus:text-gray-700 focus:bg-white focus:border-green-300 focus:outline-none"
-                                                name="matrik_monitoring_d" wire:model.defer="matrik_monitoring_d">
-                                            @error('matrik_monitoring_d')
-                                                <div class="mb-2 text-sm text-red-700 rounded-lg dark:bg-red-200 dark:text-red-800"
-                                                    role="alert">
-                                                    {{ $message }}
-                                                </div>
-                                            @enderror
-                                        </div>
-                                       
-                                    </div>
+                                    
 
                                     <div class="mb-3">
                                         <label for="exampleText0"
