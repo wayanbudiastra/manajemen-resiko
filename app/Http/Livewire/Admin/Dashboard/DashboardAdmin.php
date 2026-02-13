@@ -19,11 +19,11 @@ class DashboardAdmin extends Component
     {
         $this->tahun = date('Y');
 
-        $ds_sangat_rendah = Risk_register_master::where('aktif', 'Y')->where('matrik_monitoring_grade', '1')->count();
-        $ds_rendah = Risk_register_master::where('aktif', 'Y')->where('matrik_monitoring_grade', '2')->count();
-        $ds_sedang = Risk_register_master::where('aktif', 'Y')->where('matrik_monitoring_grade', '3')->count();
-        $ds_tinggi = Risk_register_master::where('aktif', 'Y')->where('matrik_monitoring_grade', '4')->count();
-        $ds_sangat_tinggi = Risk_register_master::where('aktif', 'Y')->where('matrik_monitoring_grade', '5')->count();
+        $ds_sangat_rendah = Risk_register_master::where('aktif', 'Y')->where('matrik_kontrol_grade', '1')->count();
+        $ds_rendah = Risk_register_master::where('aktif', 'Y')->where('matrik_kontrol_grade', '2')->count();
+        $ds_sedang = Risk_register_master::where('aktif', 'Y')->where('matrik_kontrol_grade', '3')->count();
+        $ds_tinggi = Risk_register_master::where('aktif', 'Y')->where('matrik_kontrol_grade', '4')->count();
+        $ds_sangat_tinggi = Risk_register_master::where('aktif', 'Y')->where('matrik_kontrol_grade', '5')->count();
 
 
         $this->portal_sangat_rendah = $ds_sangat_rendah;

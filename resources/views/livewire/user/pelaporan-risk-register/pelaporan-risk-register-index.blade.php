@@ -158,7 +158,7 @@
                                                                     Tinggi <br> {{$item->matrik_monitoring_rpn}} </div>
                                                             @elseif($item->matrik_monitoring_grade == 5)
                                                                 <div
-                                                                    class="bg-red-600 text-white px-2 py-2 font-bold text-center rounded-lg">
+                                                                    class="bg-red-900 text-white px-2 py-2 font-bold text-center rounded-lg">
                                                                     Sangat Tinggi <br> {{$item->matrik_monitoring_rpn}} </div>
                                                             @endif
                                                 </td>

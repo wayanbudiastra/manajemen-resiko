@@ -166,7 +166,7 @@
 
                                   <div class="mb-3">
                                     <label for="exampleText0"
-                                        class="form-label inline-block mb-2 text-gray-700"> Residual Risk </label>
+                                        class="form-label inline-block mb-2 text-gray-700"> Treatment Risk </label>
 
                                     <select
                                         class="form-select form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0
@@ -192,10 +192,10 @@
                                 <div class="mb-3">
                                         <div class="flex space-x-2">
                                         <label for="exampleText0"
-                                            class="form-control w-1/2 inline-block mb-2 text-gray-700">Matrik Evaluasi Frekuensi</label>
+                                            class="form-control w-1/2 inline-block mb-2 text-gray-700">Matrik Residual Frekuensi</label>
 
                                             <label for="exampleText0"
-                                            class="form-control w-1/2 inline-block mb-2 text-gray-700">Matrik Evaluasi Dampak</label>
+                                            class="form-control w-1/2 inline-block mb-2 text-gray-700">Matrik Residual Dampak</label>
                                     </div>
                                         <div class="flex space-x-2">
                                             <input type="text" placeholder="F"
