@@ -133,9 +133,6 @@
                                     @enderror
                                 </div>
 
-                                
-
-                               
                                     <div class="mb-3">
                                     <label for="exampleText0"
                                         class="form-label inline-block mb-2 text-gray-700">Pengendalian Saat Ini</label>

@@ -258,6 +258,24 @@ function rekap_risk_unit($unit, $tahun, $bulan, $grade)
     return $total;
 }
 
+function rekap_grade_evaluasi($periode, $grade)
+{
+    $total = 0;
+    $data = Risk_register_pelaporan::where ('periode_laporan', $periode)->where('matrik_monitoring_grade', $grade)->where('posting', 'Y')->count();
+    if ($data > 0) {
+        $total = $data;
+    }
+    return $total;
+}
+function rekap_grade_evaluasi_kontrol($periode, $grade)
+{
+    $total = 0;
+    $data = Risk_register_pelaporan::where ('periode_laporan', $periode)->where('matrik_kontrol_grade', $grade)->where('posting', 'Y')->count();
+    if ($data > 0) {
+        $total = $data;
+    }
+    return $total;
+}
 function rekap_risk_unit_total($unit, $tahun, $bulan)
 {
     $total = 0;

@@ -66,6 +66,7 @@ use App\Http\Livewire\Admin\Report\RekapTotalInsiden;
 use App\Http\Livewire\Admin\RiskDeadline\MonitoringDeadlineIndex;
 use App\Http\Livewire\Admin\RiskEvaluasi\RiskEvaluasiIndex;
 use App\Http\Livewire\Admin\RiskEvaluasi\RiskEvaluasiUpdate;
+use App\Http\Livewire\Admin\RiskEvaluasiResiko\RiskEvaluasiResikoIndex;
 use App\Http\Livewire\Admin\RiskKategori\RiskKategoriIndex;
 use App\Http\Livewire\Admin\RiskKategori\RiskKategoriUpdate;
 use App\Http\Livewire\Admin\RiskKontrolEvaluasi\RiskKontrolEvaluasiGrafik;
@@ -294,6 +295,7 @@ Route::middleware(['auth', 'cekadmin:Y', 'aktifuser:Y'])->group(function () {
     Route::get('/admin-resiko-kontrol-evaluasi-excel/{param?}', [ExportExcelRiskRegisterController::class,'resiko_kontrol_evaluasi'])->name('resiko.kontrol.evaluasi.excel');
     Route::get('/admin-resiko-kontrol-evaluasi-grafik/{param?}/{param1?}', RiskKontrolEvaluasiGrafik::class)->name('resiko.kontrol.evaluasi.grafik');
     Route::get('/admin-resiko-rekap-kategori', RiskRekapKatergoriIndex::class)->name('resiko.rekap.kategori.index');
+ Route::get('/admin-evaluasi-resiko-index', RiskEvaluasiResikoIndex::class)->name('admin.evaluasi.resiko.index');
 
     Route::get('/admin-portal-vendor', PortalVendorIndex::class)->name('portal.vendor.index');
     Route::get('/admin-portal-vendor-edit/{param?}', PortalVendorEdit::class)->name('portal.vendor.edit');
