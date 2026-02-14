@@ -112,7 +112,7 @@
                                                                     $jumlah_lalu = rekap_grade_evaluasi_kontrol($this->periode_ini, $item->id);
                                                                     $jumlah_ini = rekap_grade_evaluasi($this->periode_ini, $item->id);
                                                                     if ($jumlah_ini > 0) {
-                                                                        $persentase = ($jumlah_lalu - $jumlah_ini) / $jumlah_ini * 100;
+                                                                        $persentase = ($jumlah_lalu - $jumlah_ini) / $jumlah_lalu * 100;
                                                                     } else {
                                                                         $persentase = 0;
                                                                     }
@@ -128,9 +128,9 @@
                                                                     <td class="px-4 py-3">
                                                                        {{ rekap_grade_evaluasi_kontrol($this->periode_ini, $item->id) }}</td>
                                                                      <td class="px-4 py-3">
-                                                                       {{ rekap_grade_evaluasi($this->periode_ini, $item->id) - rekap_grade_evaluasi_kontrol($this->periode_ini, $item->id) }}</td>
+                                                                       {{ rekap_grade_evaluasi_kontrol($this->periode_ini, $item->id) - rekap_grade_evaluasi($this->periode_ini, $item->id) }}</td>
                                                                     <td>
-                                                                          {{ rekap_grade_evaluasi($this->periode_ini, $item->id) - (rekap_grade_evaluasi_kontrol($this->periode_ini, $item->id ) - rekap_grade_evaluasi_kontrol($this->periode_ini, $item->id))  }}</td>
+                                                                          {{ rekap_grade_evaluasi_kontrol($this->periode_ini, $item->id) - (rekap_grade_evaluasi_kontrol($this->periode_ini, $item->id ) - rekap_grade_evaluasi($this->periode_ini, $item->id))  }}</td>
                                                                     <td class="px-4 py-3">
                                                                       {{number_format($persentase, 2)}} %</td>
                                                                     <td>
