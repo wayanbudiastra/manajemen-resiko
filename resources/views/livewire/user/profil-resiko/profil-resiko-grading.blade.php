@@ -247,6 +247,22 @@
                                     @enderror
                                 </div>
 
+                                 <div class="mb-3">
+                                    <label for="exampleText0"
+                                        class="form-label inline-block mb-2 text-gray-700">Realisasi Penanganan</label>
+                                    <input type="radio" wire:model.defer="realisasi_penanganan" value="Y" name="realisasi_penanganan"
+                                        class="form-check-input"> Sudah dilaksanakan
+                                    <input type="radio" wire:model.defer="realisasi_penanganan" value="N" name="realisasi_penanganan"
+                                        class="form-check-input"> Belum dilaksanakan
+
+                                    @error('aktif')
+                                    <div class="mb-2 text-sm text-red-700  rounded-lg dark:bg-red-200 dark:text-red-800"
+                                        role="alert">
+                                        <span class="font-medium"></span>{{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
+
                                 <button wire:click="store"
                                     class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-green-600 border border-transparent rounded-lg active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-green"><i
                                         class="fas fa-fw fa-save"></i>Simpan Data</button>

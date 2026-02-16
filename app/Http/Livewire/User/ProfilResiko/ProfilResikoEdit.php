@@ -14,7 +14,7 @@ class ProfilResikoEdit extends Component
     public $param = '', $user_unit = '', $unit_id = '', $resiko = '', $efek_resiko = '', $target_waktu = '';
     public $aktivitas_kerja = '', $pengendalian_saat_ini = '', $risk_kategori_id = '',  $risk_evaluasi_id;
     public $akar_masalah = '', $rencana_tindak_lanjut = '', $laporan_singkat = '', $aktif = '', $matrik_monitoring_f = '', $matrik_monitoring_d = '';
-    public $matrik_kontrol_f = '', $matrik_kontrol_d = '', $penanggung_jawab = '', $matrik_evaluasi_d = '', $matrik_evaluasi_f = '';
+    public $matrik_kontrol_f = '', $matrik_kontrol_d = '', $penanggung_jawab = '', $matrik_evaluasi_d = '', $matrik_evaluasi_f = '', $tgl_deadline ='' ,  $realisasi_penanganan = '';
 
     public function mount($param = null)
     {
@@ -69,7 +69,8 @@ class ProfilResikoEdit extends Component
                 "matrik_monitoring_f" => $this->matrik_monitoring_f,
                 "matrik_monitoring_rpn" => $this->matrik_monitoring_f * $this->matrik_monitoring_d,
                 "matrik_monitoring_grade" => setup_grade($this->matrik_monitoring_f * $this->matrik_monitoring_d),
-                "aktif" => $this->aktif
+                "tgl_deadline" => $this->tgl_deadline,
+                "realisasi_penganganan" => $this->realisasi_penanganan
             ]);
             session()->flash('success', 'Data Berhasil di simpan..');
             $this->kembali();
@@ -99,6 +100,8 @@ class ProfilResikoEdit extends Component
             $this->matrik_monitoring_d = $data->matrik_monitoring_d;
             $this->matrik_monitoring_f = $data->matrik_monitoring_f;
             $this->aktif = $data->aktif;
+             $this->tgl_deadline = $data->tgl_deadline;
+             $this->realisasi_penanganan = $data->realisasi_penganganan;
 
             $katagori = Risk_kategori::where('aktif', 'Y')->get();
             //
