@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Insiden\Insiden_unit;
 use App\Models\Risk\Risk_kategori;
 use App\Models\Risk\Risk_register_master;
+use App\Models\Risk\Risk_register_pelaporan;
 use Illuminate\Http\Request;
 
 class ExportExcelRiskRegisterController extends Controller
@@ -104,8 +105,11 @@ class ExportExcelRiskRegisterController extends Controller
 
          $pilih_tahun = $tahun;
 
-         $data = Risk_register_master::where("aktif","Y")->orderby('id', 'desc')->get();
+         $periode = $tahun;
 
+         $data = Risk_register_pelaporan::where("periode_laporan",$periode)->orderby('id', 'desc')->get();
+
+        // dd($data);
          return view('report.adminresikomasterrekapexcel', [
             "no" => 1,
             "data"=> $data,

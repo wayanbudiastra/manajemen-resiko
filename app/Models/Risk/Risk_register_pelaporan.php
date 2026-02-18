@@ -3,12 +3,12 @@
 namespace App\Models\Risk;
 
 use App\Models\User;
+use App\Models\Insiden\Insiden_unit;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Risk_register_pelaporan extends Model
 {
-    use HasFactory;
     use HasFactory;
     protected $table = 'risk_register_pelaporan';
     protected $guarded = [];
@@ -26,5 +26,10 @@ class Risk_register_pelaporan extends Model
     public function risk_kategori()
     {
         return $this->belongsTo(Risk_kategori::class);
+    }
+
+     public function unit()
+    {
+        return $this->BelongsTo(Insiden_unit::class, 'unit_id');
     }
 }

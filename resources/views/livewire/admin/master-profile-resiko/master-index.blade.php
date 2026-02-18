@@ -52,7 +52,23 @@
                                             
                                         </div>
                                     </div>
-                                    <div class="flex justify-end mt-5">
+                                    <div class="flex mt-5">
+                                        <select
+                                        class="form-select form-control w-1/6 px-3 py-1.5 mr-4 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-green-300 focus:outline-none select2"
+                                        name="pilih_tahun" wire:model.defer="pilih_tahun">
+                                        <option value="">Pilih Tahun</option>
+                                        @foreach ($years as $item)
+                                            <option value="{{ $item }}">{{ $item }}</option>
+                                        @endforeach
+                                    </select>
+                                     <select
+                                        class="form-select form-control w-1/5 mr-4 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-green-300 focus:outline-none select2"
+                                        name="pilih_bulan" wire:model.defer="pilih_bulan">
+                                        <option value="">Pilih Bulan</option>
+                                        @foreach ($mounts as $item)
+                                            <option value="{{ $item['no'] }}">{{ $item['bulan'] }}</option>
+                                        @endforeach
+                                    </select>
   <button target="_BLANK" wire:click="excel"
                                         class="w-1/8 px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-blue-600 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue">
                                         <i class="fas fa-fw fa-download"> </i> Excel

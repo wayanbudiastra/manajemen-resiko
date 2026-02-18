@@ -49,7 +49,6 @@ class PelaporanRiskRegisterIndex extends Component
 
     public function deleteConfirmed($id)
     {
-
         try {
             $data = Risk_register_pelaporan::find($id);
             $data->delete();
