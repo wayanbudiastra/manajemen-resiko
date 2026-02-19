@@ -82,6 +82,7 @@
                                             class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
                                             <th class="px-4 py-3">No</th>
                                             
+                                                    <th class="px-4 py-3">Periode Laporan</th>
                                                     <th class="px-4 py-3">Aktivitas Kerja</th>
                                                      <th class="px-4 py-3">Resiko</th>
                                                     <th class="px-4 py-3">Kategori Resiko</th>
@@ -102,7 +103,8 @@
                                             <tr class="text-gray-700 dark:text-gray-400">
                                                 <td class="px-4 py-3">
                                                     {{ $no++ }}</td>
-                                              
+                                              <td class="px-4 py-3">
+                                                            {{ get_periode_laporan($item->periode_laporan) }}</td>
                                                         <td class="px-4 py-3">
                                                             {{ $item->aktivitas_kerja }}</td>
                                                             <td class="px-4 py-3">

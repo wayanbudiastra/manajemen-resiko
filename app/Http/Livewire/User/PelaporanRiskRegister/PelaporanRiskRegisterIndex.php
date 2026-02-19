@@ -31,11 +31,21 @@ class PelaporanRiskRegisterIndex extends Component
     public function postingConfirmedAll()
     {
         try {
+            $jml = 0;
             $user_unit_id = $this->cek_unit();
             $counter = Risk_register_pelaporan::where('unit_id', $user_unit_id)->where('posting', 'N')->count();
-            $data = Risk_register_pelaporan::where('unit_id', $user_unit_id)->where('posting', 'N')->update(['posting' => 'Y']);
-
-            session()->flash('success', 'Sebanyak ' . $data . ' Data Berhasil di posting....');
+           // $data = Risk_register_pelaporan::where('unit_id', $user_unit_id)->where('posting', 'N')->update(['posting' => 'Y']);
+$data = Risk_register_pelaporan::where('unit_id', $user_unit_id)->where('posting', 'N')->get();
+foreach($data as $item){
+    if($item->laporan_singkat){
+        $update_data = Risk_register_pelaporan::find($item->id);
+        $update_data->update([
+            "posting" => "Y"
+        ]);
+        $jml++;
+    }
+}
+            session()->flash('success', 'Sebanyak ' . $jml . ' Data Berhasil di posting....');
         } catch (Exception $e) {
             session()->flash('error', 'Terjadi Kesalahan..' . $e);
         }
@@ -81,9 +91,12 @@ public function postingConfirmed($id)
         try {
 
             $data = Risk_register_pelaporan::find($id);
-            $data->update([
+            if($data->laporan_singkat === null){
+             $data->update([
                 "posting" => "Y"
             ]);
+            }
+           
 
             session()->flash('success',  'Data Berhasil di posting....');
         } catch (Exception $e) {
@@ -126,7 +139,7 @@ public function postingConfirmed($id)
                             'risk_evaluasi_id' => $item->risk_evaluasi_id,
                             'akar_masalah' => $item->akar_masalah,
                             'rencana_tindak_lanjut' => $item->rencana_tindak_lanjut,
-                            'laporan_singkat' => $item->laporan_singkat,
+                            'laporan_singkat' => null,
                             'penanggung_jawab' => $item->penanggung_jawab,
                             'target_waktu' => $item->target_waktu,
                             'matrik_kontrol_f' => $item->matrik_kontrol_f,
