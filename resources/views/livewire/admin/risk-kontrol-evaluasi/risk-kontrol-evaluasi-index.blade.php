@@ -37,10 +37,10 @@
 
 
                             <div class="w-full overflow-hidden rounded-lg shadow-xs mt-5">
-                                <div class="flex w-1/2 space-x-2 items-start">
+                                <div class="flex w-1/2 space-x-2 items-start mt-4">
                                     <!-- Select: Lebar 75% -->
                                     <select
-                                        class="form-select form-control w-3/4 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-green-300 focus:outline-none select2"
+                                        class="ml-4 form-select form-control w-1/4 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-green-300 focus:outline-none select2"
                                         name="pilih_tahun" wire:model.defer="pilih_tahun">
                                         <option value="">Pilih Tahun</option>
                                         @foreach ($data as $item)
@@ -108,23 +108,23 @@
                                                 <td class="px-4 py-3 bg-green-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '01', 1) }}</td>
                                                 <td class="px-4 py-3 bg-green-300">
-                                                    {{ rekap_risk_unit_all($tahun, '01', 1) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '01', 1) }}</td>
                                                 <td class="px-4 py-3 bg-yellow-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '01', 2) }}</td>
                                                 <td class="px-4 py-3 bg-yellow-300">
-                                                    {{ rekap_risk_unit_all($tahun, '01', 2) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '01', 2) }}</td>
                                                 <td class="px-4 py-3 bg-orange-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '01', 3) }}</td>
                                                 <td class="px-4 py-3 bg-orange-300">
-                                                    {{ rekap_risk_unit_all($tahun, '01', 3) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '01', 3) }}</td>
                                                 <td class="px-4 py-3 bg-red-400">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '01', 4) }}</td>
                                                 <td class="px-4 py-3 bg-red-400">
-                                                    {{ rekap_risk_unit_all($tahun, '01', 4) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '01', 4) }}</td>
                                                 <td class="px-4 py-3 bg-red-800 text-white">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '01', 5) }}</td>
                                                 <td class="px-4 py-3 bg-red-800 text-white">
-                                                    {{ rekap_risk_unit_all($tahun, '01', 5) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '01', 5) }}</td>
                                                 <td class="px-4 py-3">
                                                     <button wire:click="data_grafik('{{ "01" }}',{{$tahun}})"
                                                         class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-red">
@@ -138,23 +138,23 @@
                                                 <td class="px-4 py-3 bg-green-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '02', 1) }}</td>
                                                 <td class="px-4 py-3 bg-green-300">
-                                                    {{ rekap_risk_unit_all($tahun, '02', 1) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '02', 1) }}</td>
                                                 <td class="px-4 py-3 bg-yellow-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '02', 2) }}</td>
                                                 <td class="px-4 py-3 bg-yellow-300">
-                                                    {{ rekap_risk_unit_all($tahun, '02', 2) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '02', 2) }}</td>
                                                 <td class="px-4 py-3 bg-orange-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '02', 3) }}</td>
                                                 <td class="px-4 py-3 bg-orange-300">
-                                                    {{ rekap_risk_unit_all($tahun, '02', 3) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '02', 3) }}</td>
                                                 <td class="px-4 py-3 bg-red-400">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '02', 4) }}</td>
                                                 <td class="px-4 py-3 bg-red-400">
-                                                    {{ rekap_risk_unit_all($tahun, '02', 4) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '02', 4) }}</td>
                                                 <td class="px-4 py-3 bg-red-800 text-white">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '02', 5) }}</td>
                                                 <td class="px-4 py-3 bg-red-800 text-white">
-                                                    {{ rekap_risk_unit_all($tahun, '02', 5) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '02', 5) }}</td>
                                                 <td class="px-4 py-3"> <button wire:click="data_grafik('{{ "02" }}',{{$tahun}})"
                                                         class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-red">
                                                         <i class="fas fa-fw fa-line-chart"></i> Grafik
@@ -168,23 +168,23 @@
                                                 <td class="px-4 py-3 bg-green-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '03', 1) }}</td>
                                                 <td class="px-4 py-3 bg-green-300">
-                                                    {{ rekap_risk_unit_all($tahun, '03', 1) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '03', 1) }}</td>
                                                 <td class="px-4 py-3 bg-yellow-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '03', 2) }}</td>
                                                 <td class="px-4 py-3 bg-yellow-300">
-                                                    {{ rekap_risk_unit_all($tahun, '03', 2) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '03', 2) }}</td>
                                                 <td class="px-4 py-3 bg-orange-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '03', 3) }}</td>
                                                 <td class="px-4 py-3 bg-orange-300">
-                                                    {{ rekap_risk_unit_all($tahun, '03', 3) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '03', 3) }}</td>
                                                 <td class="px-4 py-3 bg-red-400">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '03', 4) }}</td>
                                                 <td class="px-4 py-3 bg-red-400">
-                                                    {{ rekap_risk_unit_all($tahun, '03', 4) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '03', 4) }}</td>
                                                 <td class="px-4 py-3 bg-red-800 text-white">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '03', 5) }}</td>
                                                 <td class="px-4 py-3 bg-red-800 text-white">
-                                                    {{ rekap_risk_unit_all($tahun, '03', 5) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '03', 5) }}</td>
                                                 <td class="px-4 py-3"> <button wire:click="data_grafik('{{ "03" }}',{{$tahun}})"
                                                         class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-red">
                                                         <i class="fas fa-fw fa-line-chart"></i> Grafik
@@ -198,23 +198,23 @@
                                                 <td class="px-4 py-3 bg-green-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '04', 1) }}</td>
                                                 <td class="px-4 py-3 bg-green-300">
-                                                    {{ rekap_risk_unit_all($tahun, '04', 1) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '04', 1) }}</td>
                                                 <td class="px-4 py-3 bg-yellow-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '04', 2) }}</td>
                                                 <td class="px-4 py-3 bg-yellow-300">
-                                                    {{ rekap_risk_unit_all($tahun, '04', 2) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '04', 2) }}</td>
                                                 <td class="px-4 py-3 bg-orange-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '04', 3) }}</td>
                                                 <td class="px-4 py-3 bg-orange-300">
-                                                    {{ rekap_risk_unit_all($tahun, '04', 3) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '04', 3) }}</td>
                                                 <td class="px-4 py-3 bg-red-400">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '04', 4) }}</td>
                                                 <td class="px-4 py-3 bg-red-400">
-                                                    {{ rekap_risk_unit_all($tahun, '04', 4) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '04', 4) }}</td>
                                                 <td class="px-4 py-3 bg-red-800 text-white">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '04', 5) }}</td>
                                                 <td class="px-4 py-3 bg-red-800 text-white">
-                                                    {{ rekap_risk_unit_all($tahun, '04', 5) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '04', 5) }}</td>
                                                 <td class="px-4 py-3"> <button wire:click="data_grafik('{{ "04" }}',{{$tahun}})"
                                                         class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-red">
                                                         <i class="fas fa-fw fa-line-chart"></i> Grafik
@@ -228,23 +228,23 @@
                                                 <td class="px-4 py-3 bg-green-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '05', 1) }}</td>
                                                 <td class="px-4 py-3 bg-green-300">
-                                                    {{ rekap_risk_unit_all($tahun, '05', 1) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '05', 1) }}</td>
                                                 <td class="px-4 py-3 bg-yellow-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '05', 2) }}</td>
                                                 <td class="px-4 py-3 bg-yellow-300">
-                                                    {{ rekap_risk_unit_all($tahun, '05', 2) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '05', 2) }}</td>
                                                 <td class="px-4 py-3 bg-orange-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '05', 3) }}</td>
                                                 <td class="px-4 py-3 bg-orange-300">
-                                                    {{ rekap_risk_unit_all($tahun, '05', 3) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '05', 3) }}</td>
                                                 <td class="px-4 py-3 bg-red-400">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '05', 4) }}</td>
                                                 <td class="px-4 py-3 bg-red-400">
-                                                    {{ rekap_risk_unit_all($tahun, '05', 4) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '05', 4) }}</td>
                                                 <td class="px-4 py-3 bg-red-800 text-white">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '05', 5) }}</td>
                                                 <td class="px-4 py-3 bg-red-800 text-white">
-                                                    {{ rekap_risk_unit_all($tahun, '05', 5) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '05', 5) }}</td>
                                                 <td class="px-4 py-3"> <button wire:click="data_grafik('{{ "05" }}',{{$tahun}})"
                                                         class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-red">
                                                         <i class="fas fa-fw fa-line-chart"></i> Grafik
@@ -258,23 +258,23 @@
                                                 <td class="px-4 py-3 bg-green-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '06', 1) }}</td>
                                                 <td class="px-4 py-3 bg-green-300">
-                                                    {{ rekap_risk_unit_all($tahun, '06', 1) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '06', 1) }}</td>
                                                 <td class="px-4 py-3 bg-yellow-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '06', 2) }}</td>
                                                 <td class="px-4 py-3 bg-yellow-300">
-                                                    {{ rekap_risk_unit_all($tahun, '06', 2) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '06', 2) }}</td>
                                                 <td class="px-4 py-3 bg-orange-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '06', 3) }}</td>
                                                 <td class="px-4 py-3 bg-orange-300">
-                                                    {{ rekap_risk_unit_all($tahun, '06', 3) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '06', 3) }}</td>
                                                 <td class="px-4 py-3 bg-red-400">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '06', 4) }}</td>
                                                 <td class="px-4 py-3 bg-red-400">
-                                                    {{ rekap_risk_unit_all($tahun, '06', 4) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '06', 4) }}</td>
                                                 <td class="px-4 py-3 bg-red-800 text-white">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '06', 5) }}</td>
                                                 <td class="px-4 py-3 bg-red-800 text-white">
-                                                    {{ rekap_risk_unit_all($tahun, '06', 5) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '06', 5) }}</td>
                                                 <td class="px-4 py-3"> <button wire:click="data_grafik('{{ "06" }}',{{$tahun}})"
                                                         class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-red">
                                                         <i class="fas fa-fw fa-line-chart"></i> Grafik
@@ -288,23 +288,23 @@
                                                 <td class="px-4 py-3 bg-green-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '07', 1) }}</td>
                                                 <td class="px-4 py-3 bg-green-300">
-                                                    {{ rekap_risk_unit_all($tahun, '07', 1) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '07', 1) }}</td>
                                                 <td class="px-4 py-3 bg-yellow-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '07', 2) }}</td>
                                                 <td class="px-4 py-3 bg-yellow-300">
-                                                    {{ rekap_risk_unit_all($tahun, '07', 2) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '07', 2) }}</td>
                                                 <td class="px-4 py-3 bg-orange-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '07', 3) }}</td>
                                                 <td class="px-4 py-3 bg-orange-300">
-                                                    {{ rekap_risk_unit_all($tahun, '07', 3) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '07', 3) }}</td>
                                                 <td class="px-4 py-3 bg-red-400">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '07', 4) }}</td>
                                                 <td class="px-4 py-3 bg-red-400">
-                                                    {{ rekap_risk_unit_all($tahun, '07', 4) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '07', 4) }}</td>
                                                 <td class="px-4 py-3 bg-red-800 text-white">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '07', 5) }}</td>
                                                 <td class="px-4 py-3 bg-red-800 text-white">
-                                                    {{ rekap_risk_unit_all($tahun, '07', 5) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '07', 5) }}</td>
                                                 <td class="px-4 py-3"> <button wire:click="data_grafik('{{ "07" }}',{{$tahun}})"
                                                         class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-red">
                                                         <i class="fas fa-fw fa-line-chart"></i> Grafik
@@ -318,23 +318,23 @@
                                                 <td class="px-4 py-3 bg-green-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '08', 1) }}</td>
                                                 <td class="px-4 py-3 bg-green-300">
-                                                    {{ rekap_risk_unit_all($tahun, '08', 1) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '08', 1) }}</td>
                                                 <td class="px-4 py-3 bg-yellow-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '08', 2) }}</td>
                                                 <td class="px-4 py-3 bg-yellow-300">
-                                                    {{ rekap_risk_unit_all($tahun, '08', 2) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '08', 2) }}</td>
                                                 <td class="px-4 py-3 bg-orange-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '08', 3) }}</td>
                                                 <td class="px-4 py-3 bg-orange-300">
-                                                    {{ rekap_risk_unit_all($tahun, '08', 3) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '08', 3) }}</td>
                                                 <td class="px-4 py-3 bg-red-400">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '08', 4) }}</td>
                                                 <td class="px-4 py-3 bg-red-400">
-                                                    {{ rekap_risk_unit_all($tahun, '08', 4) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '08', 4) }}</td>
                                                 <td class="px-4 py-3 bg-red-800 text-white">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '08', 5) }}</td>
                                                 <td class="px-4 py-3 bg-red-800 text-white">
-                                                    {{ rekap_risk_unit_all($tahun, '08', 5) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '08', 5) }}</td>
                                                 <td class="px-4 py-3"> <button wire:click="data_grafik('{{ "08" }}',{{$tahun}})"
                                                         class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-red">
                                                         <i class="fas fa-fw fa-line-chart"></i> Grafik
@@ -348,23 +348,23 @@
                                                 <td class="px-4 py-3 bg-green-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '09', 1) }}</td>
                                                 <td class="px-4 py-3 bg-green-300">
-                                                    {{ rekap_risk_unit_all($tahun, '09', 1) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '09', 1) }}</td>
                                                 <td class="px-4 py-3 bg-yellow-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '09', 2) }}</td>
                                                 <td class="px-4 py-3 bg-yellow-300">
-                                                    {{ rekap_risk_unit_all($tahun, '09', 2) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '09', 2) }}</td>
                                                 <td class="px-4 py-3 bg-orange-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '09', 3) }}</td>
                                                 <td class="px-4 py-3 bg-orange-300">
-                                                    {{ rekap_risk_unit_all($tahun, '09', 3) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '09', 3) }}</td>
                                                 <td class="px-4 py-3 bg-red-400">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '09', 4) }}</td>
                                                 <td class="px-4 py-3 bg-red-400">
-                                                    {{ rekap_risk_unit_all($tahun, '09', 4) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '09', 4) }}</td>
                                                 <td class="px-4 py-3 bg-red-800 text-white">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '09', 5) }}</td>
                                                 <td class="px-4 py-3 bg-red-800 text-white">
-                                                    {{ rekap_risk_unit_all($tahun, '09', 5) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '09', 5) }}</td>
                                                 <td class="px-4 py-3"> <button wire:click="data_grafik('{{ "09" }}',{{$tahun}})"
                                                         class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-red">
                                                         <i class="fas fa-fw fa-line-chart"></i> Grafik
@@ -378,23 +378,23 @@
                                                 <td class="px-4 py-3 bg-green-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '10', 1) }}</td>
                                                 <td class="px-4 py-3 bg-green-300">
-                                                    {{ rekap_risk_unit_all($tahun, '10', 1) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '10', 1) }}</td>
                                                 <td class="px-4 py-3 bg-yellow-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '10', 2) }}</td>
                                                 <td class="px-4 py-3 bg-yellow-300">
-                                                    {{ rekap_risk_unit_all($tahun, '10', 2) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '10', 2) }}</td>
                                                 <td class="px-4 py-3 bg-orange-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '10', 3) }}</td>
                                                 <td class="px-4 py-3 bg-orange-300">
-                                                    {{ rekap_risk_unit_all($tahun, '10', 3) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '10', 3) }}</td>
                                                 <td class="px-4 py-3 bg-red-400">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '10', 4) }}</td>
                                                 <td class="px-4 py-3 bg-red-400">
-                                                    {{ rekap_risk_unit_all($tahun, '10', 4) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '10', 4) }}</td>
                                                 <td class="px-4 py-3 bg-red-800 text-white">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '10', 5) }}</td>
                                                 <td class="px-4 py-3 bg-red-800 text-white">
-                                                    {{ rekap_risk_unit_all($tahun, '10', 5) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '10', 5) }}</td>
                                                 <td class="px-4 py-3"> <button wire:click="data_grafik({{ 10 }},{{$tahun}})"
                                                         class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-red">
                                                         <i class="fas fa-fw fa-line-chart"></i> Grafik
@@ -408,23 +408,23 @@
                                                 <td class="px-4 py-3 bg-green-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '11', 1) }}</td>
                                                 <td class="px-4 py-3 bg-green-300">
-                                                    {{ rekap_risk_unit_all($tahun, '11', 1) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '11', 1) }}</td>
                                                 <td class="px-4 py-3 bg-yellow-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '11', 2) }}</td>
                                                 <td class="px-4 py-3 bg-yellow-300">
-                                                    {{ rekap_risk_unit_all($tahun, '11', 2) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '11', 2) }}</td>
                                                 <td class="px-4 py-3 bg-orange-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '11', 3) }}</td>
                                                 <td class="px-4 py-3 bg-orange-300">
-                                                    {{ rekap_risk_unit_all($tahun, '11', 3) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '11', 3) }}</td>
                                                 <td class="px-4 py-3 bg-red-400">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '11', 4) }}</td>
                                                 <td class="px-4 py-3 bg-red-400">
-                                                    {{ rekap_risk_unit_all($tahun, '11', 4) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '11', 4) }}</td>
                                                 <td class="px-4 py-3 bg-red-800 text-white">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '11', 5) }}</td>
                                                 <td class="px-4 py-3 bg-red-800 text-white">
-                                                    {{ rekap_risk_unit_all($tahun, '11', 5) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '11', 5) }}</td>
                                                 <td class="px-4 py-3"> <button wire:click="data_grafik({{ 11 }},{{$tahun}})"
                                                         class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-red">
                                                         <i class="fas fa-fw fa-line-chart"></i> Grafik
@@ -438,23 +438,23 @@
                                                 <td class="px-4 py-3 bg-green-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '12', 1) }}</td>
                                                 <td class="px-4 py-3 bg-green-300">
-                                                    {{ rekap_risk_unit_all($tahun, '12', 1) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '12', 1) }}</td>
                                                 <td class="px-4 py-3 bg-yellow-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '12', 2) }}</td>
                                                 <td class="px-4 py-3 bg-yellow-300">
-                                                    {{ rekap_risk_unit_all($tahun, '12', 2) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '12', 2) }}</td>
                                                 <td class="px-4 py-3 bg-orange-300">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '12', 3) }}</td>
                                                 <td class="px-4 py-3 bg-orange-300">
-                                                    {{ rekap_risk_unit_all($tahun, '12', 3) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '12', 3) }}</td>
                                                 <td class="px-4 py-3 bg-red-400">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '12', 4) }}</td>
                                                 <td class="px-4 py-3 bg-red-400">
-                                                    {{ rekap_risk_unit_all($tahun, '12', 4) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '12', 4) }}</td>
                                                 <td class="px-4 py-3 bg-red-800 text-white">
                                                     {{ rekap_risk_unit_kontrol_all($tahun, '12', 5) }}</td>
                                                 <td class="px-4 py-3 bg-red-800 text-white">
-                                                    {{ rekap_risk_unit_all($tahun, '12', 5) }}</td>
+                                                    {{ rekap_risk_unit_monitoring_all($tahun, '12', 5) }}</td>
                                                 <td class="px-4 py-3"> <button wire:click="data_grafik({{ 12 }},{{$tahun}})"
                                                         class="px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-red">
                                                         <i class="fas fa-fw fa-line-chart"></i> Grafik
