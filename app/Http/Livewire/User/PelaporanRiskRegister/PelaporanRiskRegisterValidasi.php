@@ -15,7 +15,7 @@ class PelaporanRiskRegisterValidasi extends Component
     public $param = '',$tgl_deadline='', $user_unit = '', $unit_id = '', $resiko = '', $efek_resiko = '', $target_waktu = '', $matrik_kontrol_grade='', $matrik_monitoring_grade='';
     public $aktivitas_kerja = '', $pengendalian_saat_ini = '', $risk_kategori_id = '',  $risk_evaluasi_id;
     public $akar_masalah = '', $rencana_tindak_lanjut = '', $laporan_singkat = '', $aktif = '', $matrik_monitoring_f = '', $matrik_monitoring_d = '';
-    public $matrik_kontrol_f = '', $matrik_kontrol_d = '', $penanggung_jawab = '', $matrik_evaluasi_d = '', $matrik_evaluasi_f = '';
+    public $matrik_kontrol_f = '', $matrik_kontrol_d = '', $penanggung_jawab = '', $matrik_evaluasi_d = '', $matrik_evaluasi_f = '', $realisasi_penganganan = '';
 
     public function mount($param = null)
     {
@@ -46,6 +46,7 @@ class PelaporanRiskRegisterValidasi extends Component
                 'rencana_tindak_lanjut' => 'required',
                 'matrik_monitoring_f' => 'required',
                 'matrik_monitoring_d' => 'required',
+                'realisasi_penganganan' => 'required',
                 'tgl_deadline'=> 'required'
 
 
@@ -72,6 +73,7 @@ class PelaporanRiskRegisterValidasi extends Component
                 "matrik_monitoring_rpn" => $this->matrik_monitoring_f * $this->matrik_monitoring_d,
                 "matrik_monitoring_grade" => setup_grade($this->matrik_monitoring_f * $this->matrik_monitoring_d),
                 "tgl_deadline" => $this->tgl_deadline,
+                "realisasi_penganganan" => $this->realisasi_penganganan,
             ]);
 
             $master = Risk_register_master::find($data->risk_register_master_id);
@@ -96,6 +98,7 @@ class PelaporanRiskRegisterValidasi extends Component
                 "matrik_monitoring_rpn" => $this->matrik_monitoring_f * $this->matrik_monitoring_d,
                 "matrik_monitoring_grade" => setup_grade($this->matrik_monitoring_f * $this->matrik_monitoring_d),
                 "tgl_deadline" => $this->tgl_deadline,
+                 "realisasi_penganganan" => $this->realisasi_penganganan,
             ]);
             session()->flash('success', 'Data Berhasil di simpan..');
             $this->kembali();
@@ -128,6 +131,8 @@ class PelaporanRiskRegisterValidasi extends Component
             $this->matrik_monitoring_grade = $data->matrik_monitoring_grade;
             $this->aktif = $data->aktif;
             $this->tgl_deadline = $data->tgl_deadline;
+             $this->realisasi_penganganan = $data->realisasi_penganganan;
+
 
             $katagori = Risk_kategori::where('aktif', 'Y')->get();
             //

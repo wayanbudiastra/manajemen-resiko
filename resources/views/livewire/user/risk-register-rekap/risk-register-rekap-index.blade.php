@@ -34,10 +34,10 @@
                                 @endif
                             </div>
                             <div class="w-full overflow-hidden rounded-lg shadow-xs mt-5">
-                                <div class="flex w-1/2 space-x-2 items-start">
+                                <div class="mt-4 flex w-3/4 space-x-2 items-start">
                                     <!-- Select: Lebar 75% -->
                                     <select
-                                        class="form-select form-control w-3/4 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-green-300 focus:outline-none select2"
+                                        class="ml-4 form-select form-control w-2/4 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-green-300 focus:outline-none select2"
                                         name="pilih_tahun" wire:model.defer="pilih_tahun">
                                         <option value="">Pilih Tahun</option>
                                         @foreach ($data as $item)
@@ -47,7 +47,7 @@
 
                                     <!-- Tombol: Lebar 25% -->
                                     <button wire:click="cek_data"
-                                        class="w-1/4 px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-green-600 border border-transparent rounded-lg active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-green">
+                                        class="w-2/4 px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-green-600 border border-transparent rounded-lg active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-green">
                                         <i class="fas fa-fw fa-search-plus"></i> Cek Data
                                     </button>
                                 </div>

@@ -39,7 +39,7 @@ class RiskKontrolEvaluasiGrafik extends Component
         foreach ($grading as $item) {
             array_push($label, $item->nama_grade);
             array_push($kontrol, rekap_risk_unit_kontrol_all($this->tahun, $this->bulan, $item->id));
-            array_push($evaluasi, rekap_risk_unit_all($this->tahun, $this->bulan, $item->id));
+            array_push($evaluasi, rekap_risk_unit_monitoring_all($this->tahun, $this->bulan, $item->id));
         }
 
         // dd($label,$kontrol,$evaluasi);

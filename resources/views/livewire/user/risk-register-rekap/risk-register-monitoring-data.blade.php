@@ -34,20 +34,20 @@
                                 @endif
                             </div>
                             <div class="w-full overflow-hidden rounded-lg shadow-xs mt-5">
-                                <div class="flex w-1/2 space-x-2 items-start">
+                                <div class="mt-4 flex w-3/4 space-x-2 items-start">
                                     <!-- Select: Lebar 75% -->
 
                                     
 
                                     <!-- Tombol: Lebar 25% -->
                                     <button wire:click="kembali"
-                                        class="w-1/4 px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-green-600 border border-transparent rounded-lg active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-green">
+                                        class="ml-4 w-1/4 px-4 py-2 font-medium leading-5 text-white transition-colors duration-150 bg-green-600 border border-transparent rounded-lg active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-green">
                                         <i class="fas fa-fw fa-arrow-up"></i> Kembali
                                     </button>
                                 </div>
 
                                 <div class="w-full overflow-x-auto">
-                                    <canvas id="lineChart" width="800" height="150"></canvas>
+                                    <canvas id="lineChart" width="800" height="350"></canvas>
                                 </div>    
 
                             </div>

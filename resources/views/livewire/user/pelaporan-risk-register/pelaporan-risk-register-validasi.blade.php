@@ -217,6 +217,21 @@
                                 </div>
 
                                 <div class="mb-3">
+                                        <label for="exampleText0"
+                                            class="form-label inline-block mb-2 text-gray-700">Kondisi Saat ini</label>
+                                        <textarea rows="6"
+                                            class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-green-300 focus:outline-none"
+                                            aria-label="Default select example" name="laporan_singkat" wire:model.defer="laporan_singkat"></textarea>
+
+                                        @error('laporan_singkat')
+                                            <div class="mb-2 text-sm text-red-700  rounded-lg dark:bg-red-200 dark:text-red-800"
+                                                role="alert">
+                                                <span class="font-medium"></span>{{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+
+                                <div class="mb-3">
                                     <label for="exampleText0"
                                         class="form-label inline-block mb-2 text-gray-700">Tanggal Deadline</label>
                                     <input type="date"
@@ -229,6 +244,22 @@
                                             role="alert">
                                             <span class="font-medium"></span>{{ $message }}
                                         </div>
+                                    @enderror
+                                </div>
+
+                                 <div class="mb-3">
+                                    <label for="exampleText0"
+                                        class="form-label inline-block mb-2 text-gray-700">Realisasi Penanganan</label>
+                                    <input type="radio" wire:model.defer="realisasi_penganganan" value="Y" name="realisasi_penganganan"
+                                        class="form-check-input"> Sudah
+                                    <input type="radio" wire:model.defer="realisasi_penganganan" value="N" name="realisasi_penganganan"
+                                        class="form-check-input"> belum Selesai
+
+                                    @error('realisasi_penganganan')
+                                    <div class="mb-2 text-sm text-red-700  rounded-lg dark:bg-red-200 dark:text-red-800"
+                                        role="alert">
+                                        <span class="font-medium"></span>{{ $message }}
+                                    </div>
                                     @enderror
                                 </div>
                                 
